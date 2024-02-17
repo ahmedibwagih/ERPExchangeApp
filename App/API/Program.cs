@@ -99,10 +99,8 @@ builder.Services.AddSignalR();
 
 builder.Services.AddSwaggerGen(swagger =>
 {
-
     //add custom header for all requests
    //swagger.OperationFilter<DynamoSwaggerOperationFilter>();
-
     swagger.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
