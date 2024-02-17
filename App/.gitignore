@@ -66,4 +66,3 @@ _ReSharper*/
 # Rider
 .idea/
 *.csproj.dotSettings.user
-/ref/Dynamo.App/bin/Debug/net6.0/Dynamo.App.dll
