@@ -95,6 +95,19 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddSignalR();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+                      builder =>
+                      {
+                          builder.AllowAnyHeader();
+                          builder.AllowAnyMethod();
+                          builder.AllowAnyOrigin();
+                      });
+});
+
+
 //builder.Services.AddAutoMapper(typeof(Startup));
 
 builder.Services.AddSwaggerGen(swagger =>
@@ -156,8 +169,14 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ErpExchange V1");
+    });
+    app.UseDeveloperExceptionPage();
 }
+
+app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

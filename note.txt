@@ -1,0 +1,15 @@
+1- SendDeliveryNotify in payment with confirm order
+2-all in transaction
+3- move ConfirmPendingOrder from payorder 
+
+add-migration AddChats -context dbcontext
+Update-Database -context dbcontext
+
+{
+  "userName": "admin@admin.com",
+  "password": "Default@123"
+}
+
+npm install nswag -g
+
+ nswag openapi2tsclient /input:https://localhost:7080/swagger/v1/swagger.json /output:src/app/services/api.service.ts

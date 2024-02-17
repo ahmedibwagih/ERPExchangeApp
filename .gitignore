@@ -3,7 +3,6 @@
 .vs/
 .idea/
 *.suo
-*.sln.docstates
 *.dll
 *.exe
 *.pdb
@@ -12,7 +11,7 @@
 *.user
 *.suo
 *.userprefs
-*.sln.ide
+
 
 # Binaries
 bin/
@@ -33,11 +32,7 @@ net8.0/
 *.suo
 *.user
 *.userosscache
-*.sln.ide
-*.sln.ide-shm
-*.sln.ide-wal
-*.sln.ide-shm.lock
-*.sln.ide-wal.lock
+
 
 # .NET Core
 project.lock.json
@@ -47,7 +42,6 @@ artifacts/
 # Rider generated .NET Core Files
 .idea/
 *.sln.iml
-*.csproj.user
 *.xproj.user
 
 # Resharper
