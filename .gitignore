@@ -4,6 +4,9 @@
 .idea/
 *.suo
 *.sln.docstates
+*.dll
+*.exe
+*.pdb
 
 # User-specific files
 *.user
@@ -14,7 +17,8 @@
 # Binaries
 bin/
 obj/
-App/API/bin/
+debug/
+net8.0/
 
 # NuGet Packages
 *.nupkg
