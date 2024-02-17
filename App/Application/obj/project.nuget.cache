@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GdXbDioP/+fdW0chnEnr8SrOEiUSoqcHag8LTBuaXuZG+isWGKpJ04n4DiRu4USyi42iyG+7AunFzuMHJoOPHA==",
+  "dgSpecHash": "lV8utH/QELoFcUeVGXNe8vdKVCwfrl+we74UBAI1k5mwhbshYoAkO+5mOk71yAMgYkN+r0jQ5nD0sEHmKMrEfA==",
   "success": true,
-  "projectFilePath": "E:\\ERPExchange\\Api\\App\\Application\\Application.csproj",
+  "projectFilePath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giga\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\giga\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

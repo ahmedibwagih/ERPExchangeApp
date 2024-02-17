@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vkX1Xf5iSXbtLGNmv9kcA5lGg29lxicdSl1kse8Maz/35KvtAMnig5IYklUL8iNvRvUeEelEcxRME5ExCyJw9w==",
+  "dgSpecHash": "f3SgMrDj3Rh9HhfNCMEJcpt0Fskjbk8czWU8m626ooCNSlLSF9TruGjUVn7LJRywOrFdbydQCeT3vN95wiE/cQ==",
   "success": true,
-  "projectFilePath": "E:\\ERPExchange\\Api\\App\\Api\\Api.csproj",
+  "projectFilePath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giga\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\giga\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

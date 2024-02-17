@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zf2DHky2aoq03+xv+ua80wkVnkNpq+wndXNyDf/OKWLXbTC5q1GlFo9gaHn12apenYAnRnGBTgGKt+kpe4booA==",
+  "dgSpecHash": "JTpkV/i7BssNGdYwIEca9NEVWWtKkQJZPM/+oHzp/uYRQJ0BIzuBv6ab4SBEzN1OFCcp/aEwyKt7QZ7ncvIfGg==",
   "success": true,
-  "projectFilePath": "E:\\ERPExchange\\Api\\App\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giga\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\giga\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

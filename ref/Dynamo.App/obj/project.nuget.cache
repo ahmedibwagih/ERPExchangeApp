@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7PH+Vl7iubpjxh8v4Q0RtKVkskt66dSiViLDvT5RDhx2IvTnX0o8DYa1BDg6DnoctUhaMb+mCR944DEXdlzgCw==",
+  "dgSpecHash": "fO72DMZSMOsvifSsyN5X0GzIUqNKT9B2w44aH/eU+6ROr/iejv/lW8YIBPAgC/uCmHanTZ20Ds6bHprJVeVW1w==",
   "success": true,
-  "projectFilePath": "E:\\ERPExchange\\Api\\ref\\Dynamo.App\\Dynamo.App.csproj",
+  "projectFilePath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.App\\Dynamo.App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giga\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\giga\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

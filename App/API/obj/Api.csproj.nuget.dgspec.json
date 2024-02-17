@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ERPExchange\\Api\\App\\Api\\Api.csproj": {}
+    "E:\\ERPExchange\\ERPExchangeApp\\App\\Api\\Api.csproj": {}
   },
   "projects": {
-    "E:\\ERPExchange\\Api\\App\\Api\\Api.csproj": {
+    "E:\\ERPExchange\\ERPExchangeApp\\App\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ERPExchange\\Api\\App\\Api\\Api.csproj",
+        "projectUniqueName": "E:\\ERPExchange\\ERPExchangeApp\\App\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "E:\\ERPExchange\\Api\\App\\Api\\Api.csproj",
+        "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Api\\Api.csproj",
         "packagesPath": "C:\\Users\\giga\\.nuget\\packages\\",
-        "outputPath": "E:\\ERPExchange\\Api\\App\\Api\\obj\\",
+        "outputPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,17 +33,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\ERPExchange\\Api\\App\\Application\\Application.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\App\\Application\\Application.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\App\\Application\\Application.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application\\Application.csproj"
               },
-              "E:\\ERPExchange\\Api\\ref\\Dynamo.App\\Dynamo.App.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.App\\Dynamo.App.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.App\\Dynamo.App.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.App\\Dynamo.App.csproj"
               },
-              "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj"
               },
-              "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj"
               }
             }
           }
@@ -108,14 +108,14 @@
         }
       }
     },
-    "E:\\ERPExchange\\Api\\App\\Application.Core\\Application.Core.csproj": {
+    "E:\\ERPExchange\\ERPExchangeApp\\App\\Application.Core\\Application.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ERPExchange\\Api\\App\\Application.Core\\Application.Core.csproj",
+        "projectUniqueName": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application.Core\\Application.Core.csproj",
         "projectName": "Application.Core",
-        "projectPath": "E:\\ERPExchange\\Api\\App\\Application.Core\\Application.Core.csproj",
+        "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application.Core\\Application.Core.csproj",
         "packagesPath": "C:\\Users\\giga\\.nuget\\packages\\",
-        "outputPath": "E:\\ERPExchange\\Api\\App\\Application.Core\\obj\\",
+        "outputPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -137,8 +137,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj"
               }
             }
           }
@@ -178,14 +178,14 @@
         }
       }
     },
-    "E:\\ERPExchange\\Api\\App\\Application\\Application.csproj": {
+    "E:\\ERPExchange\\ERPExchangeApp\\App\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ERPExchange\\Api\\App\\Application\\Application.csproj",
+        "projectUniqueName": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "E:\\ERPExchange\\Api\\App\\Application\\Application.csproj",
+        "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\giga\\.nuget\\packages\\",
-        "outputPath": "E:\\ERPExchange\\Api\\App\\Application\\obj\\",
+        "outputPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -207,14 +207,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\ERPExchange\\Api\\App\\Application.Core\\Application.Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\App\\Application.Core\\Application.Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\App\\Application.Core\\Application.Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application.Core\\Application.Core.csproj"
               },
-              "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj"
               },
-              "E:\\ERPExchange\\Api\\App\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\App\\Infrastructure\\Infrastructure.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\App\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -265,14 +265,14 @@
         }
       }
     },
-    "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj": {
+    "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj",
+        "projectUniqueName": "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj",
+        "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\giga\\.nuget\\packages\\",
-        "outputPath": "E:\\ERPExchange\\Api\\App\\Core\\obj\\",
+        "outputPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -294,8 +294,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj"
               }
             }
           }
@@ -335,14 +335,14 @@
         }
       }
     },
-    "E:\\ERPExchange\\Api\\App\\Infrastructure\\Infrastructure.csproj": {
+    "E:\\ERPExchange\\ERPExchangeApp\\App\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ERPExchange\\Api\\App\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "E:\\ERPExchange\\ERPExchangeApp\\App\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "E:\\ERPExchange\\Api\\App\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\giga\\.nuget\\packages\\",
-        "outputPath": "E:\\ERPExchange\\Api\\App\\Infrastructure\\obj\\",
+        "outputPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -364,14 +364,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\ERPExchange\\Api\\App\\Application.Core\\Application.Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\App\\Application.Core\\Application.Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\App\\Application.Core\\Application.Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Application.Core\\Application.Core.csproj"
               },
-              "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\App\\Core\\Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\App\\Core\\Core.csproj"
               },
-              "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj"
               }
             }
           }
@@ -467,14 +467,14 @@
         }
       }
     },
-    "E:\\ERPExchange\\Api\\ref\\Dynamo.App\\Dynamo.App.csproj": {
+    "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.App\\Dynamo.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ERPExchange\\Api\\ref\\Dynamo.App\\Dynamo.App.csproj",
+        "projectUniqueName": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.App\\Dynamo.App.csproj",
         "projectName": "Dynamo.App",
-        "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.App\\Dynamo.App.csproj",
+        "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.App\\Dynamo.App.csproj",
         "packagesPath": "C:\\Users\\giga\\.nuget\\packages\\",
-        "outputPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.App\\obj\\",
+        "outputPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -496,8 +496,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj"
               }
             }
           }
@@ -549,14 +549,14 @@
         }
       }
     },
-    "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
+    "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj",
+        "projectUniqueName": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj",
         "projectName": "Dynamo.Core",
-        "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj",
+        "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj",
         "packagesPath": "C:\\Users\\giga\\.nuget\\packages\\",
-        "outputPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\obj\\",
+        "outputPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -609,14 +609,14 @@
         }
       }
     },
-    "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj": {
+    "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj",
+        "projectUniqueName": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj",
         "projectName": "Dynamo.Context",
-        "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj",
+        "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj",
         "packagesPath": "C:\\Users\\giga\\.nuget\\packages\\",
-        "outputPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\obj\\",
+        "outputPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -638,8 +638,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
-                "projectPath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Core\\Dynamo.Core.csproj"
+              "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj": {
+                "projectPath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Core\\Dynamo.Core.csproj"
               }
             }
           }

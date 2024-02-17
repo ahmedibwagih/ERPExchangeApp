@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WZZ6+KBqM1wZ/v8GzPpAad8wP0etOfa0+bOq5SV8QdlNYdktDfdavrOJwuuLYPeD2xU/MG7bnmEM5M02sI+ZuA==",
+  "dgSpecHash": "VB6VZQWhDaDnLcpy5nhkUNYEZPeOeCVzoobmnQaZQLeM9gKDWppgcN6Yhk0OwMgU3DiNrQ3r/mLWuPb7iIF1Dg==",
   "success": true,
-  "projectFilePath": "E:\\ERPExchange\\Api\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj",
+  "projectFilePath": "E:\\ERPExchange\\ERPExchangeApp\\ref\\Dynamo.Infrastrucutre\\Dynamo.Context.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giga\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\giga\\.nuget\\packages\\mailkit\\3.4.1\\mailkit.3.4.1.nupkg.sha512",
