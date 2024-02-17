@@ -8,6 +8,7 @@
 /* eslint-disable */
 // ReSharper disable InconsistentNaming
 
+
 export class Client {
     private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
     private baseUrl: string;
@@ -240,7 +241,7 @@ function formatDate(d: Date) {
 }
 
 export class ApiException extends Error {
-    message: string;
+    override message: string;
     status: number;
     response: string;
     headers: { [key: string]: any; };
