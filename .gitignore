@@ -1,5 +1,6 @@
 # Visual Studio / Rider / JetBrains
 .vscode/
+.vs/
 .idea/
 *.suo
 *.sln.docstates
@@ -13,6 +14,7 @@
 # Binaries
 bin/
 obj/
+App/API/bin
 
 # NuGet Packages
 *.nupkg
@@ -60,30 +62,3 @@ _ReSharper*/
 # Rider
 .idea/
 *.csproj.dotSettings.user
-/App/.vs/App/DesignTimeBuild/.dtbcache.v2
-/App/.vs/App/FileContentIndex/6b41784e-2a16-4714-bf5f-32f6ba994e6f.vsidx
-*.vsidx
-/App/.vs/App/FileContentIndex/a17aea9c-6e6f-4280-8ff2-4dc65ea47bb0.vsidx
-/App/.vs/App/FileContentIndex/bdc46722-0d4c-4979-ade9-c44f09631985.vsidx
-/App/.vs/App/FileContentIndex/f79f7fb8-683a-4381-97e1-4459ccceb323.vsidx
-/App/.vs/App/v17/.futdcache.v2
-/App/.vs/App/v17/.suo
-/App/.vs/App/v17/fileList.bin
-/App/.vs/ProjectEvaluation/app.metadata.v7.bin
-/App/.vs/ProjectEvaluation/app.projects.v7.bin
-/App/API/obj/Debug/net8.0/ref/Api.dll
-/App/API/obj/Debug/net8.0/refint/Api.dll
-/App/Application/obj/Debug/net8.0/ref/Application.dll
-/App/Application/obj/project.assets.json
-/App/Application/obj/project.nuget.cache
-/App/Application.Core/obj/Debug/net8.0/ref/Application.Core.dll
-/App/Application.Core/obj/Debug/net8.0/refint/Application.Core.dll
-/App/Core/obj/Debug/net8.0/ref/Core.dll
-/App/Core/obj/Debug/net8.0/refint/Core.dll
-/ref/Dynamo.Infrastrucutre/obj/Debug/net6.0/ref/Dynamo.Context.dll
-*.gitignore
-/ref/Dynamo.Infrastrucutre/bin/Debug/net6.0/Dynamo.Context.dll
-/ref/Dynamo.Infrastrucutre/bin/Debug/net6.0/Dynamo.Context.pdb
-/ref/Dynamo.Infrastrucutre/bin/Debug/net6.0/Dynamo.Core.dll
-/ref/Dynamo.Infrastrucutre/bin/Debug/net6.0/Dynamo.Core.pdb
-/.gitignore
