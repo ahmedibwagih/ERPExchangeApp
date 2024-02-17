@@ -67,3 +67,5 @@ _ReSharper*/
 .idea/
 *.csproj.dotSettings.user
 /ref/Dynamo.App/bin/Debug/net6.0/Dynamo.App.dll
+/App/API/bin/Debug/net8.0/Api.deps.json
+/App/API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
