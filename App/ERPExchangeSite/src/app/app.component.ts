@@ -11,5 +11,5 @@ import { RouterOutlet, RouterLink } from '@angular/router';
     imports: [CommonModule, RouterOutlet, RouterLink]
 })
 export class AppComponent {
-  title = 'angularadmin'
+ 
 }
