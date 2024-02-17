@@ -14,7 +14,7 @@
 # Binaries
 bin/
 obj/
-App/API/bin
+App/API/bin/
 
 # NuGet Packages
 *.nupkg
