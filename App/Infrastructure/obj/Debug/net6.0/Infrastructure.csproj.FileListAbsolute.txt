@@ -1,0 +1,72 @@
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Application.Core.dll
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Core.dll
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Dynamo.Context.dll
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Dynamo.Core.dll
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Dynamo.Context.pdb
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Application.Core.pdb
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Core.pdb
+E:\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
+E:\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Application.Core.dll
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Core.dll
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Dynamo.Context.dll
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Dynamo.Core.dll
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Dynamo.Context.pdb
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Application.Core.pdb
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Core.pdb
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
+E:\Farag\Alaaz\AlaazNew\App\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Application.Core.dll
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Core.dll
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Dynamo.Context.dll
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Dynamo.Context.pdb
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Application.Core.pdb
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Core.pdb
+C:\Users\giga\Desktop\for copy\App\Infrastructure\bin\Debug\net6.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
+C:\Users\giga\Desktop\for copy\App\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll

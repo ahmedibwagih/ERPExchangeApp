@@ -1,0 +1,1 @@
+E:\ERPExchange\Api\App\ERPExchangeSite\obj\Debug\ERPExchangeSite.client.esproj.CoreCompileInputs.cache

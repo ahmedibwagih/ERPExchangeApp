@@ -1,0 +1,46 @@
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.deps.json
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.csproj.AssemblyReference.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfoInputs.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfo.cs
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.csproj.CoreCompileInputs.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\refint\Dynamo.Core.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.pdb
+E:\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\ref\Dynamo.Core.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.deps.json
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.csproj.AssemblyReference.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfoInputs.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfo.cs
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.csproj.CoreCompileInputs.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\refint\Dynamo.Core.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.pdb
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Core\obj\Debug\net6.0\ref\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.deps.json
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfoInputs.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfo.cs
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.csproj.CoreCompileInputs.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\obj\Debug\net6.0\refint\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Core\obj\Debug\net6.0\ref\Dynamo.Core.dll
+E:\ERPExchange\Api\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.deps.json
+E:\ERPExchange\Api\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.dll
+E:\ERPExchange\Api\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\ERPExchange\Api\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\ERPExchange\Api\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfoInputs.cache
+E:\ERPExchange\Api\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfo.cs
+E:\ERPExchange\Api\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.csproj.CoreCompileInputs.cache
+E:\ERPExchange\Api\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.dll
+E:\ERPExchange\Api\ref\Dynamo.Core\obj\Debug\net6.0\refint\Dynamo.Core.dll
+E:\ERPExchange\Api\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.pdb
+E:\ERPExchange\Api\ref\Dynamo.Core\obj\Debug\net6.0\ref\Dynamo.Core.dll

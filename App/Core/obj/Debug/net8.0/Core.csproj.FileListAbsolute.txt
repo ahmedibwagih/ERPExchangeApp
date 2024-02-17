@@ -1,0 +1,48 @@
+C:\Users\giga\Desktop\for copy\App\Core\bin\Debug\net8.0\Core.deps.json
+C:\Users\giga\Desktop\for copy\App\Core\bin\Debug\net8.0\Core.dll
+C:\Users\giga\Desktop\for copy\App\Core\bin\Debug\net8.0\Core.pdb
+C:\Users\giga\Desktop\for copy\App\Core\bin\Debug\net8.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy\App\Core\bin\Debug\net8.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\Core.csproj.CopyComplete
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\Core.dll
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\refint\Core.dll
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\Core.pdb
+C:\Users\giga\Desktop\for copy\App\Core\obj\Debug\net8.0\ref\Core.dll
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\giga\Desktop\for copy2\App\Core\bin\Debug\net8.0\Core.deps.json
+C:\Users\giga\Desktop\for copy2\App\Core\bin\Debug\net8.0\Core.dll
+C:\Users\giga\Desktop\for copy2\App\Core\bin\Debug\net8.0\Core.pdb
+C:\Users\giga\Desktop\for copy2\App\Core\bin\Debug\net8.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy2\App\Core\bin\Debug\net8.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\Core.csproj.CopyComplete
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\Core.dll
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\refint\Core.dll
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\Core.pdb
+C:\Users\giga\Desktop\for copy2\App\Core\obj\Debug\net8.0\ref\Core.dll
+E:\ERPExchange\Api\App\Core\bin\Debug\net8.0\Core.deps.json
+E:\ERPExchange\Api\App\Core\bin\Debug\net8.0\Core.dll
+E:\ERPExchange\Api\App\Core\bin\Debug\net8.0\Core.pdb
+E:\ERPExchange\Api\App\Core\bin\Debug\net8.0\Dynamo.Core.dll
+E:\ERPExchange\Api\App\Core\bin\Debug\net8.0\Dynamo.Core.pdb
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\EFCoreSqlServerNetTopologySuite.cs
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\Core.csproj.CopyComplete
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\Core.dll
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\refint\Core.dll
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\Core.pdb
+E:\ERPExchange\Api\App\Core\obj\Debug\net8.0\ref\Core.dll

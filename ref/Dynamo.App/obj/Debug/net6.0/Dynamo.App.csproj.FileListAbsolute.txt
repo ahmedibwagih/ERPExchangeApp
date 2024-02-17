@@ -1,0 +1,60 @@
+E:\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.deps.json
+E:\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.pdb
+E:\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.Core.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.AssemblyReference.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.GeneratedMSBuildEditorConfig.editorconfig
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.AssemblyInfoInputs.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.AssemblyInfo.cs
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.CoreCompileInputs.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.CopyComplete
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\refint\Dynamo.App.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.pdb
+E:\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\ref\Dynamo.App.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.deps.json
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.pdb
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.Core.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.AssemblyReference.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.GeneratedMSBuildEditorConfig.editorconfig
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.AssemblyInfoInputs.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.AssemblyInfo.cs
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.CoreCompileInputs.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.CopyComplete
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\refint\Dynamo.App.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.pdb
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.App\obj\Debug\net6.0\ref\Dynamo.App.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.deps.json
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.pdb
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.AssemblyReference.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.AssemblyInfoInputs.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.AssemblyInfo.cs
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.CoreCompileInputs.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.CopyComplete
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\refint\Dynamo.App.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.pdb
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.App\obj\Debug\net6.0\ref\Dynamo.App.dll
+E:\ERPExchange\Api\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.deps.json
+E:\ERPExchange\Api\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.dll
+E:\ERPExchange\Api\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.App.pdb
+E:\ERPExchange\Api\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.Core.dll
+E:\ERPExchange\Api\ref\Dynamo.App\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.AssemblyReference.cache
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.GeneratedMSBuildEditorConfig.editorconfig
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.AssemblyInfoInputs.cache
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.AssemblyInfo.cs
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.CoreCompileInputs.cache
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.csproj.CopyComplete
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.dll
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\refint\Dynamo.App.dll
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\Dynamo.App.pdb
+E:\ERPExchange\Api\ref\Dynamo.App\obj\Debug\net6.0\ref\Dynamo.App.dll

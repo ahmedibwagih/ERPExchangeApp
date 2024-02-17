@@ -1,0 +1,69 @@
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Application.deps.json
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Application.dll
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Application.pdb
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Application.Core.dll
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Core.dll
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Dynamo.Context.dll
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Application.Core.pdb
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Core.pdb
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Dynamo.Context.pdb
+C:\Users\giga\Desktop\for copy\App\Application\bin\Debug\net8.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\Application.dll
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\refint\Application.dll
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\Application.pdb
+C:\Users\giga\Desktop\for copy\App\Application\obj\Debug\net8.0\ref\Application.dll
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Application.deps.json
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Application.dll
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Application.pdb
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Application.Core.dll
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Core.dll
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Dynamo.Context.dll
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Application.Core.pdb
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Core.pdb
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Dynamo.Context.pdb
+C:\Users\giga\Desktop\for copy2\App\Application\bin\Debug\net8.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\Application.dll
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\refint\Application.dll
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\Application.pdb
+C:\Users\giga\Desktop\for copy2\App\Application\obj\Debug\net8.0\ref\Application.dll
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Application.deps.json
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Application.dll
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Application.pdb
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Application.Core.dll
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Core.dll
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Dynamo.Context.dll
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Dynamo.Core.dll
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Infrastructure.dll
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Application.Core.pdb
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Core.pdb
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Infrastructure.pdb
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Dynamo.Context.pdb
+E:\ERPExchange\Api\App\Application\bin\Debug\net8.0\Dynamo.Core.pdb
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\Application.dll
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\refint\Application.dll
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\Application.pdb
+E:\ERPExchange\Api\App\Application\obj\Debug\net8.0\ref\Application.dll

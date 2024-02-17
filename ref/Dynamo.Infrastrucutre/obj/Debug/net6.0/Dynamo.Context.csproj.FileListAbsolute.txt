@@ -1,0 +1,68 @@
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.deps.json
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.runtimeconfig.json
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.pdb
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Core.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.AssemblyReference.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.GeneratedMSBuildEditorConfig.editorconfig
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.AssemblyInfoInputs.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.AssemblyInfo.cs
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.CoreCompileInputs.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.CopyComplete
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\refint\Dynamo.Context.dll
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.pdb
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.genruntimeconfig.cache
+E:\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\ref\Dynamo.Context.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.deps.json
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.runtimeconfig.json
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.pdb
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Core.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.AssemblyReference.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.GeneratedMSBuildEditorConfig.editorconfig
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.AssemblyInfoInputs.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.AssemblyInfo.cs
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.CoreCompileInputs.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.CopyComplete
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\refint\Dynamo.Context.dll
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.pdb
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.genruntimeconfig.cache
+E:\Farag\Alaaz\AlaazNew\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\ref\Dynamo.Context.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.deps.json
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.runtimeconfig.json
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.pdb
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Core.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Core.pdb
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.AssemblyReference.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.AssemblyInfoInputs.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.AssemblyInfo.cs
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.CoreCompileInputs.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.CopyComplete
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\refint\Dynamo.Context.dll
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.pdb
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.genruntimeconfig.cache
+C:\Users\giga\Desktop\for copy2\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\ref\Dynamo.Context.dll
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.deps.json
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.runtimeconfig.json
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.dll
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Context.pdb
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Core.dll
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\bin\Debug\net6.0\Dynamo.Core.pdb
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.AssemblyReference.cache
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.GeneratedMSBuildEditorConfig.editorconfig
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.AssemblyInfoInputs.cache
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.AssemblyInfo.cs
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.CoreCompileInputs.cache
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.csproj.CopyComplete
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.dll
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\refint\Dynamo.Context.dll
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.pdb
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\Dynamo.Context.genruntimeconfig.cache
+E:\ERPExchange\Api\ref\Dynamo.Infrastrucutre\obj\Debug\net6.0\ref\Dynamo.Context.dll
