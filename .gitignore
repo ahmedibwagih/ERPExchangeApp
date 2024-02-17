@@ -1,0 +1,62 @@
+# Visual Studio / Rider / JetBrains
+.vscode/
+.idea/
+*.suo
+*.sln.docstates
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.sln.ide
+
+# Binaries
+bin/
+obj/
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if you have the NuGet packages folder at the solution level
+#!/**/packages
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.ide
+*.sln.ide-shm
+*.sln.ide-wal
+*.sln.ide-shm.lock
+*.sln.ide-wal.lock
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider generated .NET Core Files
+.idea/
+*.sln.iml
+*.csproj.user
+*.xproj.user
+
+# Resharper
+_ReSharper*/
+*.resharper
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# GhostDoc plugin settings
+*.GhostDoc.xml
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Rider
+.idea/
+*.csproj.dotSettings.user
