@@ -50,6 +50,7 @@ namespace Infrastructure
             services.AddScoped(typeof(IPermissionRepository), typeof(PermissionRepository));
             services.AddScoped(typeof(IRolePermissionRepository<RolePermission>), typeof(RolePermissionRepository));
             services.AddScoped(typeof(IUserRoleRepository<IdentityUserRole<string>>), typeof(UserRoleRepository));
+
             return services;
         }
     }

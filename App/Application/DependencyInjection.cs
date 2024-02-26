@@ -12,7 +12,7 @@ namespace Application
         {
             services.AddSingleton(config);
             services.AddScoped<IAuthenticateService, AuthenticateService>();
-       
+           
             services.AddScoped(typeof(IService<,,,,>), typeof(BaseService<,,,,>));
 
             return services;

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
 import {  Client, LoginDto, TokenDto } from '../../services/api.service';
+import { BackEndClientService } from '../../services/back-end-client.service';
 @Component({
   selector: 'app-log-in',
   standalone: true,
@@ -12,9 +13,10 @@ import {  Client, LoginDto, TokenDto } from '../../services/api.service';
 
 
 export class LogInComponent {
-  private client: Client;
-  constructor(private router: Router) {
-    this.client = new Client('https://localhost:7080');
+
+  backend:BackEndClientService;
+  constructor(private router: Router,private back:BackEndClientService) {
+    this.backend = back;
   }
 
 
@@ -39,7 +41,7 @@ export class LogInComponent {
     };
     
 debugger;
-    this.client.authenticationLogin(credentials)
+    this.backend.authenticationLogin(credentials)
       .then((token: TokenDto) => {
         // Handle successful login
         console.log('Logged in successfully:', token);

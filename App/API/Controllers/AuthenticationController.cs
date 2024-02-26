@@ -29,10 +29,6 @@ namespace Api.Controllers
         {
             return Ok (await authenticateService.Login(model));
         }
-
-
-
-       
         
     }
 }
