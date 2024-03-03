@@ -1,4 +1,5 @@
 ﻿
+using Core.Entities.privilege;
 using Dynamo.Context.Data;
 using Dynamo.Context.Data.Extensions;
 using Dynamo.Context.ModelConfiguration;
@@ -25,6 +26,10 @@ namespace Infrastructure.Data
         private readonly RoleConfiguration roleConfiguration;
         private readonly UserRolesConfiguration userRolesConfiguration;
 
+        
+        public DbSet<Screens> Screens { get; set; }
+        public DbSet<PrivilageType> PrivilageType { get; set; }
+        public DbSet<Privilage> Privilage { get; set; }
         public DBContext(DbContextOptions<DynamoContext> options
                         , DynamoSession session
                         , DynamoUserMapping dynamoUserMapping

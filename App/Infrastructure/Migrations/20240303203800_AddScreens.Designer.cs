@@ -4,6 +4,7 @@ using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20240303203800_AddScreens")]
+    partial class AddScreens
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,52 +24,6 @@ namespace Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("Core.Entities.privilege.Privilage", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(0);
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<long?>("PrivilageTypeId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("ScreensId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PrivilageTypeId");
-
-                    b.HasIndex("ScreensId");
-
-                    b.ToTable("Privilage");
-                });
-
-            modelBuilder.Entity("Core.Entities.privilege.PrivilageType", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasColumnOrder(0);
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long?>("ScreensId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ScreensId");
-
-                    b.ToTable("PrivilageType");
-                });
 
             modelBuilder.Entity("Core.Entities.privilege.Screens", b =>
                 {
@@ -414,30 +371,6 @@ namespace Infrastructure.Migrations
                             UserId = "9702DAFA-3A8E-4E4C-AADD-16B702AAFDCC",
                             RoleId = "C37BA866-F045-4329-8264-333C7FABBC88"
                         });
-                });
-
-            modelBuilder.Entity("Core.Entities.privilege.Privilage", b =>
-                {
-                    b.HasOne("Core.Entities.privilege.PrivilageType", "PrivilageType")
-                        .WithMany()
-                        .HasForeignKey("PrivilageTypeId");
-
-                    b.HasOne("Core.Entities.privilege.Screens", "Screens")
-                        .WithMany()
-                        .HasForeignKey("ScreensId");
-
-                    b.Navigation("PrivilageType");
-
-                    b.Navigation("Screens");
-                });
-
-            modelBuilder.Entity("Core.Entities.privilege.PrivilageType", b =>
-                {
-                    b.HasOne("Core.Entities.privilege.Screens", "Screens")
-                        .WithMany()
-                        .HasForeignKey("ScreensId");
-
-                    b.Navigation("Screens");
                 });
 
             modelBuilder.Entity("Dynamo.Context.Identity.RolePermission", b =>

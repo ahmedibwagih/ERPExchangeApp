@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Core.Other;
 using Core.Repositories.Auth;
 using Core.Repositories.Base;
+using Core.Repositories.privilage;
 using Core.UnitOfWork;
 using Dynamo.Core.Other;
 using Infrastructure.Data;
@@ -16,17 +17,24 @@ namespace Infrastructure.UnitOfWork
        
 
         public IPermissionRepository Permission { get; }
-       
+        public IScreenRepository Screen { get; }
+        public IPrivilageRepository Privilage { get; }
+        public IPrivilageTypeRepository PrivilageType { get; }
+
 
         public UnitOfWork(DBContext context
             , IPermissionRepository permission
-           
+            , IScreenRepository screen
+             , IPrivilageRepository privilage
+             , IPrivilageTypeRepository privilageType
             )
         {
             this.context = context;
            
             Permission = permission;
-          
+            Screen= screen;
+            Privilage= privilage;
+            PrivilageType= privilageType;
         }
 
         public async Task<int> CompleteAsync()
