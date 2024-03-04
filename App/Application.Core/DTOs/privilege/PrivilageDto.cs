@@ -3,18 +3,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Core.Other;
 using Dynamo.Core.Entities.Base;
 using System;
+using Core.DTOs;
 
 namespace Application.Core.DTOs.privilege
 {
-    public class Privilage : Entity
+    public class PrivilageDto : EntityDto
     {
-     
-        [ForeignKey("ScreensId")]
-        public Screens Screens { get; set; }
-        [ForeignKey("PrivilageTypeId")]
-        public PrivilageType PrivilageType { get; set; }
-        //[ForeignKey("PrivilageTypeId")]
-        //public Role PrivilageType { get; set; }
+
+        public long ScreensId { get; set; }
+        public long PrivilageTypeId { get; set; }
+        public string RoleId { get; set; }
+        public PrivilageStateEnum State { get; set; }
 
     }
 }

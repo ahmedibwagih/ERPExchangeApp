@@ -14,6 +14,7 @@ namespace Application
             services.AddScoped<IAuthenticateService, AuthenticateService>();
            
             services.AddScoped(typeof(IService<,,,,>), typeof(BaseService<,,,,>));
+            services.AddScoped<IUserService, UserService>();
 
             return services;
         }

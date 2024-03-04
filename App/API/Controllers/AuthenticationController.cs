@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Application.Core.DTOs.Authentication;
+using Application.Core.DTOs.User;
 using Application.Core.Services;
 using Application.Services;
 using Core.Other;
@@ -13,13 +14,12 @@ namespace Api.Controllers
     public class AuthenticationController : ControllerBase
     {
         private readonly IAuthenticateService authenticateService;
+        private readonly IUserService userService;
 
-
-        public AuthenticationController(
-            IAuthenticateService authenticateService
-            )
+        public AuthenticationController(IAuthenticateService authenticateService, IUserService userService)
         {
             this.authenticateService = authenticateService;
+            this.userService = userService;
 
         }
 
@@ -29,6 +29,24 @@ namespace Api.Controllers
         {
             return Ok (await authenticateService.Login(model));
         }
-        
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("[action]")]
+        public async Task<ActionResult<UserDto>> CreateUser([FromBody] UserDto input)
+        {
+            return await userService.CreateUser(input);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("[action]")]
+        [AppAuthorize]
+        public async Task<SessionDto> GetUserSession()
+        {
+            return await userService.GetUserSession();
+        }
+
+
     }
 }

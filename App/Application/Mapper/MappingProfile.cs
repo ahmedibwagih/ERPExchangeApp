@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Linq;
 using Application.Core.DTOs.Authentication;
+using Application.Core.DTOs.privilege;
 using Application.Core.DTOs.Role;
 using Application.Core.DTOs.User;
 using AutoMapper;
 using Core.DTOs;
-using Core.DTOs.privilege;
+
 using Core.Entities.privilege;
 using Core.Other;
 using Dynamo.Context.Identity;

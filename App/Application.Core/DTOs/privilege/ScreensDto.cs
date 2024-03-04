@@ -3,17 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Core.Other;
 using Dynamo.Core.Entities.Base;
 using System;
+using Core.DTOs;
 
 namespace Application.Core.DTOs.privilege
 {
-    public class Screens : Entity
+    public class ScreensDto : EntityDto
     {
         public string Name { get; set; }
         public bool IsFinal { get; set; }
-
         public long? ScreenParrentId { get; set; }
-        //[ForeignKey("OrderId")]
-        //public Order Order { get; set; }
 
     }
 }

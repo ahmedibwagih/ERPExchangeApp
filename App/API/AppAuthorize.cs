@@ -18,15 +18,12 @@ namespace Api
             return base.OnAuthorizationAsync(context);
         }
 
-        protected override void OnReadAuthorizations(string userId, string userName, string lang, string type, string typeId)
+        protected override void OnReadAuthorizations(string userId, string userName)
         {
             var session = Context.HttpContext.RequestServices.GetService<DynamoSession>();
             session.UserId = userId;
             session.UserName = userName;
-            session.TypeId = typeId;
-            session.UserType = type;
-
-            DynamoSession.Lang = lang;
+         
         }
 
         protected override async Task<bool> OnCheckPermissions(string[] permissions)
