@@ -56,3 +56,15 @@ E:\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.dll
 E:\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\refint\Dynamo.Core.dll
 E:\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.pdb
 E:\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\ref\Dynamo.Core.dll
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.deps.json
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.dll
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\bin\Debug\net6.0\Dynamo.Core.pdb
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfoInputs.cache
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.AssemblyInfo.cs
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.csproj.CoreCompileInputs.cache
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.sourcelink.json
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.dll
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\refint\Dynamo.Core.dll
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\Dynamo.Core.pdb
+D:\AngularProject\ERPExchange\ERPExchangeApp\ref\Dynamo.Core\obj\Debug\net6.0\ref\Dynamo.Core.dll

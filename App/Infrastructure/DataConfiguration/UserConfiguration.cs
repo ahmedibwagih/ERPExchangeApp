@@ -31,7 +31,7 @@ namespace Infrastructure.DataConfiguration
                 PasswordHash = "AQAAAAEAACcQAAAAEKeHbwz9ifJ/7QF5bYDb8Yexqm9D++pSz9gVA8u0jHAyVWFjDla0t9cbFpOxPy3JpA==", //Default@123
                 SecurityStamp = "R3XT5SFLH6DQLP4IZMAWSHZFSIUWADTI",
                 ConcurrencyStamp = "bcdbea3a-af4c-4b3c-8bf7-51f4f26ac35f",
-                Type = (int)UserTypeEnum.System
+                Type =0
             };
 
 

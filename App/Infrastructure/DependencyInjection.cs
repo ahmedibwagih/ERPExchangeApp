@@ -1,6 +1,7 @@
 ﻿using Core;
 using Core.Repositories.Auth;
 using Core.Repositories.Base;
+using Core.Repositories.privilage;
 using Core.UnitOfWork;
 using Dynamo.Context.Data;
 using Dynamo.Context.Identity;
@@ -50,6 +51,10 @@ namespace Infrastructure
             services.AddScoped(typeof(IPermissionRepository), typeof(PermissionRepository));
             services.AddScoped(typeof(IRolePermissionRepository<RolePermission>), typeof(RolePermissionRepository));
             services.AddScoped(typeof(IUserRoleRepository<IdentityUserRole<string>>), typeof(UserRoleRepository));
+
+            services.AddScoped(typeof(IPrivilageRepository), typeof(PrivilageRepository));
+            services.AddScoped(typeof(IPrivilageTypeRepository), typeof(PrivilageTypeRepository));
+            services.AddScoped(typeof(IScreenRepository), typeof(ScreenRepository));
 
             return services;
         }

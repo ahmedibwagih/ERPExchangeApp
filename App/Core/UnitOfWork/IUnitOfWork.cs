@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Core.Repositories.Auth;
 using Core.Repositories.Base;
+using Core.Repositories.privilage;
 
 
 namespace Core.UnitOfWork
@@ -9,7 +10,9 @@ namespace Core.UnitOfWork
     {
       
         IPermissionRepository Permission { get; }
-       
+        IScreenRepository Screen { get; }
+        IPrivilageRepository Privilage { get; }
+        IPrivilageTypeRepository PrivilageType { get; }
 
 
         Task<int> CompleteAsync();

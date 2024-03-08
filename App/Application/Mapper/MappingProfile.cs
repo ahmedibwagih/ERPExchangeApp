@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Linq;
 using Application.Core.DTOs.Authentication;
+using Application.Core.DTOs.privilege;
 using Application.Core.DTOs.Role;
 using Application.Core.DTOs.User;
 using AutoMapper;
 using Core.DTOs;
+
+using Core.Entities.privilege;
 using Core.Other;
 using Dynamo.Context.Identity;
 using Dynamo.Core.Entities;
@@ -72,7 +75,14 @@ namespace Application.Mapper
             CreateMap<DynamoUser, SessionDto>()
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id));
 
+            CreateMap<Privilage, PrivilageDto>();
+            CreateMap<PrivilageDto, Privilage>();
 
+            CreateMap<Screens, ScreensDto>();
+            CreateMap<ScreensDto, Screens>();
+
+            CreateMap<PrivilageType, PrivilageTypeDto>();
+            CreateMap<PrivilageTypeDto, PrivilageType>();
         }
     }
 }

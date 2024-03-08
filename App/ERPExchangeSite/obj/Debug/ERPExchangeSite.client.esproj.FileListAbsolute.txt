@@ -1,0 +1,3 @@
+E:\ERPExchange\Api\App\ERPExchangeSite\obj\Debug\ERPExchangeSite.client.esproj.CoreCompileInputs.cache
+E:\ERPExchange\ERPExchangeApp\App\ERPExchangeSite\obj\Debug\ERPExchangeSite.client.esproj.CoreCompileInputs.cache
+D:\AngularProject\ERPExchange\ERPExchangeApp\App\ERPExchangeSite\obj\Debug\ERPExchangeSite.client.esproj.CoreCompileInputs.cache
