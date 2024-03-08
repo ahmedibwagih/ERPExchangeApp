@@ -1,4 +1,5 @@
 ﻿
+using Core.Entities.LookUps;
 using Core.Entities.privilege;
 using Dynamo.Context.Data;
 using Dynamo.Context.Data.Extensions;
@@ -26,7 +27,14 @@ namespace Infrastructure.Data
         private readonly RoleConfiguration roleConfiguration;
         private readonly UserRolesConfiguration userRolesConfiguration;
 
-        
+
+        public DbSet<Banks> Banks { get; set; }
+        public DbSet<Countries> Countries { get; set; }
+        public DbSet<Currencies> Currencies { get; set; }
+        public DbSet<IdentitySources> IdentitySources { get; set; }
+        public DbSet<Jobs> Jobs { get; set; }
+        public DbSet<TransferPurposes> TransferPurposes { get; set; }
+
         public DbSet<Screens> Screens { get; set; }
         public DbSet<PrivilageType> PrivilageType { get; set; }
         public DbSet<Privilage> Privilage { get; set; }

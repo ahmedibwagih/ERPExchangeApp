@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Core.Entities.LookUps;
 using Core.Other;
 using Core.Repositories.Auth;
 using Core.Repositories.Base;
+using Core.Repositories.LookUps;
 using Core.Repositories.privilage;
 using Core.UnitOfWork;
 using Dynamo.Core.Other;
@@ -14,7 +16,14 @@ namespace Infrastructure.UnitOfWork
     {
         private readonly DBContext context;
 
-       
+
+
+        public IBanksRepository Banks { get; }
+        public ICountriesRepository Countries { get; }
+        public ICurrenciesRepository Currencies { get; }
+        public IIdentitySourcesRepository IdentitySources { get; }
+        public IJobsRepository Jobs { get; }
+        public ITransferPurposesRepository TransferPurposes { get; }
 
         public IPermissionRepository Permission { get; }
         public IScreenRepository Screen { get; }
@@ -22,19 +31,32 @@ namespace Infrastructure.UnitOfWork
         public IPrivilageTypeRepository PrivilageType { get; }
 
 
+
+
         public UnitOfWork(DBContext context
             , IPermissionRepository permission
             , IScreenRepository screen
              , IPrivilageRepository privilage
              , IPrivilageTypeRepository privilageType
+            , IBanksRepository banks
+            , ICountriesRepository countries
+            , ICurrenciesRepository currencies
+            , IIdentitySourcesRepository identitySources
+            , IJobsRepository jobs
+            , ITransferPurposesRepository transferPurposes
             )
         {
             this.context = context;
-           
             Permission = permission;
             Screen= screen;
             Privilage= privilage;
             PrivilageType= privilageType;
+            Banks = banks;
+            Countries = countries;
+            Currencies = currencies;
+            IdentitySources = identitySources;
+            Jobs = jobs;
+            TransferPurposes = transferPurposes;
         }
 
         public async Task<int> CompleteAsync()

@@ -1,6 +1,8 @@
 ﻿using Core;
+using Core.Entities.LookUps;
 using Core.Repositories.Auth;
 using Core.Repositories.Base;
+using Core.Repositories.LookUps;
 using Core.Repositories.privilage;
 using Core.UnitOfWork;
 using Dynamo.Context.Data;
@@ -55,6 +57,15 @@ namespace Infrastructure
             services.AddScoped(typeof(IPrivilageRepository), typeof(PrivilageRepository));
             services.AddScoped(typeof(IPrivilageTypeRepository), typeof(PrivilageTypeRepository));
             services.AddScoped(typeof(IScreenRepository), typeof(ScreenRepository));
+
+
+            services.AddScoped(typeof(IBanksRepository), typeof(BanksRepository));
+            services.AddScoped(typeof(ICountriesRepository), typeof(CountriesRepository));
+            services.AddScoped(typeof(ICurrenciesRepository), typeof(CurrenciesRepository));
+            services.AddScoped(typeof(IIdentitySourcesRepository), typeof(IdentitySourcesRepository));
+            services.AddScoped(typeof(IJobsRepository), typeof(JobsRepository));
+            services.AddScoped(typeof(ITransferPurposesRepository), typeof(TransferPurposesRepository));
+
 
             return services;
         }

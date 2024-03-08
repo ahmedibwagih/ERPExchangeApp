@@ -7,6 +7,23 @@
     
     }
 
+    public enum RiskRateEnum : int
+    {
+        Low = 0,
+        Medium = 1,
+        High = 2,
+
+    }
+
+    public enum ActiveEnum : int
+    {
+        NoneActive = 0,
+        Active = 1
+
+    }
+
+
+
     //public enum AttachmentTypeEnum : int
     //{
     //    Product = 1,

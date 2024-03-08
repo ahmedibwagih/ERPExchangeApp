@@ -1,6 +1,9 @@
 ﻿using Application.Core.Services;
+using Application.Core.Services.LookUps;
 using Application.Services;
+using Application.Services.LookUps;
 using Core;
+using Core.Entities.LookUps;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -12,10 +15,17 @@ namespace Application
         {
             services.AddSingleton(config);
             services.AddScoped<IAuthenticateService, AuthenticateService>();
-           
             services.AddScoped(typeof(IService<,,,,>), typeof(BaseService<,,,,>));
             services.AddScoped<IUserService, UserService>();
 
+
+            //LookUps
+            services.AddScoped< IBanksService, BanksService>();
+            services.AddScoped< ICountriesService, CountriesService>();
+            services.AddScoped< ICurrenciesService, CurrenciesService>();
+            services.AddScoped< IIdentitySourcesService, IdentitySourcesService>();
+            services.AddScoped< IJobsService, JobsService>();
+            services.AddScoped < ITransferPurposesService, TransferPurposesService>();
             return services;
         }
     }

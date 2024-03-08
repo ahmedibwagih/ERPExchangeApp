@@ -22,6 +22,172 @@ namespace Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Core.Entities.LookUps.Banks", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(0);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<int>("IsActve")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameAr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RiskRate")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Banks");
+                });
+
+            modelBuilder.Entity("Core.Entities.LookUps.Countries", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(0);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<int>("IsActve")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameAr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RiskRate")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("Core.Entities.LookUps.Currencies", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(0);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CountryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("IsActve")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameAr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RiskRate")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("Currencies");
+                });
+
+            modelBuilder.Entity("Core.Entities.LookUps.IdentitySources", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(0);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CountryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("IsActve")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameAr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RiskRate")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("IdentitySources");
+                });
+
+            modelBuilder.Entity("Core.Entities.LookUps.Jobs", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(0);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<int>("IsActve")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameAr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RiskRate")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Jobs");
+                });
+
+            modelBuilder.Entity("Core.Entities.LookUps.TransferPurposes", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnOrder(0);
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<int>("IsActve")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameAr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RiskRate")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TransferPurposes");
+                });
+
             modelBuilder.Entity("Core.Entities.privilege.Privilage", b =>
                 {
                     b.Property<long>("Id")
@@ -31,11 +197,17 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long?>("PrivilageTypeId")
+                    b.Property<long>("PrivilageTypeId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("ScreensId")
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("ScreensId")
                         .HasColumnType("bigint");
+
+                    b.Property<int>("State")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -58,7 +230,7 @@ namespace Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("ScreensId")
+                    b.Property<long>("ScreensId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
@@ -270,7 +442,7 @@ namespace Infrastructure.Migrations
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "R3XT5SFLH6DQLP4IZMAWSHZFSIUWADTI",
                             TwoFactorEnabled = false,
-                            Type = 1,
+                            Type = 0,
                             UserName = "admin"
                         });
                 });
@@ -416,15 +588,41 @@ namespace Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Core.Entities.LookUps.Currencies", b =>
+                {
+                    b.HasOne("Core.Entities.LookUps.Countries", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("Core.Entities.LookUps.IdentitySources", b =>
+                {
+                    b.HasOne("Core.Entities.LookUps.Countries", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
             modelBuilder.Entity("Core.Entities.privilege.Privilage", b =>
                 {
                     b.HasOne("Core.Entities.privilege.PrivilageType", "PrivilageType")
                         .WithMany()
-                        .HasForeignKey("PrivilageTypeId");
+                        .HasForeignKey("PrivilageTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Core.Entities.privilege.Screens", "Screens")
                         .WithMany()
-                        .HasForeignKey("ScreensId");
+                        .HasForeignKey("ScreensId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("PrivilageType");
 
@@ -435,7 +633,9 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("Core.Entities.privilege.Screens", "Screens")
                         .WithMany()
-                        .HasForeignKey("ScreensId");
+                        .HasForeignKey("ScreensId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Screens");
                 });

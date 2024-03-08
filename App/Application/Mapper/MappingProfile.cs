@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Linq;
 using Application.Core.DTOs.Authentication;
+using Application.Core.DTOs.LookUps;
 using Application.Core.DTOs.privilege;
 using Application.Core.DTOs.Role;
 using Application.Core.DTOs.User;
 using AutoMapper;
 using Core.DTOs;
-
+using Core.Entities.LookUps;
 using Core.Entities.privilege;
 using Core.Other;
 using Dynamo.Context.Identity;
@@ -52,7 +53,8 @@ namespace Application.Mapper
 
             CreateMap<DynamoUser, UserUpdateDto>();
 
-          
+
+        
             CreateMap<IdentityUserRole<string>, UserRoleDto>().ReverseMap();
 
             CreateMap<DynamoRole, UserRoleDto>()
@@ -83,6 +85,15 @@ namespace Application.Mapper
 
             CreateMap<PrivilageType, PrivilageTypeDto>();
             CreateMap<PrivilageTypeDto, PrivilageType>();
+
+            CreateMap<Banks, BanksDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            CreateMap < Banks, BanksDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            CreateMap <Countries , CountriesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            CreateMap <Currencies , CurrenciesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            CreateMap <IdentitySources , IdentitySourcesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            CreateMap <Jobs, JobsDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            CreateMap <TransferPurposes , TransferPurposesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+
         }
     }
 }
