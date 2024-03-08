@@ -86,13 +86,21 @@ namespace Application.Mapper
             CreateMap<PrivilageType, PrivilageTypeDto>();
             CreateMap<PrivilageTypeDto, PrivilageType>();
 
-            CreateMap<Banks, BanksDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
-            CreateMap < Banks, BanksDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
-            CreateMap <Countries , CountriesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
-            CreateMap <Currencies , CurrenciesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
-            CreateMap <IdentitySources , IdentitySourcesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
-            CreateMap <Jobs, JobsDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
-            CreateMap <TransferPurposes , TransferPurposesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            //CreateMap<Banks, BanksDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            //CreateMap < Banks, BanksDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            //CreateMap <Countries , CountriesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            //CreateMap <Currencies , CurrenciesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            //CreateMap <IdentitySources , IdentitySourcesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            //CreateMap <Jobs, JobsDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+            //CreateMap <TransferPurposes , TransferPurposesDto>().ForMember(m => m.Name, op => op.MapFrom(mp => mp.NameAr)).ReverseMap();
+
+            CreateMap<Banks, BanksDto>().ReverseMap();
+            CreateMap<Banks, BanksDto>().ReverseMap();
+            CreateMap<Countries, CountriesDto>().ReverseMap();
+            CreateMap<Currencies, CurrenciesDto>().ReverseMap();
+            CreateMap<IdentitySources, IdentitySourcesDto>().ReverseMap();
+            CreateMap<Jobs, JobsDto>().ReverseMap();
+            CreateMap<TransferPurposes, TransferPurposesDto>().ReverseMap();
 
         }
     }

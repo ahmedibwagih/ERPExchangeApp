@@ -6,8 +6,9 @@ namespace Application.Core.DTOs.LookUps
 {
     public class BanksDto : EntityDto
     {
-        public string? Name { get; set; }
-        public RiskRateEnum RiskRate { get; set; }
-        public ActiveEnum IsActve { get; set; }
+        public string NameAr { get; set; }
+        public string NameEn { get; set; }
+        public int RiskRate { get; set; }
+        public int IsActve { get; set; } = 1;
     }
 }

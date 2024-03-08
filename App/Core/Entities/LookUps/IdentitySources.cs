@@ -15,6 +15,7 @@ namespace Core.Entities.LookUps
         public string NameAr { get; set; }
         public string NameEn { get; set; }
         public RiskRateEnum RiskRate { get; set; }
+
         public ActiveEnum IsActve { get; set; }
     }
 }

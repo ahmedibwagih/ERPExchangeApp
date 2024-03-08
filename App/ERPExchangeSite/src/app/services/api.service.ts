@@ -8,7 +8,6 @@
 /* eslint-disable */
 // ReSharper disable InconsistentNaming
 
-
 export class Client {
     private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
     private baseUrl: string;
@@ -62,6 +61,1447 @@ export class Client {
     }
 
     /**
+     * @param body (optional) 
+     * @return Success
+     */
+    authenticationCreateUser(body: UserDto | undefined): Promise<UserDto> {
+        let url_ = this.baseUrl + "/api/Authentication/CreateUser";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processAuthenticationCreateUser(_response);
+        });
+    }
+
+    protected processAuthenticationCreateUser(response: Response): Promise<UserDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = UserDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<UserDto>(null as any);
+    }
+
+    /**
+     * @return Success
+     */
+    authenticationGetUserSession(): Promise<SessionDto> {
+        let url_ = this.baseUrl + "/api/Authentication/GetUserSession";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processAuthenticationGetUserSession(_response);
+        });
+    }
+
+    protected processAuthenticationGetUserSession(response: Response): Promise<SessionDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = SessionDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<SessionDto>(null as any);
+    }
+
+    /**
+     * @param pageNumber (optional) 
+     * @param pageSize (optional) 
+     * @param orderByField (optional) 
+     * @param orderType (optional) 
+     * @param filter (optional) 
+     * @param hiddenFilter (optional) 
+     * @return Success
+     */
+    banksGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<BanksDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Banks/GetAll?";
+        if (pageNumber === null)
+            throw new Error("The parameter 'pageNumber' cannot be null.");
+        else if (pageNumber !== undefined)
+            url_ += "PageNumber=" + encodeURIComponent("" + pageNumber) + "&";
+        if (pageSize === null)
+            throw new Error("The parameter 'pageSize' cannot be null.");
+        else if (pageSize !== undefined)
+            url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
+        if (orderByField === null)
+            throw new Error("The parameter 'orderByField' cannot be null.");
+        else if (orderByField !== undefined)
+            url_ += "OrderByField=" + encodeURIComponent("" + orderByField) + "&";
+        if (orderType === null)
+            throw new Error("The parameter 'orderType' cannot be null.");
+        else if (orderType !== undefined)
+            url_ += "OrderType=" + encodeURIComponent("" + orderType) + "&";
+        if (filter === null)
+            throw new Error("The parameter 'filter' cannot be null.");
+        else if (filter !== undefined)
+            url_ += "Filter=" + encodeURIComponent("" + filter) + "&";
+        if (hiddenFilter === null)
+            throw new Error("The parameter 'hiddenFilter' cannot be null.");
+        else if (hiddenFilter !== undefined)
+            url_ += "HiddenFilter=" + encodeURIComponent("" + hiddenFilter) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processBanksGetAll(_response);
+        });
+    }
+
+    protected processBanksGetAll(response: Response): Promise<BanksDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = BanksDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<BanksDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    banksGet(id: number | undefined): Promise<BanksDto> {
+        let url_ = this.baseUrl + "/api/Banks/Get?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processBanksGet(_response);
+        });
+    }
+
+    protected processBanksGet(response: Response): Promise<BanksDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = BanksDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<BanksDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    banksCreate(body: BanksDto | undefined): Promise<BanksDto> {
+        let url_ = this.baseUrl + "/api/Banks/Create";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processBanksCreate(_response);
+        });
+    }
+
+    protected processBanksCreate(response: Response): Promise<BanksDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = BanksDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<BanksDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    banksUpdate(body: BanksDto | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Banks/Update";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processBanksUpdate(_response);
+        });
+    }
+
+    protected processBanksUpdate(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    banksDelete(id: number | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Banks/Delete?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processBanksDelete(_response);
+        });
+    }
+
+    protected processBanksDelete(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param pageNumber (optional) 
+     * @param pageSize (optional) 
+     * @param orderByField (optional) 
+     * @param orderType (optional) 
+     * @param filter (optional) 
+     * @param hiddenFilter (optional) 
+     * @return Success
+     */
+    countriesGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<CountriesDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Countries/GetAll?";
+        if (pageNumber === null)
+            throw new Error("The parameter 'pageNumber' cannot be null.");
+        else if (pageNumber !== undefined)
+            url_ += "PageNumber=" + encodeURIComponent("" + pageNumber) + "&";
+        if (pageSize === null)
+            throw new Error("The parameter 'pageSize' cannot be null.");
+        else if (pageSize !== undefined)
+            url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
+        if (orderByField === null)
+            throw new Error("The parameter 'orderByField' cannot be null.");
+        else if (orderByField !== undefined)
+            url_ += "OrderByField=" + encodeURIComponent("" + orderByField) + "&";
+        if (orderType === null)
+            throw new Error("The parameter 'orderType' cannot be null.");
+        else if (orderType !== undefined)
+            url_ += "OrderType=" + encodeURIComponent("" + orderType) + "&";
+        if (filter === null)
+            throw new Error("The parameter 'filter' cannot be null.");
+        else if (filter !== undefined)
+            url_ += "Filter=" + encodeURIComponent("" + filter) + "&";
+        if (hiddenFilter === null)
+            throw new Error("The parameter 'hiddenFilter' cannot be null.");
+        else if (hiddenFilter !== undefined)
+            url_ += "HiddenFilter=" + encodeURIComponent("" + hiddenFilter) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCountriesGetAll(_response);
+        });
+    }
+
+    protected processCountriesGetAll(response: Response): Promise<CountriesDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = CountriesDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<CountriesDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    countriesGet(id: number | undefined): Promise<CountriesDto> {
+        let url_ = this.baseUrl + "/api/Countries/Get?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCountriesGet(_response);
+        });
+    }
+
+    protected processCountriesGet(response: Response): Promise<CountriesDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = CountriesDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<CountriesDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    countriesCreate(body: CountriesDto | undefined): Promise<CountriesDto> {
+        let url_ = this.baseUrl + "/api/Countries/Create";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCountriesCreate(_response);
+        });
+    }
+
+    protected processCountriesCreate(response: Response): Promise<CountriesDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = CountriesDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<CountriesDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    countriesUpdate(body: CountriesDto | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Countries/Update";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCountriesUpdate(_response);
+        });
+    }
+
+    protected processCountriesUpdate(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    countriesDelete(id: number | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Countries/Delete?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCountriesDelete(_response);
+        });
+    }
+
+    protected processCountriesDelete(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param pageNumber (optional) 
+     * @param pageSize (optional) 
+     * @param orderByField (optional) 
+     * @param orderType (optional) 
+     * @param filter (optional) 
+     * @param hiddenFilter (optional) 
+     * @return Success
+     */
+    currenciesGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<CurrenciesDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Currencies/GetAll?";
+        if (pageNumber === null)
+            throw new Error("The parameter 'pageNumber' cannot be null.");
+        else if (pageNumber !== undefined)
+            url_ += "PageNumber=" + encodeURIComponent("" + pageNumber) + "&";
+        if (pageSize === null)
+            throw new Error("The parameter 'pageSize' cannot be null.");
+        else if (pageSize !== undefined)
+            url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
+        if (orderByField === null)
+            throw new Error("The parameter 'orderByField' cannot be null.");
+        else if (orderByField !== undefined)
+            url_ += "OrderByField=" + encodeURIComponent("" + orderByField) + "&";
+        if (orderType === null)
+            throw new Error("The parameter 'orderType' cannot be null.");
+        else if (orderType !== undefined)
+            url_ += "OrderType=" + encodeURIComponent("" + orderType) + "&";
+        if (filter === null)
+            throw new Error("The parameter 'filter' cannot be null.");
+        else if (filter !== undefined)
+            url_ += "Filter=" + encodeURIComponent("" + filter) + "&";
+        if (hiddenFilter === null)
+            throw new Error("The parameter 'hiddenFilter' cannot be null.");
+        else if (hiddenFilter !== undefined)
+            url_ += "HiddenFilter=" + encodeURIComponent("" + hiddenFilter) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCurrenciesGetAll(_response);
+        });
+    }
+
+    protected processCurrenciesGetAll(response: Response): Promise<CurrenciesDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = CurrenciesDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<CurrenciesDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    currenciesGet(id: number | undefined): Promise<CurrenciesDto> {
+        let url_ = this.baseUrl + "/api/Currencies/Get?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCurrenciesGet(_response);
+        });
+    }
+
+    protected processCurrenciesGet(response: Response): Promise<CurrenciesDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = CurrenciesDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<CurrenciesDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    currenciesCreate(body: CurrenciesDto | undefined): Promise<CurrenciesDto> {
+        let url_ = this.baseUrl + "/api/Currencies/Create";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCurrenciesCreate(_response);
+        });
+    }
+
+    protected processCurrenciesCreate(response: Response): Promise<CurrenciesDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = CurrenciesDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<CurrenciesDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    currenciesUpdate(body: CurrenciesDto | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Currencies/Update";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCurrenciesUpdate(_response);
+        });
+    }
+
+    protected processCurrenciesUpdate(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    currenciesDelete(id: number | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Currencies/Delete?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processCurrenciesDelete(_response);
+        });
+    }
+
+    protected processCurrenciesDelete(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param pageNumber (optional) 
+     * @param pageSize (optional) 
+     * @param orderByField (optional) 
+     * @param orderType (optional) 
+     * @param filter (optional) 
+     * @param hiddenFilter (optional) 
+     * @return Success
+     */
+    identitySourcesGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<IdentitySourcesDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/IdentitySources/GetAll?";
+        if (pageNumber === null)
+            throw new Error("The parameter 'pageNumber' cannot be null.");
+        else if (pageNumber !== undefined)
+            url_ += "PageNumber=" + encodeURIComponent("" + pageNumber) + "&";
+        if (pageSize === null)
+            throw new Error("The parameter 'pageSize' cannot be null.");
+        else if (pageSize !== undefined)
+            url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
+        if (orderByField === null)
+            throw new Error("The parameter 'orderByField' cannot be null.");
+        else if (orderByField !== undefined)
+            url_ += "OrderByField=" + encodeURIComponent("" + orderByField) + "&";
+        if (orderType === null)
+            throw new Error("The parameter 'orderType' cannot be null.");
+        else if (orderType !== undefined)
+            url_ += "OrderType=" + encodeURIComponent("" + orderType) + "&";
+        if (filter === null)
+            throw new Error("The parameter 'filter' cannot be null.");
+        else if (filter !== undefined)
+            url_ += "Filter=" + encodeURIComponent("" + filter) + "&";
+        if (hiddenFilter === null)
+            throw new Error("The parameter 'hiddenFilter' cannot be null.");
+        else if (hiddenFilter !== undefined)
+            url_ += "HiddenFilter=" + encodeURIComponent("" + hiddenFilter) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processIdentitySourcesGetAll(_response);
+        });
+    }
+
+    protected processIdentitySourcesGetAll(response: Response): Promise<IdentitySourcesDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = IdentitySourcesDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<IdentitySourcesDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    identitySourcesGet(id: number | undefined): Promise<IdentitySourcesDto> {
+        let url_ = this.baseUrl + "/api/IdentitySources/Get?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processIdentitySourcesGet(_response);
+        });
+    }
+
+    protected processIdentitySourcesGet(response: Response): Promise<IdentitySourcesDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = IdentitySourcesDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<IdentitySourcesDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    identitySourcesCreate(body: IdentitySourcesDto | undefined): Promise<IdentitySourcesDto> {
+        let url_ = this.baseUrl + "/api/IdentitySources/Create";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processIdentitySourcesCreate(_response);
+        });
+    }
+
+    protected processIdentitySourcesCreate(response: Response): Promise<IdentitySourcesDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = IdentitySourcesDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<IdentitySourcesDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    identitySourcesUpdate(body: IdentitySourcesDto | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/IdentitySources/Update";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processIdentitySourcesUpdate(_response);
+        });
+    }
+
+    protected processIdentitySourcesUpdate(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    identitySourcesDelete(id: number | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/IdentitySources/Delete?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processIdentitySourcesDelete(_response);
+        });
+    }
+
+    protected processIdentitySourcesDelete(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param pageNumber (optional) 
+     * @param pageSize (optional) 
+     * @param orderByField (optional) 
+     * @param orderType (optional) 
+     * @param filter (optional) 
+     * @param hiddenFilter (optional) 
+     * @return Success
+     */
+    jobsGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<JobsDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Jobs/GetAll?";
+        if (pageNumber === null)
+            throw new Error("The parameter 'pageNumber' cannot be null.");
+        else if (pageNumber !== undefined)
+            url_ += "PageNumber=" + encodeURIComponent("" + pageNumber) + "&";
+        if (pageSize === null)
+            throw new Error("The parameter 'pageSize' cannot be null.");
+        else if (pageSize !== undefined)
+            url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
+        if (orderByField === null)
+            throw new Error("The parameter 'orderByField' cannot be null.");
+        else if (orderByField !== undefined)
+            url_ += "OrderByField=" + encodeURIComponent("" + orderByField) + "&";
+        if (orderType === null)
+            throw new Error("The parameter 'orderType' cannot be null.");
+        else if (orderType !== undefined)
+            url_ += "OrderType=" + encodeURIComponent("" + orderType) + "&";
+        if (filter === null)
+            throw new Error("The parameter 'filter' cannot be null.");
+        else if (filter !== undefined)
+            url_ += "Filter=" + encodeURIComponent("" + filter) + "&";
+        if (hiddenFilter === null)
+            throw new Error("The parameter 'hiddenFilter' cannot be null.");
+        else if (hiddenFilter !== undefined)
+            url_ += "HiddenFilter=" + encodeURIComponent("" + hiddenFilter) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processJobsGetAll(_response);
+        });
+    }
+
+    protected processJobsGetAll(response: Response): Promise<JobsDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = JobsDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<JobsDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    jobsGet(id: number | undefined): Promise<JobsDto> {
+        let url_ = this.baseUrl + "/api/Jobs/Get?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processJobsGet(_response);
+        });
+    }
+
+    protected processJobsGet(response: Response): Promise<JobsDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = JobsDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<JobsDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    jobsCreate(body: JobsDto | undefined): Promise<JobsDto> {
+        let url_ = this.baseUrl + "/api/Jobs/Create";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processJobsCreate(_response);
+        });
+    }
+
+    protected processJobsCreate(response: Response): Promise<JobsDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = JobsDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<JobsDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    jobsUpdate(body: JobsDto | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Jobs/Update";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processJobsUpdate(_response);
+        });
+    }
+
+    protected processJobsUpdate(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    jobsDelete(id: number | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Jobs/Delete?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processJobsDelete(_response);
+        });
+    }
+
+    protected processJobsDelete(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param pageNumber (optional) 
+     * @param pageSize (optional) 
+     * @param orderByField (optional) 
+     * @param orderType (optional) 
+     * @param filter (optional) 
+     * @param hiddenFilter (optional) 
+     * @return Success
+     */
+    transferPurposesGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<BanksDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/TransferPurposes/GetAll?";
+        if (pageNumber === null)
+            throw new Error("The parameter 'pageNumber' cannot be null.");
+        else if (pageNumber !== undefined)
+            url_ += "PageNumber=" + encodeURIComponent("" + pageNumber) + "&";
+        if (pageSize === null)
+            throw new Error("The parameter 'pageSize' cannot be null.");
+        else if (pageSize !== undefined)
+            url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
+        if (orderByField === null)
+            throw new Error("The parameter 'orderByField' cannot be null.");
+        else if (orderByField !== undefined)
+            url_ += "OrderByField=" + encodeURIComponent("" + orderByField) + "&";
+        if (orderType === null)
+            throw new Error("The parameter 'orderType' cannot be null.");
+        else if (orderType !== undefined)
+            url_ += "OrderType=" + encodeURIComponent("" + orderType) + "&";
+        if (filter === null)
+            throw new Error("The parameter 'filter' cannot be null.");
+        else if (filter !== undefined)
+            url_ += "Filter=" + encodeURIComponent("" + filter) + "&";
+        if (hiddenFilter === null)
+            throw new Error("The parameter 'hiddenFilter' cannot be null.");
+        else if (hiddenFilter !== undefined)
+            url_ += "HiddenFilter=" + encodeURIComponent("" + hiddenFilter) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processTransferPurposesGetAll(_response);
+        });
+    }
+
+    protected processTransferPurposesGetAll(response: Response): Promise<BanksDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = BanksDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<BanksDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    transferPurposesGet(id: number | undefined): Promise<BanksDto> {
+        let url_ = this.baseUrl + "/api/TransferPurposes/Get?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processTransferPurposesGet(_response);
+        });
+    }
+
+    protected processTransferPurposesGet(response: Response): Promise<BanksDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = BanksDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<BanksDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    transferPurposesCreate(body: BanksDto | undefined): Promise<BanksDto> {
+        let url_ = this.baseUrl + "/api/TransferPurposes/Create";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processTransferPurposesCreate(_response);
+        });
+    }
+
+    protected processTransferPurposesCreate(response: Response): Promise<BanksDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = BanksDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<BanksDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    transferPurposesUpdate(body: BanksDto | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/TransferPurposes/Update";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processTransferPurposesUpdate(_response);
+        });
+    }
+
+    protected processTransferPurposesUpdate(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    transferPurposesDelete(id: number | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/TransferPurposes/Delete?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processTransferPurposesDelete(_response);
+        });
+    }
+
+    protected processTransferPurposesDelete(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
      * @return Success
      */
     weatherForecastGet(): Promise<WeatherForecast[]> {
@@ -106,6 +1546,534 @@ export class Client {
     }
 }
 
+export class BanksDto implements IBanksDto {
+    id?: number;
+    readOnly?: boolean;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+
+    constructor(data?: IBanksDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.readOnly = _data["readOnly"];
+            this.nameAr = _data["nameAr"];
+            this.nameEn = _data["nameEn"];
+            this.riskRate = _data["riskRate"];
+            this.isActve = _data["isActve"];
+        }
+    }
+
+    static fromJS(data: any): BanksDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new BanksDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["readOnly"] = this.readOnly;
+        data["nameAr"] = this.nameAr;
+        data["nameEn"] = this.nameEn;
+        data["riskRate"] = this.riskRate;
+        data["isActve"] = this.isActve;
+        return data;
+    }
+}
+
+export interface IBanksDto {
+    id?: number;
+    readOnly?: boolean;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+}
+
+export class BanksDtoPagingResultDto implements IBanksDtoPagingResultDto {
+    total?: number;
+    result?: BanksDto[] | undefined;
+
+    constructor(data?: IBanksDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(BanksDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): BanksDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new BanksDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface IBanksDtoPagingResultDto {
+    total?: number;
+    result?: BanksDto[] | undefined;
+}
+
+export class CountriesDto implements ICountriesDto {
+    id?: number;
+    readOnly?: boolean;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+
+    constructor(data?: ICountriesDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.readOnly = _data["readOnly"];
+            this.nameAr = _data["nameAr"];
+            this.nameEn = _data["nameEn"];
+            this.riskRate = _data["riskRate"];
+            this.isActve = _data["isActve"];
+        }
+    }
+
+    static fromJS(data: any): CountriesDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new CountriesDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["readOnly"] = this.readOnly;
+        data["nameAr"] = this.nameAr;
+        data["nameEn"] = this.nameEn;
+        data["riskRate"] = this.riskRate;
+        data["isActve"] = this.isActve;
+        return data;
+    }
+}
+
+export interface ICountriesDto {
+    id?: number;
+    readOnly?: boolean;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+}
+
+export class CountriesDtoPagingResultDto implements ICountriesDtoPagingResultDto {
+    total?: number;
+    result?: CountriesDto[] | undefined;
+
+    constructor(data?: ICountriesDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(CountriesDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): CountriesDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new CountriesDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface ICountriesDtoPagingResultDto {
+    total?: number;
+    result?: CountriesDto[] | undefined;
+}
+
+export class CurrenciesDto implements ICurrenciesDto {
+    id?: number;
+    readOnly?: boolean;
+    countryId?: number;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+
+    constructor(data?: ICurrenciesDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.readOnly = _data["readOnly"];
+            this.countryId = _data["countryId"];
+            this.nameAr = _data["nameAr"];
+            this.nameEn = _data["nameEn"];
+            this.riskRate = _data["riskRate"];
+            this.isActve = _data["isActve"];
+        }
+    }
+
+    static fromJS(data: any): CurrenciesDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new CurrenciesDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["readOnly"] = this.readOnly;
+        data["countryId"] = this.countryId;
+        data["nameAr"] = this.nameAr;
+        data["nameEn"] = this.nameEn;
+        data["riskRate"] = this.riskRate;
+        data["isActve"] = this.isActve;
+        return data;
+    }
+}
+
+export interface ICurrenciesDto {
+    id?: number;
+    readOnly?: boolean;
+    countryId?: number;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+}
+
+export class CurrenciesDtoPagingResultDto implements ICurrenciesDtoPagingResultDto {
+    total?: number;
+    result?: CurrenciesDto[] | undefined;
+
+    constructor(data?: ICurrenciesDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(CurrenciesDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): CurrenciesDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new CurrenciesDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface ICurrenciesDtoPagingResultDto {
+    total?: number;
+    result?: CurrenciesDto[] | undefined;
+}
+
+export class IdentitySourcesDto implements IIdentitySourcesDto {
+    id?: number;
+    readOnly?: boolean;
+    countryId?: number;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+
+    constructor(data?: IIdentitySourcesDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.readOnly = _data["readOnly"];
+            this.countryId = _data["countryId"];
+            this.nameAr = _data["nameAr"];
+            this.nameEn = _data["nameEn"];
+            this.riskRate = _data["riskRate"];
+            this.isActve = _data["isActve"];
+        }
+    }
+
+    static fromJS(data: any): IdentitySourcesDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new IdentitySourcesDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["readOnly"] = this.readOnly;
+        data["countryId"] = this.countryId;
+        data["nameAr"] = this.nameAr;
+        data["nameEn"] = this.nameEn;
+        data["riskRate"] = this.riskRate;
+        data["isActve"] = this.isActve;
+        return data;
+    }
+}
+
+export interface IIdentitySourcesDto {
+    id?: number;
+    readOnly?: boolean;
+    countryId?: number;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+}
+
+export class IdentitySourcesDtoPagingResultDto implements IIdentitySourcesDtoPagingResultDto {
+    total?: number;
+    result?: IdentitySourcesDto[] | undefined;
+
+    constructor(data?: IIdentitySourcesDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(IdentitySourcesDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): IdentitySourcesDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new IdentitySourcesDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface IIdentitySourcesDtoPagingResultDto {
+    total?: number;
+    result?: IdentitySourcesDto[] | undefined;
+}
+
+export class JobsDto implements IJobsDto {
+    id?: number;
+    readOnly?: boolean;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+
+    constructor(data?: IJobsDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.readOnly = _data["readOnly"];
+            this.nameAr = _data["nameAr"];
+            this.nameEn = _data["nameEn"];
+            this.riskRate = _data["riskRate"];
+            this.isActve = _data["isActve"];
+        }
+    }
+
+    static fromJS(data: any): JobsDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new JobsDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["readOnly"] = this.readOnly;
+        data["nameAr"] = this.nameAr;
+        data["nameEn"] = this.nameEn;
+        data["riskRate"] = this.riskRate;
+        data["isActve"] = this.isActve;
+        return data;
+    }
+}
+
+export interface IJobsDto {
+    id?: number;
+    readOnly?: boolean;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+}
+
+export class JobsDtoPagingResultDto implements IJobsDtoPagingResultDto {
+    total?: number;
+    result?: JobsDto[] | undefined;
+
+    constructor(data?: IJobsDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(JobsDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): JobsDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new JobsDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface IJobsDtoPagingResultDto {
+    total?: number;
+    result?: JobsDto[] | undefined;
+}
+
 export class LoginDto implements ILoginDto {
     userName!: string;
     password!: string;
@@ -146,6 +2114,46 @@ export interface ILoginDto {
     password: string;
 }
 
+export class SessionDto implements ISessionDto {
+    userId?: string | undefined;
+    userName?: string | undefined;
+
+    constructor(data?: ISessionDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.userId = _data["userId"];
+            this.userName = _data["userName"];
+        }
+    }
+
+    static fromJS(data: any): SessionDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new SessionDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["userId"] = this.userId;
+        data["userName"] = this.userName;
+        return data;
+    }
+}
+
+export interface ISessionDto {
+    userId?: string | undefined;
+    userName?: string | undefined;
+}
+
 export class TokenDto implements ITokenDto {
     token?: string | undefined;
     expiration?: Date;
@@ -184,6 +2192,114 @@ export class TokenDto implements ITokenDto {
 export interface ITokenDto {
     token?: string | undefined;
     expiration?: Date;
+}
+
+export class UserDto implements IUserDto {
+    id?: string | undefined;
+    userName!: string;
+    fullName!: string;
+    email!: string;
+    password!: string;
+    phoneNumber!: string;
+    userRoles?: UserRoleDto[] | undefined;
+
+    constructor(data?: IUserDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.userName = _data["userName"];
+            this.fullName = _data["fullName"];
+            this.email = _data["email"];
+            this.password = _data["password"];
+            this.phoneNumber = _data["phoneNumber"];
+            if (Array.isArray(_data["userRoles"])) {
+                this.userRoles = [] as any;
+                for (let item of _data["userRoles"])
+                    this.userRoles!.push(UserRoleDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): UserDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new UserDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["userName"] = this.userName;
+        data["fullName"] = this.fullName;
+        data["email"] = this.email;
+        data["password"] = this.password;
+        data["phoneNumber"] = this.phoneNumber;
+        if (Array.isArray(this.userRoles)) {
+            data["userRoles"] = [];
+            for (let item of this.userRoles)
+                data["userRoles"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface IUserDto {
+    id?: string | undefined;
+    userName: string;
+    fullName: string;
+    email: string;
+    password: string;
+    phoneNumber: string;
+    userRoles?: UserRoleDto[] | undefined;
+}
+
+export class UserRoleDto implements IUserRoleDto {
+    roleId?: string | undefined;
+    roleName?: string | undefined;
+
+    constructor(data?: IUserRoleDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.roleId = _data["roleId"];
+            this.roleName = _data["roleName"];
+        }
+    }
+
+    static fromJS(data: any): UserRoleDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new UserRoleDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["roleId"] = this.roleId;
+        data["roleName"] = this.roleName;
+        return data;
+    }
+}
+
+export interface IUserRoleDto {
+    roleId?: string | undefined;
+    roleName?: string | undefined;
 }
 
 export class WeatherForecast implements IWeatherForecast {

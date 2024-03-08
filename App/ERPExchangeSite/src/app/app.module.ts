@@ -14,23 +14,28 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { MatTableModule } from '@angular/material/table';
 import { FullComponent } from './layouts/full/full.component';
 
 
 import { NavigationComponent } from './shared/header/navigation.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule
 
 import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { LoginComponent } from './login/login.component';
-
+import { BanksComponent } from './component/lookups/banks/banks.component';
+//import { BanksComponent } from './lookups/banks/banks.component';
+import { MatSelectModule } from '@angular/material/select';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
     SpinnerComponent,
     LoginComponent,
+    BanksComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +51,7 @@ import { LoginComponent } from './login/login.component';
     SidebarComponent, MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule ,MatTableModule  ,MatInputModule,MatIconModule ,MatSelectModule,FlexLayoutModule
   ],
   providers: [
     {

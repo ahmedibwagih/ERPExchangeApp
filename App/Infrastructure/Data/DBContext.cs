@@ -1,6 +1,7 @@
 ﻿
 using Core.Entities.LookUps;
 using Core.Entities.privilege;
+using Core.Other;
 using Dynamo.Context.Data;
 using Dynamo.Context.Data.Extensions;
 using Dynamo.Context.ModelConfiguration;
@@ -69,6 +70,30 @@ namespace Infrastructure.Data
             ApplyConfigurations(builder);
             SetProductMapping(builder);
             SetAttachmentMapping(builder);
+
+            builder.Entity<Banks>()
+           .Property(e => e.IsActve)
+           .HasDefaultValue(ActiveEnum.Active);
+
+            builder.Entity<Jobs>()
+            .Property(e => e.IsActve)
+            .HasDefaultValue(ActiveEnum.Active);
+
+            builder.Entity<Countries>()
+            .Property(e => e.IsActve)
+            .HasDefaultValue(ActiveEnum.Active);
+
+            builder.Entity<Currencies>()
+            .Property(e => e.IsActve)
+            .HasDefaultValue(ActiveEnum.Active);
+
+            builder.Entity<IdentitySources>()
+            .Property(e => e.IsActve)
+            .HasDefaultValue(ActiveEnum.Active);
+
+            builder.Entity<TransferPurposes>()
+            .Property(e => e.IsActve)
+            .HasDefaultValue(ActiveEnum.Active);
 
         }
 
