@@ -1,16 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
-import { HeaderComponent } from "../header/header.component";
-import { SidebarComponent } from "../sidebar/sidebar.component";
-import { CommonModule } from '@angular/common';
+import { Component, AfterViewInit } from '@angular/core';
+//declare var require: any;
 
 @Component({
-    selector: 'app-dashboard',
-    standalone: true,
-    templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.css',
-    imports: [RouterOutlet, RouterLink, HeaderComponent, SidebarComponent]
+  templateUrl: './dashboard.component.html'
 })
-export class DashboardComponent {
-    title = 'angularadmin'
+export class DashboardComponent implements AfterViewInit {
+  subtitle: string;
+  constructor() {
+    this.subtitle = 'This is some text within a card block.';
+  }
+
+  ngAfterViewInit() { }
 }
