@@ -675,3 +675,4 @@ D:\AngularProject\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\refint\Api
 D:\AngularProject\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.pdb
 D:\AngularProject\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 D:\AngularProject\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\ref\Api.dll
+E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.MvcApplicationPartsAssemblyInfo.cs

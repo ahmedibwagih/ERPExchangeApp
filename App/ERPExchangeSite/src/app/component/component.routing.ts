@@ -14,6 +14,7 @@ import { CountriesComponent } from './lookups/countries/countries.component';
 import { CurrenciesComponent } from './lookups/currencies/currencies.component';
 import { IdentitySourcesComponent } from './lookups/identitySources/identitySources.component';
 import { TransferPurposesComponent } from './lookups/transferPurposes/transferPurposes.component';
+import { UserManagementComponent } from './Privilage/user-management/user-management.component';
 
 
 
@@ -21,6 +22,11 @@ export const ComponentsRoutes: Routes = [
 	{
 		path: '',
 		children: [
+			
+			{
+				path: 'Privilage/users',
+				component: UserManagementComponent
+			},
 			{
 				path: 'lookups/banks',
 				component: BanksComponent

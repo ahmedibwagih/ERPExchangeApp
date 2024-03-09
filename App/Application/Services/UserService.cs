@@ -75,6 +75,41 @@ namespace Application.Services
         }
 
 
+        public virtual async Task<PagingResultDto<UserDto>> GetUsers(PagingInputDto pagingInputDto)
+        {
+            var query = userManager.Users.AsQueryable();
+
+            if (!string.IsNullOrEmpty(pagingInputDto.Filter))
+            {
+                var filter = pagingInputDto.Filter;
+                query = query
+                    .Where(u => u.UserName.Contains(filter) ||
+                    u.Email.Contains(filter) ||
+                    u.FullName.Contains(filter) ||
+                    u.PhoneNumber.Contains(filter));
+            }
+
+            query = query.Where(a => a.IsDeleted == false);
+            var order = query.OrderBy(pagingInputDto.OrderByField + " " + pagingInputDto.OrderType);
+
+            var page = order.Skip((pagingInputDto.PageNumber * pagingInputDto.PageSize) - pagingInputDto.PageSize).Take(pagingInputDto.PageSize);
+
+            var total = await query.CountAsync();
+
+            var list = MapperObject.Mapper
+                .Map<IList<UserDto>>(await page.ToListAsync());
+
+
+            var response = new PagingResultDto<UserDto>
+            {
+                Result = list,
+                Total = total
+            };
+
+            return response;
+        }
+
+
         public async Task<UserDto> GetById(string id)
         {
             var entity = await userManager.Users
@@ -112,8 +147,10 @@ namespace Application.Services
             await userManager.UpdateAsync(user);
         }
 
+
         public async Task<UserDto> CreateUser(UserDto input)
         {
+            input.Id = Guid.NewGuid().ToString();
             var userExists = await userManager.FindByEmailAsync(input.Email);
             if (userExists != null)
                 throw new DynamoException(AppMessages.EMailAlreadyExisted);
@@ -126,7 +163,9 @@ namespace Application.Services
 
             unitOfWork.BeginTran();
 
-            await userManager.CreateAsync(user, input.Password);
+          var result =  await userManager.CreateAsync(user, input.Password);
+            if (result.Errors.Count() > 0)
+                throw new DynamoException(result.Errors.FirstOrDefault().Description);
             input.Id = user.Id;
 
             var userRoles = MapperObject.Mapper.Map<List<IdentityUserRole<string>>>(input.UserRoles);
@@ -142,6 +181,42 @@ namespace Application.Services
             unitOfWork.CommitTran();
 
             return input;
+        }
+
+        public async Task<UserDto> CreateUserWithoutRoles(UserDto input)
+        {
+            input.Id = Guid.NewGuid().ToString();
+            var userExists = await userManager.FindByEmailAsync(input.Email);
+            if (userExists != null)
+                throw new DynamoException(AppMessages.EMailAlreadyExisted);
+
+            userExists = await userManager.Users.FirstOrDefaultAsync(x => x.PhoneNumber == input.PhoneNumber);
+            if (userExists != null)
+                throw new DynamoException(AppMessages.PhoneAlreadyExisted);
+
+            var user = MapperObject.Mapper.Map<DynamoUser>(input);
+
+            DynamoUser user2 = await userManager.CreateUser(user,input.Password);
+            input.Id = user2.Id;
+            return input;
+            //userManager.BeginTran();
+
+            //await userManager.CreateAsync(user, input.Password);
+
+
+            //var userRoles = MapperObject.Mapper.Map<List<IdentityUserRole<string>>>(input.UserRoles);
+            //foreach (var role in userRoles)
+            //{
+            //    role.UserId = user.Id;
+            //}
+
+            //await userManager.CompleteAsync();
+
+            //await userRole.AddRangeAsync(userRoles);
+
+            //userManager.CommitTran();
+
+
         }
 
         public async Task<UserUpdateDto> Update(UserUpdateDto input)
@@ -168,6 +243,27 @@ namespace Application.Services
             await userRole.DeleteAsync(removedRoles.AsEnumerable());
 
             await unitOfWork.CompleteAsync();
+            unitOfWork.CommitTran();
+
+            return input;
+        }
+
+        public async Task<UserDto> UpdateUser(UserDto input)
+        {
+            input.Password = "";
+            var entity = await userManager.Users.FirstOrDefaultAsync(x => x.Id == input.Id);
+
+            if (entity == null)
+                throw new DynamoException(AppMessages.RecordNotExisted);
+
+           //input.Password = entity.PasswordHash;
+            MapperObject.Mapper.Map(input, entity);
+
+            unitOfWork.BeginTran();
+
+            await userManager.UpdateAsync(entity);
+
+             await unitOfWork.CompleteAsync();
             unitOfWork.CommitTran();
 
             return input;

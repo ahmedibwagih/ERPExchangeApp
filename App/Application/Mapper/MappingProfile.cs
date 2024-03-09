@@ -44,7 +44,7 @@ namespace Application.Mapper
                 .ForMember(m => m.UserRoles, op => op.Ignore())
                 .ForMember(m => m.Id, op => op.Ignore());
 
-            CreateMap<DynamoUser, UserDto>();
+            CreateMap<DynamoUser, UserDto>().ReverseMap();
             CreateMap<DynamoUser, UserAllDto>();
 
             CreateMap<UserUpdateDto, DynamoUser>()

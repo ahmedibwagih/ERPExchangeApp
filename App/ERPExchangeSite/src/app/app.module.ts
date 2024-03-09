@@ -36,7 +36,7 @@ import { CountriesComponent } from './component/lookups/countries/countries.comp
 import { CurrenciesComponent } from './component/lookups/currencies/currencies.component';
 import { IdentitySourcesComponent } from './component/lookups/identitySources/identitySources.component';
 import { TransferPurposesComponent } from './component/lookups/transferPurposes/transferPurposes.component';
-
+import { UserManagementComponent } from './component/Privilage/user-management/user-management.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +49,7 @@ import { TransferPurposesComponent } from './component/lookups/transferPurposes/
 CurrenciesComponent,
 IdentitySourcesComponent,
 TransferPurposesComponent,
+UserManagementComponent
   ],
   imports: [
     CommonModule,

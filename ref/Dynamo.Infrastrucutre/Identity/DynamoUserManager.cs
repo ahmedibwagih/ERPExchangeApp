@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dynamo.Context.Data;
+using Dynamo.Core.Other;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -109,7 +110,7 @@ namespace Dynamo.Context.Identity
         public async Task<(DynamoUser, string[])> GetUserSession(string userId)
         {
             var context = GetContext();
-
+          
             var permissions = await GetUserPermission(userId);
 
             var user = await context.Users
@@ -128,5 +129,64 @@ namespace Dynamo.Context.Identity
                 .Any(p => p.Permission.Name.Equals(permission))))
                 .ToArrayAsync();
         }
+
+
+        public async Task<DynamoUser> CreateUser(DynamoUser user,string Password)
+        {
+
+            //BeginTran();
+            var context = GetContext();
+            var connectionString = context.Database.GetConnectionString();
+           var result = await CreateAsync(user, Password);
+            //input.Id = user.Id;
+
+           if (result.Errors.Count()>0)
+                throw new DynamoException(result.Errors.FirstOrDefault().Description);
+            await context.SaveChangesAsync();
+
+            //await CompleteAsync();
+
+          
+
+          //  CommitTran();
+
+            return user;
+        }
+
+
+        public async Task<int> CompleteAsync()
+        {
+            try
+            {
+                var context = GetContext();
+                return await context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                RollbackTran();
+                throw;
+            }
+
+        }
+        public async void BeginTran()
+        {
+            var context = GetContext();
+            await context.Database.BeginTransactionAsync();
+        }
+
+        public async void CommitTran()
+        {
+            var context = GetContext();
+            await context.Database.CommitTransactionAsync();
+        }
+
+        public async void RollbackTran()
+        {
+            var context = GetContext();
+            var transaction = context.Database.CurrentTransaction;
+            if (transaction != null)
+                await context.Database.RollbackTransactionAsync();
+        }
+
     }
 }

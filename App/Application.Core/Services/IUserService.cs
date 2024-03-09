@@ -13,17 +13,18 @@ namespace Application.Core.Services
         Task Delete(string id);
         Task UndoDelete(string id);
         Task<UserDto> CreateUser(UserDto input);
+        Task<UserDto> CreateUserWithoutRoles(UserDto input);
         Task<UserUpdateDto> Update(UserUpdateDto input);
 
         Task<SessionDto> GetUserSession();
         Task<UserAllDto[]> GetUsersPermission(string permission);
-   
-     
-       
-        Task<bool> ResetPassword(ResetPasswordDto input);
 
+
+        Task<PagingResultDto<UserDto>> GetUsers(PagingInputDto pagingInputDto);
+        Task<bool> ResetPassword(ResetPasswordDto input);
+        Task<UserDto> UpdateUser(UserDto input);
        // Task<bool> CompleteForgetPassword(string userId, string newPassword);
 
-        
+
     }
 }

@@ -58,18 +58,25 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
-  }
-
-
-  ,
+  },
   {
-    path: '/component/alert',
-    title: 'alert',
-    icon: 'bi bi-patch-check',
+    path: '/component/Privilage/users',
+    title: 'المستخدمين',
+    icon: 'bi bi-bell',
     class: '',
     extralink: false,
     submenu: []
   },
+
+  // ,
+  // {
+  //   path: '/component/alert',
+  //   title: 'alert',
+  //   icon: 'bi bi-patch-check',
+  //   class: '',
+  //   extralink: false,
+  //   submenu: []
+  // },
   // ,
   // {
   //   path: '/component/badges',
