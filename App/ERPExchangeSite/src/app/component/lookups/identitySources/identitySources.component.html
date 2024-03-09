@@ -3,7 +3,7 @@
 
 <mat-card>
     <mat-card-header  fxLayout="row" fxLayoutAlign="center center">
-      <mat-card-title>البنوك</mat-card-title>
+      <mat-card-title>مصادر الهوية</mat-card-title>
     </mat-card-header>
     <mat-card-content  fxLayout="column" fxLayoutAlign="start center">
       <!-- Form for adding/editing identitySource -->
@@ -11,31 +11,40 @@
         <mat-form-field>
           
           <mat-label>الاسم العربي</mat-label>
-          <input matInput placeholder="Name (Arabic)" [(ngModel)]="identitySource.nameAr" name="nameAr" required>
+          <input matInput placeholder="الاسم عربي" [(ngModel)]="identitySource.nameAr" name="nameAr" required>
         </mat-form-field>
         <mat-form-field>
           <mat-label>الاسم بالانجليزي</mat-label>
-          <input matInput placeholder="Name (English)" [(ngModel)]="identitySource.nameEn" name="nameEn" required>
+          <input matInput placeholder="الاسم بالانجليزية" [(ngModel)]="identitySource.nameEn" name="nameEn" required>
         </mat-form-field>
         <!-- <mat-form-field>
-          <input matInput type="number" placeholder="Risk Rate" [(ngModel)]="identitySource.riskRate" name="riskRate" required>
+          <input matInput type="number" placeholder="درجه المخاطر" [(ngModel)]="identitySource.riskRate" name="riskRate" required>
         </mat-form-field> -->
         <mat-form-field>
           <mat-label>درجه المخاطر</mat-label>
-          <!-- <mat-select placeholder="Select Risk Rate" name="riskRate" [(ngModel)]="identitySource.riskRate" required>
+          <!-- <mat-select placeholder="اختار درجه المخاطر" name="riskRate" [(ngModel)]="identitySource.riskRate" required>
             <mat-option value=0>Low</mat-option>
             <mat-option value=1>Medium</mat-option>
             <mat-option value=2>High</mat-option>
           </mat-select> -->
 
-          <mat-select placeholder="Select Risk Rate" name="riskRate" [(ngModel)]="identitySource.riskRate" required>
+          <mat-select placeholder="اختار درجه المخاطر" name="riskRate" [(ngModel)]="identitySource.riskRate" required>
             <mat-option *ngFor="let option of identitySourceOptions" [value]="option.value">
               {{ option.viewValue }}
             </mat-option>
           </mat-select>
           
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">{{ isEditing ? 'Update' : 'Add' }}</button>
+
+                <mat-form-field>
+          <mat-label>الدولة</mat-label>
+          <mat-select placeholder="اختار الدولة" name="countryId" [(ngModel)]="identitySource.countryId" required>
+            <mat-option *ngFor="let option of countriesOptions" [value]="option.id">
+              {{ option.nameAr }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">{{ isEditing ? 'تعديل' : 'اضافة' }}</button>
       </form>
   
       <!-- Display identitySources in a table -->
@@ -48,29 +57,41 @@
 
 
         <ng-container matColumnDef="nameAr">
-          <th mat-header-cell *matHeaderCellDef>Name (Arabic)</th>
+          <th mat-header-cell *matHeaderCellDef>الاسم عربي</th>
           <td mat-cell *matCellDef="let identitySource">{{ identitySource.nameAr }}</td>
         </ng-container>
   
         <ng-container matColumnDef="nameEn">
-          <th mat-header-cell *matHeaderCellDef>Name (English)</th>
+          <th mat-header-cell *matHeaderCellDef>الاسم بالانجليزية</th>
           <td mat-cell *matCellDef="let identitySource">{{ identitySource.nameEn }}</td>
         </ng-container>
   
         <ng-container matColumnDef="riskRate">
-          <th mat-header-cell *matHeaderCellDef>Risk Rate</th>
+          <th mat-header-cell *matHeaderCellDef>درجه المخاطر</th>
           <td mat-cell *matCellDef="let identitySource">
           
-            <mat-select placeholder="Select Risk Rate" [value]="identitySource.riskRate" [disabled]="true">
+            <mat-select placeholder="اختار درجه المخاطر" [value]="identitySource.riskRate" [disabled]="true">
               <mat-option *ngFor="let option of identitySourceOptions" [value]="option.value">
                 {{ option.viewValue }}
               </mat-option>
             </mat-select>
           </td>
         </ng-container>
+
+        <ng-container matColumnDef="countryId">
+          <th mat-header-cell *matHeaderCellDef>الدولة</th>
+          <td mat-cell *matCellDef="let currency">
+          
+            <mat-select placeholder="اختار الدولة" [value]="currency.countryId" [disabled]="true">
+              <mat-option *ngFor="let option of countriesOptions" [value]="option.id">
+                {{ option.nameAr }}
+              </mat-option>
+            </mat-select>
+          </td>
+        </ng-container>
   
         <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let identitySource">
             <button mat-icon-button color="primary" (click)="editIdentitySource(identitySource)">
               <mat-icon>edit</mat-icon>

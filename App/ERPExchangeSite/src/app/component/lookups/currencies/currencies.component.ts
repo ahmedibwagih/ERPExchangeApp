@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
-import { CurrenciesDto, CurrenciesDtoPagingResultDto } from 'src/app/services/api.service';
+import { CountriesDto, CurrenciesDto, CurrenciesDtoPagingResultDto } from 'src/app/services/api.service';
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
 import { GenericAlertComponent } from '../../General/generic-alert/generic-alert.component';
 
@@ -32,12 +32,16 @@ export class CurrenciesComponent implements OnInit {
     { value: 1, viewValue: 'Meduim' },
     { value: 2, viewValue: 'Hight' }
   ];
+
+  countriesOptions!: CountriesDto[];
+
   Allcurrencies:CurrenciesDtoPagingResultDto | undefined ;
   currencies: CurrenciesDto[]  = [];
   currency: CurrenciesDto = new CurrenciesDto()  ;
 
+
   isEditing = false;
-  displayedColumns = ['nameAr', 'nameEn', 'riskRate', 'actions'];
+  displayedColumns = ['nameAr', 'nameEn', 'riskRate','countryId', 'actions'];
 
   backend:BackEndClientService;
   constructor(private back:BackEndClientService) { 
@@ -45,8 +49,20 @@ export class CurrenciesComponent implements OnInit {
 
   }
 
+  
   ngOnInit(): void {
     this.fillCurrencies();
+   
+
+    //fill countriesOptions
+    this.back.countriesGetAll(1,100,undefined,undefined,undefined,undefined)
+    .then((result: CurrenciesDtoPagingResultDto) => {
+      this.countriesOptions = result.result?? [];
+
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
   }
 
   fillCurrencies(){

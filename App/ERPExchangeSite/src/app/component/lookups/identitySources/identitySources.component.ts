@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
-import { IdentitySourcesDto, IdentitySourcesDtoPagingResultDto } from 'src/app/services/api.service';
+import { CountriesDto, CurrenciesDtoPagingResultDto, IdentitySourcesDto, IdentitySourcesDtoPagingResultDto } from 'src/app/services/api.service';
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
 import { GenericAlertComponent } from '../../General/generic-alert/generic-alert.component';
 
@@ -35,9 +35,9 @@ export class IdentitySourcesComponent implements OnInit {
   AllidentitySources:IdentitySourcesDtoPagingResultDto | undefined ;
   identitySources: IdentitySourcesDto[]  = [];
   identitySource: IdentitySourcesDto = new IdentitySourcesDto()  ;
-
+  countriesOptions!: CountriesDto[];
   isEditing = false;
-  displayedColumns = ['nameAr', 'nameEn', 'riskRate', 'actions'];
+  displayedColumns = ['nameAr', 'nameEn', 'riskRate','countryId', 'actions'];
 
   backend:BackEndClientService;
   constructor(private back:BackEndClientService) { 
@@ -47,6 +47,16 @@ export class IdentitySourcesComponent implements OnInit {
 
   ngOnInit(): void {
     this.fillIdentitySources();
+
+    //fill countriesOptions
+    this.back.countriesGetAll(1,100,undefined,undefined,undefined,undefined)
+    .then((result: CurrenciesDtoPagingResultDto) => {
+      this.countriesOptions = result.result?? [];
+
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
   }
 
   fillIdentitySources(){
