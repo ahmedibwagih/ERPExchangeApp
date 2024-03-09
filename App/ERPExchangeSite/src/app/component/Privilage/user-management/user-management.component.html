@@ -13,10 +13,7 @@
         <input matInput type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required>
         <mat-error *ngIf="userForm.controls['email'].invalid">Email is required</mat-error>
       </mat-form-field>
-      <mat-form-field>
-        <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required>
-        <mat-error *ngIf="userForm.controls['password'].invalid">Password is required</mat-error>
-      </mat-form-field>
+
       <mat-form-field>
         <input matInput placeholder="Phone Number" name="phoneNumber" [(ngModel)]="user.phoneNumber" required>
         <mat-error *ngIf="userForm.controls['phoneNumber'].invalid">Phone Number is required</mat-error>
@@ -26,8 +23,6 @@
   </mat-card>
 
   <mat-table [dataSource]="users">
-    <!-- Define columns for user table -->
-    <!-- Example columns: UserName, FullName, Email, PhoneNumber -->
     <ng-container matColumnDef="userName">
       <mat-header-cell *matHeaderCellDef> User Name </mat-header-cell>
       <mat-cell *matCellDef="let user"> {{user.userName}} </mat-cell>
@@ -48,7 +43,7 @@
       <mat-cell *matCellDef="let user"> {{user.phoneNumber}} </mat-cell>
     </ng-container>
   
-    <!-- Action column for editing and deleting users -->
+   
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
       <mat-cell *matCellDef="let user">

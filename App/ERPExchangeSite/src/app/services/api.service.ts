@@ -140,6 +140,123 @@ export class Client {
     }
 
     /**
+     * @return Success
+     */
+    authenticationGetUsers(): Promise<UserDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Authentication/GetUsers";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processAuthenticationGetUsers(_response);
+        });
+    }
+
+    protected processAuthenticationGetUsers(response: Response): Promise<UserDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = UserDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<UserDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    authenticationUpdateUser(body: UserDto | undefined): Promise<UserDto> {
+        let url_ = this.baseUrl + "/api/Authentication/UpdateUser";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processAuthenticationUpdateUser(_response);
+        });
+    }
+
+    protected processAuthenticationUpdateUser(response: Response): Promise<UserDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = UserDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<UserDto>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    authenticationUpdateDelete(id: string | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Authentication/UpdateDelete?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processAuthenticationUpdateDelete(_response);
+        });
+    }
+
+    protected processAuthenticationUpdateDelete(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
      * @param pageNumber (optional) 
      * @param pageSize (optional) 
      * @param orderByField (optional) 
@@ -2303,7 +2420,7 @@ export class UserDto implements IUserDto {
     userName!: string;
     fullName!: string;
     email!: string;
-    password!: string;
+    password?: string | undefined;
     phoneNumber!: string;
     userRoles?: UserRoleDto[] | undefined;
 
@@ -2361,9 +2478,57 @@ export interface IUserDto {
     userName: string;
     fullName: string;
     email: string;
-    password: string;
+    password?: string | undefined;
     phoneNumber: string;
     userRoles?: UserRoleDto[] | undefined;
+}
+
+export class UserDtoPagingResultDto implements IUserDtoPagingResultDto {
+    total?: number;
+    result?: UserDto[] | undefined;
+
+    constructor(data?: IUserDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(UserDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): UserDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new UserDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface IUserDtoPagingResultDto {
+    total?: number;
+    result?: UserDto[] | undefined;
 }
 
 export class UserRoleDto implements IUserRoleDto {

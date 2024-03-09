@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
-import { UserDto } from 'src/app/services/api.service';
+import { UserDto, UserDtoPagingResultDto } from 'src/app/services/api.service';
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
@@ -17,17 +17,25 @@ export class UserManagementComponent implements OnInit {
     this.userService = back;
 
   }
-  displayedColumns = ['UserName', 'Email', 'FullName', 'actions'];
+  displayedColumns = ['userName', 'fullName', 'email' , 'phoneNumber' , 'actions'];
 
   ngOnInit(): void {
     this.loadUsers();
   }
 
-  loadUsers(): void {
-    // this.userService.getUsers().subscribe(users => {
-    //   this.users = users;
-    // });
+  loadUsers(){
+debugger;
+    this.back.authenticationGetUsers()
+    .then((result: UserDtoPagingResultDto) => {
+      this.users = result?.result ?? [];
+      })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
+
   }
+
+  
 
   addUser(user: UserDto): void {
     // this.userService.addUser(user).subscribe(() => {
