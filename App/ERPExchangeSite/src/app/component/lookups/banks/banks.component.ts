@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { BanksDto, BanksDtoPagingResultDto } from 'src/app/services/api.service';
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
+import { GenericAlertComponent } from '../../General/generic-alert/generic-alert.component';
 
 @Component({
   selector: 'app-banks',
@@ -8,7 +9,24 @@ import { BackEndClientService } from 'src/app/services/back-end-client.service';
   styleUrls: ['./banks.component.scss']
 })
 export class BanksComponent implements OnInit {
- // bankSelectedOption: any; // Define a property to hold the selected option value
+  //alert
+ // danger-warning-success-info
+  showAlert: boolean = false;
+  alertMessage: any = false;
+  alertType: any = false;
+  onCloseAlert() {
+    this.showAlert = false;
+    this.alertMessage  ="" ;
+    this.alertType ="" ;
+  }
+  alert(message: any,type: any)
+  {
+   debugger;
+  this.alertMessage  =message ;
+  this.alertType =type ;
+  this.showAlert = true;
+  }
+ ////////////////////////////////////
   bankOptions = [          // Array of options
     { value: 0, viewValue: 'Low' },
     { value: 1, viewValue: 'Meduim' },
@@ -50,10 +68,14 @@ export class BanksComponent implements OnInit {
     if (this.isEditing) {
       this.back.banksUpdate(this.bank) .then(() => {
         this.fillBanks();
+        this.alert( "تم التعديل بنجاح","success");
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
+        this.alert( "يوجد مشكله في التعديل","warning");
       });
+      
+
     
     } else {
 
@@ -63,9 +85,11 @@ export class BanksComponent implements OnInit {
       // this.newBank.isActve = 1;
       this.back.banksCreate(this.bank) .then(() => {
         this.fillBanks();
+        this.alert( "تم الاضافة بنجاح","success");
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
+        this.alert( "يوجد مشكله في الاضافة","warning");
       });
 
     }
@@ -88,9 +112,11 @@ export class BanksComponent implements OnInit {
       // this.banks.splice(index, 1);
       this.back.banksDelete(bank?.id) .then(() => {
         this.fillBanks();
+        this.alert( "تم الحذف بنجاح","success");
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
+        this.alert( "يوجد مشكله في الحذف","warning");
       });
       // Logic to delete bank from the backend or service
     }

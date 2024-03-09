@@ -1,3 +1,6 @@
+
+<app-generic-alert   *ngIf="showAlert" [message]="alertMessage" [type]="alertType" (close)="onCloseAlert()"></app-generic-alert>
+
 <mat-card>
     <mat-card-header  fxLayout="row" fxLayoutAlign="center center">
       <mat-card-title>البنوك</mat-card-title>

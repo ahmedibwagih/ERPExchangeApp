@@ -30,12 +30,15 @@ import { BanksComponent } from './component/lookups/banks/banks.component';
 //import { BanksComponent } from './lookups/banks/banks.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { GenericAlertComponent } from './component/General/generic-alert/generic-alert.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SpinnerComponent,
     LoginComponent,
     BanksComponent,
+    GenericAlertComponent,
   ],
   imports: [
     CommonModule,

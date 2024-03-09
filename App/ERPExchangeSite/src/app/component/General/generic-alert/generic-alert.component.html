@@ -1,0 +1,13 @@
+<!-- <div class="alert" [ngClass]="'alert-' + type">
+    {{ message }}
+  </div> -->
+
+  <div class="alert" [ngClass]="'alert-' + type">
+   
+    <div style="text-align: right;">
+     <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<span>{{ message }}</span>
+  </div>
