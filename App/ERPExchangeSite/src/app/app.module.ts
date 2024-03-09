@@ -27,10 +27,15 @@ import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { LoginComponent } from './login/login.component';
 import { BanksComponent } from './component/lookups/banks/banks.component';
-//import { BanksComponent } from './lookups/banks/banks.component';
+
 import { MatSelectModule } from '@angular/material/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GenericAlertComponent } from './component/General/generic-alert/generic-alert.component';
+import { JobsComponent } from './component/lookups/Jobs/Jobs.component';
+import { CountriesComponent } from './component/lookups/countries/countries.component';
+import { CurrenciesComponent } from './component/lookups/currencies/currencies.component';
+import { IdentitySourcesComponent } from './component/lookups/identitySources/identitySources.component';
+import { TransferPurposesComponent } from './component/lookups/transferPurposes/transferPurposes.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,11 @@ import { GenericAlertComponent } from './component/General/generic-alert/generic
     LoginComponent,
     BanksComponent,
     GenericAlertComponent,
+    JobsComponent,
+    CountriesComponent,
+CurrenciesComponent,
+IdentitySourcesComponent,
+TransferPurposesComponent,
   ],
   imports: [
     CommonModule,

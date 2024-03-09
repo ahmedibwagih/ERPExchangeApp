@@ -18,9 +18,9 @@ namespace Api.Controllers.LookUps
     public class TransferPurposes : ControllerBase
     {
 
-        private readonly IService<Banks, BanksDto, BanksDto, BanksDto, BanksDto> service;
+        private readonly IService<TransferPurposes, TransferPurposesDto, TransferPurposesDto, TransferPurposesDto, TransferPurposesDto> service;
 
-        public TransferPurposes(IService<Banks, BanksDto, BanksDto, BanksDto, BanksDto> service)
+        public TransferPurposes(IService<TransferPurposes, TransferPurposesDto, TransferPurposesDto, TransferPurposesDto, TransferPurposesDto> service)
         {
             this.service = service;
         }
@@ -28,7 +28,7 @@ namespace Api.Controllers.LookUps
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("[action]")]
-        public async Task<PagingResultDto<BanksDto>> GetAll([FromQuery] PagingInputDto pagingInputDto)
+        public async Task<PagingResultDto<TransferPurposesDto>> GetAll([FromQuery] PagingInputDto pagingInputDto)
         {
             return await service.GetAllPaging(pagingInputDto);
         }
@@ -36,7 +36,7 @@ namespace Api.Controllers.LookUps
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("[action]")]
-        public async Task<BanksDto> Get(long id)
+        public async Task<TransferPurposesDto> Get(long id)
         {
             return await service.GetById(id);
         }
@@ -44,7 +44,7 @@ namespace Api.Controllers.LookUps
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("[action]")]
-        public async Task<ActionResult<BanksDto>> Create([FromBody] BanksDto input)
+        public async Task<ActionResult<TransferPurposesDto>> Create([FromBody] TransferPurposesDto input)
         {
             return await service.Create(input);
         }
@@ -52,7 +52,7 @@ namespace Api.Controllers.LookUps
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("[action]")]
-        public async Task Update([FromBody] BanksDto input)
+        public async Task Update([FromBody] TransferPurposesDto input)
         {
             await service.Update(input);
         }

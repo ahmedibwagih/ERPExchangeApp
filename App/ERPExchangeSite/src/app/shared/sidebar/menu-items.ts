@@ -17,7 +17,50 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
+  },
+  {
+    path: '/component/lookups/countries',
+    title: 'الدول',
+    icon: 'bi bi-bell',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/lookups/currencies',
+    title: 'العملات',
+    icon: 'bi bi-bell',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/lookups/identitySources',
+    title: 'مصادر الهويه',
+    icon: 'bi bi-bell',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/lookups/transferPurposes',
+    title: 'اغراض التحويل',
+    icon: 'bi bi-bell',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+
+  {
+    path: '/component/lookups/jobs',
+    title: 'الوظائف',
+    icon: 'bi bi-bell',
+    class: '',
+    extralink: false,
+    submenu: []
   }
+
+
   ,
   {
     path: '/component/alert',

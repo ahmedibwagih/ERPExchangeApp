@@ -1,0 +1,89 @@
+
+<app-generic-alert   *ngIf="showAlert" [message]="alertMessage" [type]="alertType" (close)="onCloseAlert()"></app-generic-alert>
+
+<mat-card>
+    <mat-card-header  fxLayout="row" fxLayoutAlign="center center">
+      <mat-card-title>البنوك</mat-card-title>
+    </mat-card-header>
+    <mat-card-content  fxLayout="column" fxLayoutAlign="start center">
+      <!-- Form for adding/editing country -->
+      <form (ngSubmit)="saveCountry()">
+        <mat-form-field>
+          
+          <mat-label>الاسم العربي</mat-label>
+          <input matInput placeholder="Name (Arabic)" [(ngModel)]="country.nameAr" name="nameAr" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>الاسم بالانجليزي</mat-label>
+          <input matInput placeholder="Name (English)" [(ngModel)]="country.nameEn" name="nameEn" required>
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <input matInput type="number" placeholder="Risk Rate" [(ngModel)]="country.riskRate" name="riskRate" required>
+        </mat-form-field> -->
+        <mat-form-field>
+          <mat-label>درجه المخاطر</mat-label>
+          <!-- <mat-select placeholder="Select Risk Rate" name="riskRate" [(ngModel)]="country.riskRate" required>
+            <mat-option value=0>Low</mat-option>
+            <mat-option value=1>Medium</mat-option>
+            <mat-option value=2>High</mat-option>
+          </mat-select> -->
+
+          <mat-select placeholder="Select Risk Rate" name="riskRate" [(ngModel)]="country.riskRate" required>
+            <mat-option *ngFor="let option of countryOptions" [value]="option.value">
+              {{ option.viewValue }}
+            </mat-option>
+          </mat-select>
+          
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">{{ isEditing ? 'Update' : 'Add' }}</button>
+      </form>
+  
+      <!-- Display countries in a table -->
+      <table mat-table [dataSource]="countries">
+        <!-- Columns -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let country">{{ country.id }}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="nameAr">
+          <th mat-header-cell *matHeaderCellDef>Name (Arabic)</th>
+          <td mat-cell *matCellDef="let country">{{ country.nameAr }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="nameEn">
+          <th mat-header-cell *matHeaderCellDef>Name (English)</th>
+          <td mat-cell *matCellDef="let country">{{ country.nameEn }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="riskRate">
+          <th mat-header-cell *matHeaderCellDef>Risk Rate</th>
+          <td mat-cell *matCellDef="let country">
+          
+            <mat-select placeholder="Select Risk Rate" [value]="country.riskRate" [disabled]="true">
+              <mat-option *ngFor="let option of countryOptions" [value]="option.value">
+                {{ option.viewValue }}
+              </mat-option>
+            </mat-select>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let country">
+            <button mat-icon-button color="primary" (click)="editCountry(country)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteCountry(country)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+  

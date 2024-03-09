@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { FullComponent } from './layouts/full/full.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-//import { BanksComponent } from './lookups/banks/banks.component';
 
 export const Approutes: Routes = [
     { path: 'login', component: LoginComponent },

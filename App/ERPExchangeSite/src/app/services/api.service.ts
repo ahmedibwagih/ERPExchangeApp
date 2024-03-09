@@ -1283,7 +1283,7 @@ export class Client {
      * @param hiddenFilter (optional) 
      * @return Success
      */
-    transferPurposesGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<BanksDtoPagingResultDto> {
+    transferPurposesGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<TransferPurposesDtoPagingResultDto> {
         let url_ = this.baseUrl + "/api/TransferPurposes/GetAll?";
         if (pageNumber === null)
             throw new Error("The parameter 'pageNumber' cannot be null.");
@@ -1323,14 +1323,14 @@ export class Client {
         });
     }
 
-    protected processTransferPurposesGetAll(response: Response): Promise<BanksDtoPagingResultDto> {
+    protected processTransferPurposesGetAll(response: Response): Promise<TransferPurposesDtoPagingResultDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
             return response.text().then((_responseText) => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = BanksDtoPagingResultDto.fromJS(resultData200);
+            result200 = TransferPurposesDtoPagingResultDto.fromJS(resultData200);
             return result200;
             });
         } else if (status !== 200 && status !== 204) {
@@ -1338,14 +1338,14 @@ export class Client {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             });
         }
-        return Promise.resolve<BanksDtoPagingResultDto>(null as any);
+        return Promise.resolve<TransferPurposesDtoPagingResultDto>(null as any);
     }
 
     /**
      * @param id (optional) 
      * @return Success
      */
-    transferPurposesGet(id: number | undefined): Promise<BanksDto> {
+    transferPurposesGet(id: number | undefined): Promise<TransferPurposesDto> {
         let url_ = this.baseUrl + "/api/TransferPurposes/Get?";
         if (id === null)
             throw new Error("The parameter 'id' cannot be null.");
@@ -1365,14 +1365,14 @@ export class Client {
         });
     }
 
-    protected processTransferPurposesGet(response: Response): Promise<BanksDto> {
+    protected processTransferPurposesGet(response: Response): Promise<TransferPurposesDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
             return response.text().then((_responseText) => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = BanksDto.fromJS(resultData200);
+            result200 = TransferPurposesDto.fromJS(resultData200);
             return result200;
             });
         } else if (status !== 200 && status !== 204) {
@@ -1380,14 +1380,14 @@ export class Client {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             });
         }
-        return Promise.resolve<BanksDto>(null as any);
+        return Promise.resolve<TransferPurposesDto>(null as any);
     }
 
     /**
      * @param body (optional) 
      * @return Success
      */
-    transferPurposesCreate(body: BanksDto | undefined): Promise<BanksDto> {
+    transferPurposesCreate(body: TransferPurposesDto | undefined): Promise<TransferPurposesDto> {
         let url_ = this.baseUrl + "/api/TransferPurposes/Create";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -1407,14 +1407,14 @@ export class Client {
         });
     }
 
-    protected processTransferPurposesCreate(response: Response): Promise<BanksDto> {
+    protected processTransferPurposesCreate(response: Response): Promise<TransferPurposesDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
             return response.text().then((_responseText) => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = BanksDto.fromJS(resultData200);
+            result200 = TransferPurposesDto.fromJS(resultData200);
             return result200;
             });
         } else if (status !== 200 && status !== 204) {
@@ -1422,14 +1422,14 @@ export class Client {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             });
         }
-        return Promise.resolve<BanksDto>(null as any);
+        return Promise.resolve<TransferPurposesDto>(null as any);
     }
 
     /**
      * @param body (optional) 
      * @return Success
      */
-    transferPurposesUpdate(body: BanksDto | undefined): Promise<void> {
+    transferPurposesUpdate(body: TransferPurposesDto | undefined): Promise<void> {
         let url_ = this.baseUrl + "/api/TransferPurposes/Update";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -2192,6 +2192,110 @@ export class TokenDto implements ITokenDto {
 export interface ITokenDto {
     token?: string | undefined;
     expiration?: Date;
+}
+
+export class TransferPurposesDto implements ITransferPurposesDto {
+    id?: number;
+    readOnly?: boolean;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+
+    constructor(data?: ITransferPurposesDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.readOnly = _data["readOnly"];
+            this.nameAr = _data["nameAr"];
+            this.nameEn = _data["nameEn"];
+            this.riskRate = _data["riskRate"];
+            this.isActve = _data["isActve"];
+        }
+    }
+
+    static fromJS(data: any): TransferPurposesDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new TransferPurposesDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["readOnly"] = this.readOnly;
+        data["nameAr"] = this.nameAr;
+        data["nameEn"] = this.nameEn;
+        data["riskRate"] = this.riskRate;
+        data["isActve"] = this.isActve;
+        return data;
+    }
+}
+
+export interface ITransferPurposesDto {
+    id?: number;
+    readOnly?: boolean;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    riskRate?: number;
+    isActve?: number;
+}
+
+export class TransferPurposesDtoPagingResultDto implements ITransferPurposesDtoPagingResultDto {
+    total?: number;
+    result?: TransferPurposesDto[] | undefined;
+
+    constructor(data?: ITransferPurposesDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(TransferPurposesDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): TransferPurposesDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new TransferPurposesDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface ITransferPurposesDtoPagingResultDto {
+    total?: number;
+    result?: TransferPurposesDto[] | undefined;
 }
 
 export class UserDto implements IUserDto {
