@@ -3,6 +3,7 @@ using Application.Core.DTOs.Authentication;
 using Application.Core.DTOs.LookUps;
 using Application.Core.DTOs.User;
 using Application.Core.Services;
+using Application.Core.Services.LookUps;
 using Application.Services;
 using Application.Services.LookUps;
 using Core.DTOs;
@@ -17,10 +18,10 @@ namespace Api.Controllers.LookUps
     [ApiController]
     public class TransferPurposes : ControllerBase
     {
+        
+        private readonly ITransferPurposesService service;
 
-        private readonly IService<TransferPurposes, TransferPurposesDto, TransferPurposesDto, TransferPurposesDto, TransferPurposesDto> service;
-
-        public TransferPurposes(IService<TransferPurposes, TransferPurposesDto, TransferPurposesDto, TransferPurposesDto, TransferPurposesDto> service)
+        public TransferPurposes(ITransferPurposesService service)
         {
             this.service = service;
         }

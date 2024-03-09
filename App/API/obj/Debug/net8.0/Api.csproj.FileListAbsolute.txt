@@ -489,7 +489,6 @@ E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.GeneratedMSBuildEdito
 E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.AssemblyInfoInputs.cache
 E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.AssemblyInfo.cs
 E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.csproj.CoreCompileInputs.cache
-E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.MvcApplicationPartsAssemblyInfo.cs
 E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.MvcApplicationPartsAssemblyInfo.cache
 E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\Api.sourcelink.json
 E:\ERPExchange\ERPExchangeApp\App\Api\obj\Debug\net8.0\staticwebassets.build.json
