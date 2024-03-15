@@ -18,6 +18,7 @@ namespace Dynamo.Context.Identity
         public DateTime? UpdateDate { get; set; }
         public bool IsDeleted { get; set; }
         public string? DeleteUserId { get; set; }
+        public long? JobId { get; set; }
 
         public ICollection<DynamoRole> UserRoles { get; set; }
 

@@ -18,6 +18,8 @@ namespace Application.Core.DTOs.User
       //  [Required(ErrorMessage = "Password is required")]
         public string Password { get; set; }
 
+        public long JobId { get; set; }
+
         [Required(ErrorMessage = "Password is required")]
         public string PhoneNumber { get; set; }
         public IList<UserRoleDto>? UserRoles { get; set; }
