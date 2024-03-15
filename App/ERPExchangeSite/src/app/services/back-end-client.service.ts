@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Client } from './api.service';
+import { PublicClsService } from './public-cls.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Client } from './api.service';
 export class BackEndClientService extends Client {
   
   constructor() {
-    super('https://localhost:7080');
+    super( PublicClsService.baseUrl);
    }
 
 }

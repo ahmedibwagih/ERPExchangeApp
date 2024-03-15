@@ -57,6 +57,7 @@ export class BanksComponent implements OnInit {
       this.banks=this.Allbanks.result  ?? [];
     })
     .catch((error) => {
+      debugger;
       console.error('Error fetching data:', error);
     });
 

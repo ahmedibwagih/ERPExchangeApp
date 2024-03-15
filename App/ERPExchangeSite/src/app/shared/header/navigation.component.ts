@@ -1,5 +1,7 @@
 import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbDropdownModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PublicClsService } from 'src/app/services/public-cls.service';
 
 declare var $: any;
 
@@ -14,9 +16,16 @@ export class NavigationComponent implements AfterViewInit {
 
   public showSearch = false;
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal,private router: Router) {
   }
-
+  Logout()
+  {
+    debugger;
+  //  PublicClsService.authToken="";
+  
+    localStorage.setItem('token',"");
+    this.router.navigate(['/login']);
+  }
   // This is for Notifications
   notifications: Object[] = [
     {

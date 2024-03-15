@@ -25,6 +25,7 @@ namespace Api.Controllers.LookUps
             this.service = service;
         }
 
+        //[AppAuthorize]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("[action]")]

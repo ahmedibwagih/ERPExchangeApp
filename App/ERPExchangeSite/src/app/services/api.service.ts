@@ -10,6 +10,7 @@
 
 export class Client {
     private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
+    
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
 
@@ -266,6 +267,7 @@ export class Client {
      * @return Success
      */
     banksGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<BanksDtoPagingResultDto> {
+        debugger;
         let url_ = this.baseUrl + "/api/Banks/GetAll?";
         if (pageNumber === null)
             throw new Error("The parameter 'pageNumber' cannot be null.");

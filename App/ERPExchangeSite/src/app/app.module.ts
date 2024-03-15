@@ -37,6 +37,9 @@ import { CurrenciesComponent } from './component/lookups/currencies/currencies.c
 import { IdentitySourcesComponent } from './component/lookups/identitySources/identitySources.component';
 import { TransferPurposesComponent } from './component/lookups/transferPurposes/transferPurposes.component';
 import { UserManagementComponent } from './component/Privilage/user-management/user-management.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+//import { TokenInterceptor } from './token-interceptor.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,8 +73,11 @@ UserManagementComponent
   providers: [
     {
       provide: LocationStrategy,
-      useClass: PathLocationStrategy
+      useClass: PathLocationStrategy,
+     
     },
+
+    //{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
