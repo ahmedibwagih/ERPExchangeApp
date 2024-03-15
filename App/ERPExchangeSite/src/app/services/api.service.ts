@@ -3064,6 +3064,7 @@ export class UserDto implements IUserDto {
     fullName!: string;
     email!: string;
     password?: string | undefined;
+    jobId?: number;
     phoneNumber!: string;
     userRoles?: UserRoleDto[] | undefined;
 
@@ -3083,6 +3084,7 @@ export class UserDto implements IUserDto {
             this.fullName = _data["fullName"];
             this.email = _data["email"];
             this.password = _data["password"];
+            this.jobId = _data["jobId"];
             this.phoneNumber = _data["phoneNumber"];
             if (Array.isArray(_data["userRoles"])) {
                 this.userRoles = [] as any;
@@ -3106,6 +3108,7 @@ export class UserDto implements IUserDto {
         data["fullName"] = this.fullName;
         data["email"] = this.email;
         data["password"] = this.password;
+        data["jobId"] = this.jobId;
         data["phoneNumber"] = this.phoneNumber;
         if (Array.isArray(this.userRoles)) {
             data["userRoles"] = [];
@@ -3122,6 +3125,7 @@ export interface IUserDto {
     fullName: string;
     email: string;
     password?: string | undefined;
+    jobId?: number;
     phoneNumber: string;
     userRoles?: UserRoleDto[] | undefined;
 }

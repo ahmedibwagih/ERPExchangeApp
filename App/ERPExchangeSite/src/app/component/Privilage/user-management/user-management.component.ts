@@ -2,25 +2,64 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
-import { UserDto, UserDtoPagingResultDto } from 'src/app/services/api.service';
+import { JobsDto, JobsDtoPagingResultDto, UserDto, UserDtoPagingResultDto } from 'src/app/services/api.service';
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
   styleUrls: ['./user-management.component.scss']
 })
 export class UserManagementComponent implements OnInit {
-
+  //alert
+ // danger-warning-success-info
+ showAlert: boolean = false;
+ alertMessage: any = false;
+ alertType: any = false;
+ onCloseAlert() {
+   this.showAlert = false;
+   this.alertMessage  ="" ;
+   this.alertType ="" ;
+ }
+ alert(message: any,type: any)
+ {
+  debugger;
+ this.alertMessage  =message ;
+ this.alertType =type ;
+ this.showAlert = true;
+ }
+////////////////////////////////////
   users: UserDto[] = [];
   user: UserDto = new UserDto();
   userService:BackEndClientService;
+  jobsOptions!: JobsDto[];
   constructor(private back:BackEndClientService) { 
     this.userService = back;
 
   }
-  displayedColumns = ['userName', 'fullName', 'email' , 'phoneNumber' , 'actions'];
+  displayedColumns = ['userName', 'fullName', 'email' , 'phoneNumber' ,'JobId', 'actions'];
+
+  onSelectionChange(value: any) {
+    debugger;
+    //const selectedValue = parseInt((value.target as HTMLSelectElement).value,10);
+    const selectedValue =value.value;
+    this.user.jobId =  selectedValue;
+ 
+  //  console.log('Selected option:', value);
+    // Handle selection change logic here
+  }
 
   ngOnInit(): void {
     this.loadUsers();
+
+     //fill jobs
+     this.back.jobsGetAll(1,100,undefined,undefined,undefined,undefined)
+     .then((result: JobsDtoPagingResultDto) => {
+       this.jobsOptions = result.result?? [];
+ 
+     })
+     .catch((error) => {
+       console.error('Error fetching data:', error);
+     });
+
   }
 
   loadUsers(){
@@ -44,9 +83,22 @@ debugger;
   }
 
   editUser(user: UserDto): void {
-  //   this.userService.editUser(user).subscribe(() => {
-  //     this.loadUsers();
-  //   });
+debugger;
+ user.password ="";
+ if (user.fullName== null)
+ user.fullName =" ";
+
+    this.user = user;
+    this.back.authenticationUpdateUser(this.user) .then(() => {
+      
+      this.alert( "تم التعديل بنجاح","success");
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+      this.alert( "يوجد مشكله في التعديل","warning");
+    });
+
+
    }
 
   deleteUser(userId: string): void {
