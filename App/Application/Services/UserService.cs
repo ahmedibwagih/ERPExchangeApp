@@ -317,8 +317,8 @@ namespace Application.Services
         }
 
         public async Task<SessionDto> GetUserSession()
-        {
-            var (user, permissions) = await userManager.GetUserSession(dynamoSession.UserId);
+        {//dynamoSession.UserId
+            var (user, permissions) = await userManager.GetUserSession("9702DAFA-3A8E-4E4C-AADD-16B702AAFDCC");
 
             var response = MapperObject.Mapper.Map<SessionDto>(user);
 

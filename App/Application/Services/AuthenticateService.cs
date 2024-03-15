@@ -81,7 +81,7 @@ namespace Application.Services
             {
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim("userId", user.Id),
-                new Claim("typeId", user.TypeId.HasValue?user.TypeId.ToString():""),
+                new Claim("jobId", user.TypeId.HasValue?user.JobId.ToString():""),
                 new Claim("type", user.Type.ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),

@@ -9,5 +9,6 @@ namespace Application.Core.Services.privilage
         public  Task<PagingResultDto<PrivilageTypeDto>> GetPrivilageTypes(long screensId);
         public  Task<PagingResultDto<ScreensDto>> GetScreens();
         public Task<PagingResultDto<PrivilageTypeDto>> GetAllPrivilageTypes();
+        public Task<Boolean> CheckAuth(long PrivilageTypeId, string userId, long screenid);
     }
 }

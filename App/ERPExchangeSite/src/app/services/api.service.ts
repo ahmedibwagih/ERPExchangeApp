@@ -1697,6 +1697,59 @@ export class Client {
     }
 
     /**
+     * @param privilageTypeId (optional) 
+     * @param userid (optional) 
+     * @param screenid (optional) 
+     * @return Success
+     */
+    privilageCheckAuth(privilageTypeId: number | undefined, userid: string | undefined, screenid: number | undefined): Promise<boolean> {
+        let url_ = this.baseUrl + "/api/Privilage/CheckAuth?";
+        if (privilageTypeId === null)
+            throw new Error("The parameter 'privilageTypeId' cannot be null.");
+        else if (privilageTypeId !== undefined)
+            url_ += "PrivilageTypeId=" + encodeURIComponent("" + privilageTypeId) + "&";
+        if (userid === null)
+            throw new Error("The parameter 'userid' cannot be null.");
+        else if (userid !== undefined)
+            url_ += "userid=" + encodeURIComponent("" + userid) + "&";
+        if (screenid === null)
+            throw new Error("The parameter 'screenid' cannot be null.");
+        else if (screenid !== undefined)
+            url_ += "screenid=" + encodeURIComponent("" + screenid) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageCheckAuth(_response);
+        });
+    }
+
+    protected processPrivilageCheckAuth(response: Response): Promise<boolean> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+                result200 = resultData200 !== undefined ? resultData200 : <any>null;
+    
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<boolean>(null as any);
+    }
+
+    /**
      * @param id (optional) 
      * @return Success
      */
@@ -2877,6 +2930,7 @@ export interface IScreensDtoPagingResultDto {
 export class SessionDto implements ISessionDto {
     userId?: string | undefined;
     userName?: string | undefined;
+    jobId?: number;
 
     constructor(data?: ISessionDto) {
         if (data) {
@@ -2891,6 +2945,7 @@ export class SessionDto implements ISessionDto {
         if (_data) {
             this.userId = _data["userId"];
             this.userName = _data["userName"];
+            this.jobId = _data["jobId"];
         }
     }
 
@@ -2905,6 +2960,7 @@ export class SessionDto implements ISessionDto {
         data = typeof data === 'object' ? data : {};
         data["userId"] = this.userId;
         data["userName"] = this.userName;
+        data["jobId"] = this.jobId;
         return data;
     }
 }
@@ -2912,6 +2968,7 @@ export class SessionDto implements ISessionDto {
 export interface ISessionDto {
     userId?: string | undefined;
     userName?: string | undefined;
+    jobId?: number;
 }
 
 export class TokenDto implements ITokenDto {

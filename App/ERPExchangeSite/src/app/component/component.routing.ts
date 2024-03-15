@@ -21,7 +21,9 @@ import { UserManagementComponent } from './Privilage/user-management/user-manage
 
 
 export const ComponentsRoutes: Routes = [
+	
 	{
+		
 		path: '',
 		children: [
 			

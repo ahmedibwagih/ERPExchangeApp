@@ -18,6 +18,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+  
   {
     path: '/component/lookups/countries',
     title: 'الدول',
@@ -76,7 +77,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
-  
+
 
   // ,
   // {

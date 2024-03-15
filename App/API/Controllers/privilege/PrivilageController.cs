@@ -11,8 +11,12 @@ using Core.DTOs;
 using Core.Entities.LookUps;
 using Core.Entities.privilege;
 using Core.Other;
+using Dynamo.Context.Identity;
+using Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers.LookUps
 {
@@ -22,10 +26,13 @@ namespace Api.Controllers.LookUps
     {
 
         private readonly IPrivilageService service;
-
-        public PrivilageController(IPrivilageService service)
+        private readonly IAuthenticateService authservice;
+        private readonly DynamoUserManager userManager;
+        public PrivilageController(IPrivilageService service, IAuthenticateService authservice, DynamoUserManager userManager)
         {
             this.service = service;
+            this.authservice = authservice;
+            this.userManager = userManager;
         }
 
         [HttpGet]
@@ -85,6 +92,15 @@ namespace Api.Controllers.LookUps
         public async Task Update([FromBody] PrivilageDto input)
         {
             await service.Update(input);
+        }
+
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("[action]")]
+        public async Task<Boolean> CheckAuth(long PrivilageTypeId,string userid, long screenid)
+        {
+           return await service.CheckAuth(PrivilageTypeId, userid,  screenid);
         }
 
         [HttpPost]

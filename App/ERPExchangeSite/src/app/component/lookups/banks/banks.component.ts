@@ -2,7 +2,9 @@ import { Component, OnInit, ViewChild  } from '@angular/core';
 import { BanksDto, BanksDtoPagingResultDto } from 'src/app/services/api.service';
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
 import { GenericAlertComponent } from '../../General/generic-alert/generic-alert.component';
-
+import { PublicClsService } from 'src/app/services/public-cls.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-banks',
   templateUrl: './banks.component.html',
@@ -40,12 +42,39 @@ export class BanksComponent implements OnInit {
   displayedColumns = ['nameAr', 'nameEn', 'riskRate', 'actions'];
 
   backend:BackEndClientService;
-  constructor(private back:BackEndClientService) { 
+  constructor(private back:BackEndClientService,public router: Router,public location: Location) { 
     this.backend = back;
 
   }
 
+
+  ngAfterViewInit() {
+   
+  }
   ngOnInit(): void {
+    
+    // this.back.banksGetAll(1,100,undefined,undefined,undefined,undefined)
+    // .then((result: BanksDtoPagingResultDto) => {
+    //   this.Allbanks = result;
+    //   this.banks=this.Allbanks.result  ?? [];
+    // })
+
+    this.back.privilageCheckAuth(2,PublicClsService.Getuserid(),0)
+    .then((result: boolean) => {
+      if (result == false)
+      {
+       // this.router.navigate(["/Unauthorized/Unauthorized"]);
+        this.router.navigateByUrl('component/Unauthorized/Unauthorized');
+       // this.location.go('component/Unauthorized/Unauthorized');
+  
+
+      }
+    })
+    .catch((error) => {
+      debugger;
+      console.error('Error fetching data:', error);
+    });
+    
     this.fillBanks();
   }
 

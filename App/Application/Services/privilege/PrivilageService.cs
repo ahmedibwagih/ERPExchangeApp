@@ -35,12 +35,14 @@ namespace Application.Services.privilage
     public class PrivilageService : BaseService<Privilage, PrivilageDto, PrivilageDto, PrivilageDto, PrivilageDto>, IPrivilageService
     {
         private readonly DynamoSession session;
-
+        private readonly IUserService userService;
         public PrivilageService(IUnitOfWork unitOfWork,
-       DynamoSession session) : base(unitOfWork)
+       DynamoSession session, IUserService userService) : base(unitOfWork)
         {
 
             this.session = session;
+            this.userService = userService;
+
         }
 
         public override async Task<PrivilageDto> GetById(long id)
@@ -49,6 +51,11 @@ namespace Application.Services.privilage
             return response;
         }
 
+        public async Task<Boolean> CheckAuth(long PrivilageTypeId,string userId, long screenid)
+        {
+            var jobid =(await userService.GetByIdLight(userId)).JobId;
+           return await UnitOfWork.Privilage.CheckAuth(PrivilageTypeId, jobid,  screenid);
+        }
 
         public  async Task<PagingResultDto<PrivilageTypeDto>> GetPrivilageTypes(long screensId)
         {
