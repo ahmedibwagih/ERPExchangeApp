@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Core.Other;
 using Dynamo.Core.Entities.Base;
 using System;
+using Core.Entities.LookUps;
 
 namespace Core.Entities.privilege
 {
@@ -18,7 +19,9 @@ namespace Core.Entities.privilege
         public PrivilageType PrivilageType { get; set; }
 
 
-        public string RoleId { get; set; }
+        public long JobId { get; set; }
+        [ForeignKey("JobId")]
+        public Jobs Jobs { get; set; }
 
         public PrivilageStateEnum  State { get; set; }
         //[ForeignKey("PrivilageTypeId")]

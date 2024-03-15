@@ -4,6 +4,7 @@ using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20240315071358_editPriviledge")]
+    partial class editPriviledge
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -234,12 +237,12 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Core.Entities.privilege.PrivilageType", b =>
                 {
-                    b.Property<long>("PrivilageTypeId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasColumnOrder(0);
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("PrivilageTypeId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("NameAr")
                         .HasColumnType("nvarchar(max)");
@@ -250,7 +253,7 @@ namespace Infrastructure.Migrations
                     b.Property<long>("ScreensId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("PrivilageTypeId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ScreensId");
 
@@ -259,12 +262,12 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Core.Entities.privilege.Screens", b =>
                 {
-                    b.Property<long>("ScreenId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasColumnOrder(0);
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ScreenId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<bool>("IsFinal")
                         .HasColumnType("bit");
@@ -278,7 +281,7 @@ namespace Infrastructure.Migrations
                     b.Property<long?>("ScreenParrentId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("ScreenId");
+                    b.HasKey("Id");
 
                     b.ToTable("Screens");
                 });

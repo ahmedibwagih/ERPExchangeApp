@@ -6,9 +6,14 @@ using System;
 
 namespace Core.Entities.privilege
 {
-    public class Screens : Entity
+    public class Screens 
     {
-        public string Name { get; set; }
+        [Key]
+        [Column(Order = 0)]
+        public long ScreenId { get; set; }
+
+        public string NameAr { get; set; }
+        public string NameEn { get; set; }
         public bool IsFinal { get; set; }
 
         public long? ScreenParrentId { get; set; }
