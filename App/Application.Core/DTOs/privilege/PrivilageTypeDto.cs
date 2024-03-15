@@ -7,9 +7,11 @@ using Core.DTOs;
 
 namespace Application.Core.DTOs.privilege
 {
-    public class PrivilageTypeDto : EntityDto
+    public class PrivilageTypeDto 
     {
-        public string Name { get; set; }
+        public long PrivilageTypeId { get; set; }
+        public string NameAr { get; set; }
+        public string NameEn { get; set; }
         public long ScreensId { get; set; }
 
     }

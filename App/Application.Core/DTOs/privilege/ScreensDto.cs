@@ -7,10 +7,14 @@ using Core.DTOs;
 
 namespace Application.Core.DTOs.privilege
 {
-    public class ScreensDto : EntityDto
+    public class ScreensDto 
     {
-        public string Name { get; set; }
+        public long ScreenId { get; set; }
+
+        public string NameAr { get; set; }
+        public string NameEn { get; set; }
         public bool IsFinal { get; set; }
+
         public long? ScreenParrentId { get; set; }
 
     }

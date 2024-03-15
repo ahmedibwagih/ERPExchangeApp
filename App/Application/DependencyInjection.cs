@@ -1,7 +1,9 @@
 ﻿using Application.Core.Services;
 using Application.Core.Services.LookUps;
+using Application.Core.Services.privilage;
 using Application.Services;
 using Application.Services.LookUps;
+using Application.Services.privilage;
 using Core;
 using Core.Entities.LookUps;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +28,7 @@ namespace Application
             services.AddScoped< IIdentitySourcesService, IdentitySourcesService>();
             services.AddScoped< IJobsService, JobsService>();
             services.AddScoped < ITransferPurposesService, TransferPurposesService>();
+            services.AddScoped<IPrivilageService, PrivilageService>();
             return services;
         }
     }

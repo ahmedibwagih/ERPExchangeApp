@@ -65,7 +65,7 @@ namespace Infrastructure
             services.AddScoped(typeof(IIdentitySourcesRepository), typeof(IdentitySourcesRepository));
             services.AddScoped(typeof(IJobsRepository), typeof(JobsRepository));
             services.AddScoped(typeof(ITransferPurposesRepository), typeof(TransferPurposesRepository));
-
+            services.AddScoped(typeof(IPrivilageRepository), typeof(PrivilageRepository));
 
             return services;
         }
