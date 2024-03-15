@@ -102,6 +102,15 @@ namespace Api.Controllers.LookUps
         {
            return await service.CheckAuth(PrivilageTypeId, userid,  screenid);
         }
+       
+
+                 [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("[action]")]
+        public async Task<Boolean> CheckAuthByName(string userId, string screenName, string PrivilageTypeName)
+        {
+            return await service.CheckAuthByName(userId, screenName, PrivilageTypeName);
+        }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]

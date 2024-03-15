@@ -57,6 +57,12 @@ namespace Application.Services.privilage
            return await UnitOfWork.Privilage.CheckAuth(PrivilageTypeId, jobid,  screenid);
         }
 
+        public async Task<Boolean> CheckAuthByName(string userId, string screenName, string PrivilageTypeName)
+        {
+            var jobid = (await userService.GetByIdLight(userId)).JobId;
+            return await UnitOfWork.Privilage.CheckAuthByName(jobid,  screenName, PrivilageTypeName);
+        }
+
         public  async Task<PagingResultDto<PrivilageTypeDto>> GetPrivilageTypes(long screensId)
         {
             var result = (await UnitOfWork.PrivilageType.GetAllAsync()).Where(a=>a.ScreensId == screensId);

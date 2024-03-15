@@ -59,7 +59,7 @@ export class BanksComponent implements OnInit {
     //   this.banks=this.Allbanks.result  ?? [];
     // })
 debugger;
-    this.back.privilageCheckAuth(2,this.PublicClsService.Getuserid(),0)
+    this.back.privilageCheckAuthByName(this.PublicClsService.Getuserid(),'banks','query')
     .then((result: boolean) => {
       if (result == false)
       {

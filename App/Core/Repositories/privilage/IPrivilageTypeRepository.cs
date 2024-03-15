@@ -8,6 +8,6 @@ namespace Core.Repositories.privilage
     public interface IPrivilageRepository : IRepository<Privilage>
     {
         Task<bool> CheckAuth(long PrivilageTypeId, long jobid, long screenid);
-
+        Task<bool> CheckAuthByName(long jobid, string screenName, string PrivilageTypeName);
     }
 }
