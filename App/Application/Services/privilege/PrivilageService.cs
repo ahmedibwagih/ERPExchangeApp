@@ -39,7 +39,7 @@ namespace Application.Services.privilage
         public PrivilageService(IUnitOfWork unitOfWork,
        DynamoSession session) : base(unitOfWork)
         {
-            
+
             this.session = session;
         }
 
@@ -49,8 +49,54 @@ namespace Application.Services.privilage
             return response;
         }
 
-    
-  
-    
+
+        public  async Task<PagingResultDto<PrivilageTypeDto>> GetPrivilageTypes(long screensId)
+        {
+            var result = (await UnitOfWork.PrivilageType.GetAllAsync()).Where(a=>a.ScreensId == screensId);
+
+            var list = Mapper.MapperObject.Mapper.Map<IList<PrivilageTypeDto>>(result);
+
+            var response = new PagingResultDto<PrivilageTypeDto>
+            {
+                Result = list,
+                Total = 1000
+            };
+
+            return response;
+        }
+
+        public async Task<PagingResultDto<PrivilageTypeDto>> GetAllPrivilageTypes()
+        {
+            var result = (await UnitOfWork.PrivilageType.GetAllAsync());
+
+            var list = Mapper.MapperObject.Mapper.Map<IList<PrivilageTypeDto>>(result);
+
+            var response = new PagingResultDto<PrivilageTypeDto>
+            {
+                Result = list,
+                Total = 1000
+            };
+
+            return response;
+        }
+
+
+        public async Task<PagingResultDto<ScreensDto>> GetScreens()
+        {
+            var result = (await UnitOfWork.Screen.GetAllAsync());
+
+            var list = Mapper.MapperObject.Mapper.Map<IList<ScreensDto>>(result);
+
+            var response = new PagingResultDto<ScreensDto>
+            {
+                Result = list,
+                Total = 1000
+            };
+
+            return response;
+        }
+
+
+
     }
 }

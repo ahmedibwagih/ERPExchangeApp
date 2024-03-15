@@ -9,6 +9,7 @@ import { NgbdButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
 import { BanksComponent } from './lookups/banks/banks.component';
+import { PrivilagesComponent } from './Privilage/Privilage/Privilage.component';
 import { JobsComponent } from './lookups/Jobs/Jobs.component';
 import { CountriesComponent } from './lookups/countries/countries.component';
 import { CurrenciesComponent } from './lookups/currencies/currencies.component';
@@ -30,6 +31,11 @@ export const ComponentsRoutes: Routes = [
 			{
 				path: 'lookups/banks',
 				component: BanksComponent
+			}
+			,
+			{
+				path: 'Privilage/Privilage',
+				component: PrivilagesComponent
 			},
 			{
 				path: 'lookups/jobs',

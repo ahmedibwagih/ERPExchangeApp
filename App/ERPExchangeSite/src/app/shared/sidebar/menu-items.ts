@@ -66,6 +66,15 @@ export const ROUTES: RouteInfo[] = [
     class: '',
     extralink: false,
     submenu: []
+  }
+  ,
+  {
+    path: '/component/Privilage/Privilage',
+    title: 'الصلاحيات',
+    icon: 'bi bi-bell',
+    class: '',
+    extralink: false,
+    submenu: []
   },
 
   // ,

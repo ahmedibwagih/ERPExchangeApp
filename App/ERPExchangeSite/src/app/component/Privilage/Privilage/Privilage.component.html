@@ -1,0 +1,138 @@
+
+<app-generic-alert   *ngIf="showAlert" [message]="alertMessage" [type]="alertType" (close)="onCloseAlert()"></app-generic-alert>
+
+<mat-card>
+  <mat-card-header style="direction: rtl;">
+    <div class="header-row" >
+      <span class="label">اختار الوظيفة:</span>
+      <mat-form-field appearance="fill">
+        <mat-select (selectionChange)="onSelectionChange($event)" >
+          <mat-option *ngFor="let option of jobsOptions" [value]="option.id">{{ option.nameAr }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-header>
+
+
+
+
+
+
+    
+
+
+    <mat-card-content  fxLayout="column" fxLayoutAlign="end center" style="direction: rtl;">
+      <!-- Form for adding/editing privilage -->
+      <!-- <form (ngSubmit)="savePrivilage()" >
+      
+        <mat-form-field>
+          <mat-label>الوظيفة</mat-label>
+          <mat-select placeholder="اختار الوظيفة" name="JobId" [(ngModel)]="privilage.jobId" required>
+            <mat-option *ngFor="let option of jobsOptions" [value]="option.id">
+              {{ option.nameAr }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>الشاشة</mat-label>
+          <mat-select placeholder="اختار الشاشة" name="ScreensId" [(ngModel)]="privilage.screensId" required>
+            <mat-option *ngFor="let option of ScreensOptions" [value]="option.screenId">
+              {{ option.nameAr }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <mat-label>نوع الصلاحية</mat-label>
+          <mat-select placeholder="اختار نوع الصلاحية" name="PrivilageTypeId" [(ngModel)]="privilage.privilageTypeId" required>
+            <mat-option *ngFor="let option of PrivilageTypesOptions" [value]="option.privilageTypeId">
+              {{ option.nameAr }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+ 
+        <mat-form-field>
+          <mat-label> الصلاحية</mat-label>
+          <mat-select placeholder="اختار  الصلاحية" name="State" [(ngModel)]="privilage.state" >
+            <mat-option *ngFor="let option of stateOptions" [value]="option.value">
+              {{ option.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form> -->
+  
+        <!-- <button mat-raised-button color="primary" type="submit">{{ isEditing ? 'تعديل' : 'اضافة' }}</button> -->
+    
+      <!-- Display privilages in a table -->
+      <table mat-table [dataSource]="privilages">
+  
+
+        <ng-container matColumnDef="JobId">
+          <th mat-header-cell *matHeaderCellDef>الوظيفة</th>
+          <td mat-cell *matCellDef="let privilage">
+            <mat-select placeholder="اختار الوظيفة" [value]="privilage.jobId" [disabled]="true">
+              <mat-option *ngFor="let option of jobsOptions" [value]="option.id">
+                {{ option.nameAr }}
+              </mat-option>
+            </mat-select>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ScreensId">
+          <th mat-header-cell *matHeaderCellDef>الشاشة</th>
+          <td mat-cell *matCellDef="let privilage">
+            <mat-select placeholder="اختار الشاشة" [value]="privilage.screensId" [disabled]="true">
+              <mat-option *ngFor="let option of ScreensOptions" [value]="option.screenId">
+                {{ option.nameAr }}
+              </mat-option>
+            </mat-select>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="PrivilageTypeId">
+          <th mat-header-cell *matHeaderCellDef>نوع الصلاحية</th>
+          <td mat-cell *matCellDef="let privilage">
+            <mat-select placeholder="نوع الصلاحية" [value]="privilage.privilageTypeId" [disabled]="true">
+              <mat-option *ngFor="let option of PrivilageTypesOptions" [value]="option.privilageTypeId">
+                {{ option.nameAr }}
+              </mat-option>
+            </mat-select>
+          </td>
+        </ng-container>
+
+
+      
+  
+        <ng-container matColumnDef="State">
+          <th mat-header-cell *matHeaderCellDef>الصلاحية </th>
+          <td mat-cell *matCellDef="let privilage">
+            <mat-select (selectionChange)="setVal(privilage)"  placeholder="الصلاحية" [value]="privilage.state" >
+              <mat-option  *ngFor="let option of stateOptions" [value]="option.value">
+                {{ option.viewValue }}
+              </mat-option>
+            </mat-select>
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let privilage">
+            <button mat-icon-button color="primary" (click)="editPrivilage(privilage)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <!-- <button mat-icon-button color="warn" (click)="deletePrivilage(privilage)">
+              <mat-icon>delete</mat-icon>
+            </button> -->
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+  

@@ -10,7 +10,6 @@
 
 export class Client {
     private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
-    
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
 
@@ -267,7 +266,6 @@ export class Client {
      * @return Success
      */
     banksGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<BanksDtoPagingResultDto> {
-        debugger;
         let url_ = this.baseUrl + "/api/Banks/GetAll?";
         if (pageNumber === null)
             throw new Error("The parameter 'pageNumber' cannot be null.");
@@ -1394,6 +1392,349 @@ export class Client {
     }
 
     /**
+     * @param screensId (optional) 
+     * @return Success
+     */
+    privilageGetPrivilageTypes(screensId: number | undefined): Promise<PrivilageTypeDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Privilage/GetPrivilageTypes?";
+        if (screensId === null)
+            throw new Error("The parameter 'screensId' cannot be null.");
+        else if (screensId !== undefined)
+            url_ += "screensId=" + encodeURIComponent("" + screensId) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageGetPrivilageTypes(_response);
+        });
+    }
+
+    protected processPrivilageGetPrivilageTypes(response: Response): Promise<PrivilageTypeDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = PrivilageTypeDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<PrivilageTypeDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @return Success
+     */
+    privilageGetAllPrivilageTypes(): Promise<PrivilageTypeDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Privilage/GetAllPrivilageTypes";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageGetAllPrivilageTypes(_response);
+        });
+    }
+
+    protected processPrivilageGetAllPrivilageTypes(response: Response): Promise<PrivilageTypeDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = PrivilageTypeDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<PrivilageTypeDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @return Success
+     */
+    privilageGetScreens(): Promise<ScreensDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Privilage/GetScreens";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageGetScreens(_response);
+        });
+    }
+
+    protected processPrivilageGetScreens(response: Response): Promise<ScreensDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = ScreensDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<ScreensDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param pageNumber (optional) 
+     * @param pageSize (optional) 
+     * @param orderByField (optional) 
+     * @param orderType (optional) 
+     * @param filter (optional) 
+     * @param hiddenFilter (optional) 
+     * @return Success
+     */
+    privilageGetAll(pageNumber: number | undefined, pageSize: number | undefined, orderByField: string | undefined, orderType: string | undefined, filter: string | undefined, hiddenFilter: string | undefined): Promise<PrivilageDtoPagingResultDto> {
+        let url_ = this.baseUrl + "/api/Privilage/GetAll?";
+        if (pageNumber === null)
+            throw new Error("The parameter 'pageNumber' cannot be null.");
+        else if (pageNumber !== undefined)
+            url_ += "PageNumber=" + encodeURIComponent("" + pageNumber) + "&";
+        if (pageSize === null)
+            throw new Error("The parameter 'pageSize' cannot be null.");
+        else if (pageSize !== undefined)
+            url_ += "PageSize=" + encodeURIComponent("" + pageSize) + "&";
+        if (orderByField === null)
+            throw new Error("The parameter 'orderByField' cannot be null.");
+        else if (orderByField !== undefined)
+            url_ += "OrderByField=" + encodeURIComponent("" + orderByField) + "&";
+        if (orderType === null)
+            throw new Error("The parameter 'orderType' cannot be null.");
+        else if (orderType !== undefined)
+            url_ += "OrderType=" + encodeURIComponent("" + orderType) + "&";
+        if (filter === null)
+            throw new Error("The parameter 'filter' cannot be null.");
+        else if (filter !== undefined)
+            url_ += "Filter=" + encodeURIComponent("" + filter) + "&";
+        if (hiddenFilter === null)
+            throw new Error("The parameter 'hiddenFilter' cannot be null.");
+        else if (hiddenFilter !== undefined)
+            url_ += "HiddenFilter=" + encodeURIComponent("" + hiddenFilter) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageGetAll(_response);
+        });
+    }
+
+    protected processPrivilageGetAll(response: Response): Promise<PrivilageDtoPagingResultDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = PrivilageDtoPagingResultDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<PrivilageDtoPagingResultDto>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    privilageGet(id: number | undefined): Promise<PrivilageDto> {
+        let url_ = this.baseUrl + "/api/Privilage/Get?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "GET",
+            headers: {
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageGet(_response);
+        });
+    }
+
+    protected processPrivilageGet(response: Response): Promise<PrivilageDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = PrivilageDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<PrivilageDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    privilageCreate(body: PrivilageDto | undefined): Promise<PrivilageDto> {
+        let url_ = this.baseUrl + "/api/Privilage/Create";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageCreate(_response);
+        });
+    }
+
+    protected processPrivilageCreate(response: Response): Promise<PrivilageDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = PrivilageDto.fromJS(resultData200);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<PrivilageDto>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    privilageUpdate(body: PrivilageDto | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Privilage/Update";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_: RequestInit = {
+            body: content_,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageUpdate(_response);
+        });
+    }
+
+    protected processPrivilageUpdate(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
+     * @param id (optional) 
+     * @return Success
+     */
+    privilageDelete(id: number | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/api/Privilage/Delete?";
+        if (id === null)
+            throw new Error("The parameter 'id' cannot be null.");
+        else if (id !== undefined)
+            url_ += "id=" + encodeURIComponent("" + id) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_: RequestInit = {
+            method: "POST",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processPrivilageDelete(_response);
+        });
+    }
+
+    protected processPrivilageDelete(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(null as any);
+    }
+
+    /**
      * @param pageNumber (optional) 
      * @param pageSize (optional) 
      * @param orderByField (optional) 
@@ -2231,6 +2572,306 @@ export class LoginDto implements ILoginDto {
 export interface ILoginDto {
     userName: string;
     password: string;
+}
+
+export class PrivilageDto implements IPrivilageDto {
+    id?: number;
+    readOnly?: boolean;
+    screensId?: number;
+    privilageTypeId?: number;
+    jobId?: number;
+    state?: number;
+
+    constructor(data?: IPrivilageDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.readOnly = _data["readOnly"];
+            this.screensId = _data["screensId"];
+            this.privilageTypeId = _data["privilageTypeId"];
+            this.jobId = _data["jobId"];
+            this.state = _data["state"];
+        }
+    }
+
+    static fromJS(data: any): PrivilageDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new PrivilageDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["readOnly"] = this.readOnly;
+        data["screensId"] = this.screensId;
+        data["privilageTypeId"] = this.privilageTypeId;
+        data["jobId"] = this.jobId;
+        data["state"] = this.state;
+        return data;
+    }
+}
+
+export interface IPrivilageDto {
+    id?: number;
+    readOnly?: boolean;
+    screensId?: number;
+    privilageTypeId?: number;
+    jobId?: number;
+    state?: number;
+}
+
+export class PrivilageDtoPagingResultDto implements IPrivilageDtoPagingResultDto {
+    total?: number;
+    result?: PrivilageDto[] | undefined;
+
+    constructor(data?: IPrivilageDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(PrivilageDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): PrivilageDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new PrivilageDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface IPrivilageDtoPagingResultDto {
+    total?: number;
+    result?: PrivilageDto[] | undefined;
+}
+
+export class PrivilageTypeDto implements IPrivilageTypeDto {
+    privilageTypeId?: number;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    screensId?: number;
+
+    constructor(data?: IPrivilageTypeDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.privilageTypeId = _data["privilageTypeId"];
+            this.nameAr = _data["nameAr"];
+            this.nameEn = _data["nameEn"];
+            this.screensId = _data["screensId"];
+        }
+    }
+
+    static fromJS(data: any): PrivilageTypeDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new PrivilageTypeDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["privilageTypeId"] = this.privilageTypeId;
+        data["nameAr"] = this.nameAr;
+        data["nameEn"] = this.nameEn;
+        data["screensId"] = this.screensId;
+        return data;
+    }
+}
+
+export interface IPrivilageTypeDto {
+    privilageTypeId?: number;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    screensId?: number;
+}
+
+export class PrivilageTypeDtoPagingResultDto implements IPrivilageTypeDtoPagingResultDto {
+    total?: number;
+    result?: PrivilageTypeDto[] | undefined;
+
+    constructor(data?: IPrivilageTypeDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(PrivilageTypeDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): PrivilageTypeDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new PrivilageTypeDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface IPrivilageTypeDtoPagingResultDto {
+    total?: number;
+    result?: PrivilageTypeDto[] | undefined;
+}
+
+export class ScreensDto implements IScreensDto {
+    screenId?: number;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    isFinal?: boolean;
+    screenParrentId?: number | undefined;
+
+    constructor(data?: IScreensDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.screenId = _data["screenId"];
+            this.nameAr = _data["nameAr"];
+            this.nameEn = _data["nameEn"];
+            this.isFinal = _data["isFinal"];
+            this.screenParrentId = _data["screenParrentId"];
+        }
+    }
+
+    static fromJS(data: any): ScreensDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new ScreensDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["screenId"] = this.screenId;
+        data["nameAr"] = this.nameAr;
+        data["nameEn"] = this.nameEn;
+        data["isFinal"] = this.isFinal;
+        data["screenParrentId"] = this.screenParrentId;
+        return data;
+    }
+}
+
+export interface IScreensDto {
+    screenId?: number;
+    nameAr?: string | undefined;
+    nameEn?: string | undefined;
+    isFinal?: boolean;
+    screenParrentId?: number | undefined;
+}
+
+export class ScreensDtoPagingResultDto implements IScreensDtoPagingResultDto {
+    total?: number;
+    result?: ScreensDto[] | undefined;
+
+    constructor(data?: IScreensDtoPagingResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.total = _data["total"];
+            if (Array.isArray(_data["result"])) {
+                this.result = [] as any;
+                for (let item of _data["result"])
+                    this.result!.push(ScreensDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): ScreensDtoPagingResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new ScreensDtoPagingResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["total"] = this.total;
+        if (Array.isArray(this.result)) {
+            data["result"] = [];
+            for (let item of this.result)
+                data["result"].push(item.toJSON());
+        }
+        return data;
+    }
+}
+
+export interface IScreensDtoPagingResultDto {
+    total?: number;
+    result?: ScreensDto[] | undefined;
 }
 
 export class SessionDto implements ISessionDto {

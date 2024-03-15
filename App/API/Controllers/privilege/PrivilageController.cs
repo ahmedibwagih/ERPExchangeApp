@@ -4,6 +4,7 @@ using Application.Core.DTOs.LookUps;
 using Application.Core.DTOs.privilege;
 using Application.Core.DTOs.User;
 using Application.Core.Services;
+using Application.Core.Services.privilage;
 using Application.Services;
 using Application.Services.LookUps;
 using Core.DTOs;
@@ -20,14 +21,40 @@ namespace Api.Controllers.LookUps
     public class PrivilageController : ControllerBase
     {
 
-        private readonly IService<Privilage, PrivilageDto, PrivilageDto, PrivilageDto, PrivilageDto> service;
+        private readonly IPrivilageService service;
 
-        public PrivilageController(IService<Privilage, PrivilageDto, PrivilageDto, PrivilageDto, PrivilageDto> service)
+        public PrivilageController(IPrivilageService service)
         {
             this.service = service;
         }
 
-     
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("[action]")]
+        public async Task<PagingResultDto<PrivilageTypeDto>> GetPrivilageTypes(long screensId)
+        {
+            return await service.GetPrivilageTypes(screensId);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("[action]")]
+        public async Task<PagingResultDto<PrivilageTypeDto>> GetAllPrivilageTypes()
+        {
+            return await service.GetAllPrivilageTypes();
+        }
+
+
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("[action]")]
+        public async Task<PagingResultDto<ScreensDto>> GetScreens()
+        {
+            return await service.GetScreens();
+        }
+
+
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("[action]")]
