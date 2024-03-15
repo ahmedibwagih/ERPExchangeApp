@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild  } from '@angular/core';
 import { JobsDto, JobsDtoPagingResultDto } from 'src/app/services/api.service';
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
 import { GenericAlertComponent } from '../../General/generic-alert/generic-alert.component';
+import { PublicClsService } from 'src/app/services/public-cls.service';
 
 @Component({
   selector: 'app-jobs',
@@ -40,12 +41,13 @@ export class JobsComponent implements OnInit {
   displayedColumns = ['nameAr', 'nameEn', 'riskRate', 'actions'];
 
   backend:BackEndClientService;
-  constructor(private back:BackEndClientService) { 
+  constructor(public PublicClsService:PublicClsService,private back:BackEndClientService) { 
     this.backend = back;
 
   }
 
   ngOnInit(): void {
+    this.PublicClsService.CheckQuery('Jobs');
     this.fillJobs();
   }
 

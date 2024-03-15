@@ -52,28 +52,28 @@ export class BanksComponent implements OnInit {
    
   }
   ngOnInit(): void {
-    
+    this.PublicClsService.CheckQuery('banks');
     // this.back.banksGetAll(1,100,undefined,undefined,undefined,undefined)
     // .then((result: BanksDtoPagingResultDto) => {
     //   this.Allbanks = result;
     //   this.banks=this.Allbanks.result  ?? [];
     // })
-debugger;
-    this.back.privilageCheckAuthByName(this.PublicClsService.Getuserid(),'banks','query')
-    .then((result: boolean) => {
-      if (result == false)
-      {
-       // this.router.navigate(["/Unauthorized/Unauthorized"]);
-        this.router.navigateByUrl('component/Unauthorized/Unauthorized');
-       // this.location.go('component/Unauthorized/Unauthorized');
+// debugger;
+//     this.back.privilageCheckAuthByName(this.PublicClsService.Getuserid(),'banks','query')
+//     .then((result: boolean) => {
+//       if (result == false)
+//       {
+//        // this.router.navigate(["/Unauthorized/Unauthorized"]);
+//         this.router.navigateByUrl('component/Unauthorized/Unauthorized');
+
   
 
-      }
-    })
-    .catch((error) => {
-      debugger;
-      console.error('Error fetching data:', error);
-    });
+//       }
+//     })
+//     .catch((error) => {
+//       debugger;
+//       console.error('Error fetching data:', error);
+//     });
     
     this.fillBanks();
   }

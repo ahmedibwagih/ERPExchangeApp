@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild  } from '@angular/core';
 import { CountriesDto, CurrenciesDto, CurrenciesDtoPagingResultDto } from 'src/app/services/api.service';
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
 import { GenericAlertComponent } from '../../General/generic-alert/generic-alert.component';
+import { PublicClsService } from 'src/app/services/public-cls.service';
 
 @Component({
   selector: 'app-currencies',
@@ -44,13 +45,14 @@ export class CurrenciesComponent implements OnInit {
   displayedColumns = ['nameAr', 'nameEn', 'riskRate','countryId', 'actions'];
 
   backend:BackEndClientService;
-  constructor(private back:BackEndClientService) { 
+  constructor(public PublicClsService:PublicClsService,private back:BackEndClientService) { 
     this.backend = back;
 
   }
 
   
   ngOnInit(): void {
+    this.PublicClsService.CheckQuery('Currencies');
     this.fillCurrencies();
    
 

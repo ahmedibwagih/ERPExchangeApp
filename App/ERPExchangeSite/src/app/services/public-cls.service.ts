@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { BackEndClientService } from './back-end-client.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +11,23 @@ export class PublicClsService {
   static baseUrl: string = 'https://localhost:7080';
 
   jwtHelperNew: JwtHelperService ;
-  constructor( jwtHelper: JwtHelperService) { 
+  backend:BackEndClientService;
+  constructor( jwtHelper: JwtHelperService,private back:BackEndClientService,public router: Router) { 
     this.jwtHelperNew=jwtHelper;
+    this.backend = back;
   }
 
+  CheckQuery(screenname:any)
+  {
+    this.back.privilageCheckAuthByName(this.Getuserid(),screenname,'query')
+    .then((result: boolean) => {
+      if (result == false)
+      {
+        this.router.navigateByUrl('component/Unauthorized/Unauthorized');
+     }
+    });
+
+  }
    Getuserid(): string {
 
 

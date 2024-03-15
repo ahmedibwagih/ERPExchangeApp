@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
 import { JobsDto, JobsDtoPagingResultDto, UserDto, UserDtoPagingResultDto } from 'src/app/services/api.service';
+import { PublicClsService } from 'src/app/services/public-cls.service';
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
@@ -32,7 +33,7 @@ export class UserManagementComponent implements OnInit {
   userService:BackEndClientService;
   jobsOptions!: JobsDto[];
   setJobid:number=0;
-  constructor(private back:BackEndClientService) { 
+  constructor(public PublicClsService:PublicClsService,private back:BackEndClientService) { 
     this.userService = back;
 
   }
@@ -49,6 +50,7 @@ export class UserManagementComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.PublicClsService.CheckQuery('users');
     this.loadUsers();
 
      //fill jobs

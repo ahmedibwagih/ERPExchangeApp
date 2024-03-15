@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild  } from '@angular/core';
 import { JobsDto, JobsDtoPagingResultDto, PrivilageDto, PrivilageDtoPagingResultDto, PrivilageTypeDto, PrivilageTypeDtoPagingResultDto, ScreensDto, ScreensDtoPagingResultDto } from 'src/app/services/api.service';
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
 import { GenericAlertComponent } from '../../General/generic-alert/generic-alert.component';
+import { PublicClsService } from 'src/app/services/public-cls.service';
 
 @Component({
   selector: 'app-privilages',
@@ -48,7 +49,7 @@ export class PrivilagesComponent implements OnInit {
   displayedColumns = ['JobId', 'ScreensId', 'PrivilageTypeId','State'];
 
   backend:BackEndClientService;
-  constructor(private back:BackEndClientService) { 
+  constructor(public PublicClsService:PublicClsService,private back:BackEndClientService) { 
     this.backend = back;
 
   }
@@ -72,7 +73,7 @@ export class PrivilagesComponent implements OnInit {
   }
   
   ngOnInit(): void {
-
+    this.PublicClsService.CheckQuery('privilages');
     debugger;
        //fill jobs
        this.back.jobsGetAll(1,100,undefined,undefined,undefined,undefined)
@@ -164,7 +165,7 @@ export class PrivilagesComponent implements OnInit {
     //this.privilageSelectedOption = this.privilageOptions.filter(a=>a.value == privilage.riskRate )[0];
     this.privilage = privilage;
     this.back.privilageUpdate(this.privilage) .then(() => {
-      this.fillPrivilages();
+     // this.fillPrivilages();
       //this.alert( "تم التعديل بنجاح","success");
     })
     .catch((error) => {

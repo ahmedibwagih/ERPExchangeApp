@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild  } from '@angular/core';
 import { CountriesDto, CurrenciesDtoPagingResultDto, IdentitySourcesDto, IdentitySourcesDtoPagingResultDto } from 'src/app/services/api.service';
 import { BackEndClientService } from 'src/app/services/back-end-client.service';
 import { GenericAlertComponent } from '../../General/generic-alert/generic-alert.component';
+import { PublicClsService } from 'src/app/services/public-cls.service';
 
 @Component({
   selector: 'app-identitySources',
@@ -40,12 +41,13 @@ export class IdentitySourcesComponent implements OnInit {
   displayedColumns = ['nameAr', 'nameEn', 'riskRate','countryId', 'actions'];
 
   backend:BackEndClientService;
-  constructor(private back:BackEndClientService) { 
+  constructor(public PublicClsService:PublicClsService,private back:BackEndClientService) { 
     this.backend = back;
 
   }
 
   ngOnInit(): void {
+    this.PublicClsService.CheckQuery('IdentitySources');
     this.fillIdentitySources();
 
     //fill countriesOptions
