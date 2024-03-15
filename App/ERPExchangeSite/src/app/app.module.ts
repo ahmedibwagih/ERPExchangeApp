@@ -27,6 +27,7 @@ import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { LoginComponent } from './login/login.component';
 import { BanksComponent } from './component/lookups/banks/banks.component';
+import { UnauthorizedComponent } from './component/Unauthorized/Unauthorized.component';
 import { PrivilagesComponent } from './component/Privilage/Privilage/Privilage.component';
 import { MatSelectModule } from '@angular/material/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -45,7 +46,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppComponent,
     SpinnerComponent,
     LoginComponent,
-    BanksComponent,
+    BanksComponent
+    ,UnauthorizedComponent,
     PrivilagesComponent,
     GenericAlertComponent,
     JobsComponent,

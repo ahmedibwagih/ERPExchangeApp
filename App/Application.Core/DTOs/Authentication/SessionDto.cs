@@ -7,7 +7,7 @@ namespace Application.Core.DTOs.Authentication
     {
         public string UserId { get; set; }
         public string UserName { get; set; }
-        //public long ProfileId { get; set; }
+        public long JobId { get; set; }
         //public long WalletId { get; set; }
 
         //public UserTypeEnum UserType { get; set; }
