@@ -35,6 +35,7 @@ import { IdentitySourcesComponent } from './component/lookups/identitySources/id
 import { TransferPurposesComponent } from './component/lookups/transferPurposes/transferPurposes.component';
 import { UserManagementComponent } from './component/Privilage/user-management/user-management.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 //import { TokenInterceptor } from './token-interceptor.interceptor';
 
 @NgModule({
@@ -54,6 +55,15 @@ TransferPurposesComponent,
 UserManagementComponent
   ],
   imports: [
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token'); // Function to retrieve the token from local storage
+        },
+       // allowedDomains: ['example.com'], // Whitelisted domains (optional)
+       // disallowedRoutes: ['example.com/login'] // Disallowed routes (optional)
+      }
+    }),
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,

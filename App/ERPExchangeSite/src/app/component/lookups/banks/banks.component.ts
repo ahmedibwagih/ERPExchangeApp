@@ -42,7 +42,7 @@ export class BanksComponent implements OnInit {
   displayedColumns = ['nameAr', 'nameEn', 'riskRate', 'actions'];
 
   backend:BackEndClientService;
-  constructor(private back:BackEndClientService,public router: Router,public location: Location) { 
+  constructor(public PublicClsService:PublicClsService,private back:BackEndClientService,public router: Router,public location: Location) { 
     this.backend = back;
 
   }
@@ -58,8 +58,8 @@ export class BanksComponent implements OnInit {
     //   this.Allbanks = result;
     //   this.banks=this.Allbanks.result  ?? [];
     // })
-
-    this.back.privilageCheckAuth(2,PublicClsService.Getuserid(),0)
+debugger;
+    this.back.privilageCheckAuth(2,this.PublicClsService.Getuserid(),0)
     .then((result: boolean) => {
       if (result == false)
       {

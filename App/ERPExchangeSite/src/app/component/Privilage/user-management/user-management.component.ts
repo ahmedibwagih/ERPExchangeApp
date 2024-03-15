@@ -31,6 +31,7 @@ export class UserManagementComponent implements OnInit {
   user: UserDto = new UserDto();
   userService:BackEndClientService;
   jobsOptions!: JobsDto[];
+  setJobid:number=0;
   constructor(private back:BackEndClientService) { 
     this.userService = back;
 
@@ -41,7 +42,7 @@ export class UserManagementComponent implements OnInit {
     debugger;
     //const selectedValue = parseInt((value.target as HTMLSelectElement).value,10);
     const selectedValue =value.value;
-    this.user.jobId =  selectedValue;
+    this.setJobid =  selectedValue;
  
   //  console.log('Selected option:', value);
     // Handle selection change logic here
@@ -84,6 +85,9 @@ debugger;
 
   editUser(user: UserDto): void {
 debugger;
+if (this.setJobid == 0)
+return;
+user.jobId=this.setJobid ;
  user.password ="";
  if (user.fullName== null)
  user.fullName =" ";
@@ -98,7 +102,7 @@ debugger;
       this.alert( "يوجد مشكله في التعديل","warning");
     });
 
-
+    this.setJobid = 0;
    }
 
   deleteUser(userId: string): void {
