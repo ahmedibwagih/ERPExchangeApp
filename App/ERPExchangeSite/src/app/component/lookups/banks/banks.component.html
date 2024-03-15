@@ -5,7 +5,7 @@
     <mat-card-header  fxLayout="row" fxLayoutAlign="center center">
       <mat-card-title>البنوك</mat-card-title>
     </mat-card-header>
-    <mat-card-content  fxLayout="column" fxLayoutAlign="end center">
+    <mat-card-content  fxLayout="column" fxLayoutAlign="end center" style="direction: rtl;">
       <!-- Form for adding/editing bank -->
       <form (ngSubmit)="saveBank()">
         <mat-form-field>
@@ -39,7 +39,7 @@
       </form>
   
       <!-- Display banks in a table -->
-      <table mat-table [dataSource]="banks">
+      <table mat-table [dataSource]="banks" style="direction: rtl;">
         <!-- Columns -->
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>ID</th>
