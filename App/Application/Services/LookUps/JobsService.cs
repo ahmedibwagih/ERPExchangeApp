@@ -46,12 +46,14 @@ namespace Application.Services.LookUps
             return response;
         }
 
-        //protected async override Task<bool> OnCreated(Jobs entity, JobsDto dto)
-        //{
-        //    await this.attachmentService.Save(entity.Id, AttachmentTypeEnum.Jobs, dto.Attachments, true);
+    
 
-        //    return await base.OnCreated(entity, dto);
-        //}
+      public async Task<bool> fill_Privilage()
+        {
+
+            this.UnitOfWork.Privilage.fill_Privilage();
+            return true;
+        }
 
         //protected async override Task<bool> OnUpdated(Jobs entity, JobsDto dto)
         //{
@@ -79,7 +81,7 @@ namespace Application.Services.LookUps
 
         //    return response;
         //}
-  
-    
+
+
     }
 }

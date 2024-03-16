@@ -53,7 +53,7 @@ export class TransferPurposesComponent implements OnInit {
 
   fillTransferPurposes(){
 
-    this.back.transferPurposesGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.transferPurposesGetAll(1,10000,'id',undefined,undefined,undefined)
     .then((result: TransferPurposesDtoPagingResultDto) => {
       this.AlltransferPurposes = result;
       this.transferPurposes=this.AlltransferPurposes.result  ?? [];

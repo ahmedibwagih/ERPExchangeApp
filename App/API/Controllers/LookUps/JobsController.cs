@@ -3,6 +3,7 @@ using Application.Core.DTOs.Authentication;
 using Application.Core.DTOs.LookUps;
 using Application.Core.DTOs.User;
 using Application.Core.Services;
+using Application.Core.Services.LookUps;
 using Application.Services;
 using Application.Services.LookUps;
 using Core.DTOs;
@@ -18,9 +19,9 @@ namespace Api.Controllers.LookUps
     public class JobsController : ControllerBase
     {
 
-        private readonly IService<Jobs, JobsDto, JobsDto, JobsDto, JobsDto> service;
+        private readonly IJobsService service;
 
-        public JobsController(IService<Jobs, JobsDto, JobsDto, JobsDto, JobsDto> service)
+        public JobsController(IJobsService service)
         {
             this.service = service;
         }
@@ -46,7 +47,9 @@ namespace Api.Controllers.LookUps
         [Route("[action]")]
         public async Task<ActionResult<JobsDto>> Create([FromBody] JobsDto input)
         {
-            return await service.Create(input);
+            var result = await service.Create(input);
+           // await service.fill_Privilage();
+            return result;
         }
 
         [HttpPost]

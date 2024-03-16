@@ -41,6 +41,7 @@ export class JobsComponent implements OnInit {
   displayedColumns = ['nameAr', 'nameEn', 'riskRate', 'actions'];
 
   backend:BackEndClientService;
+
   constructor(public PublicClsService:PublicClsService,private back:BackEndClientService) { 
     this.backend = back;
 
@@ -53,7 +54,7 @@ export class JobsComponent implements OnInit {
 
   fillJobs(){
 
-    this.back.jobsGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.jobsGetAll(1,10000,'id',undefined,undefined,undefined)
     .then((result: JobsDtoPagingResultDto) => {
       this.Alljobs = result;
       this.jobs=this.Alljobs.result  ?? [];
@@ -88,6 +89,14 @@ export class JobsComponent implements OnInit {
       this.back.jobsCreate(this.job) .then(() => {
         this.fillJobs();
         this.alert( "تم الاضافة بنجاح","success");
+
+       // ---------------------------
+      //  this.back.privilageAutoFill ().then(() => {
+      //   })
+      //   .catch((error) => {
+      //     console.error('Error fetching data:', error);
+      //   });
+        //---------------------------
       })
       .catch((error) => {
         console.error('Error fetching data:', error);

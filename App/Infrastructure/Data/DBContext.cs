@@ -7,8 +7,14 @@ using Dynamo.Context.Data.Extensions;
 using Dynamo.Context.ModelConfiguration;
 using Dynamo.Core.Other;
 using Infrastructure.DataConfiguration;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Reflection.Emit;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Infrastructure.Data
 {
@@ -129,6 +135,53 @@ namespace Infrastructure.Data
             builder.ApplyConfiguration(userConfiguration);
             builder.ApplyConfiguration(roleConfiguration);
             builder.ApplyConfiguration(userRolesConfiguration);
+        }
+
+        public async Task fill_Privilage()
+        {
+            try
+            {
+                using (var connection = Database.GetDbConnection())
+                {
+                    // Open the connection if it's closed
+                    if (connection.State != System.Data.ConnectionState.Open)
+                        await connection.OpenAsync();
+                    using (var command = connection.CreateCommand())
+                    {
+                        Thread.SpinWait(2000);
+                        command.CommandText = "EXEC fill_Privilage ";
+
+                        // Execute the query and return the result
+                        await command.ExecuteNonQueryAsync();
+                    }
+
+                    //await Database.ExecuteSqlRawAsync("EXEC fill_Privilage ");
+
+                }
+            }
+            catch (Exception ex)
+            {
+               await  Database.RollbackTransactionAsync();
+                using (var connection = Database.GetDbConnection())
+                {
+                    // Open the connection if it's closed
+                    if (connection.State != System.Data.ConnectionState.Open)
+                        await connection.OpenAsync();
+                    using (var command = connection.CreateCommand())
+                    {
+                        Thread.SpinWait(2000);
+                        command.CommandText = "EXEC fill_Privilage ";
+
+                        // Execute the query and return the result
+                        await command.ExecuteNonQueryAsync();
+                    }
+
+                    //await Database.ExecuteSqlRawAsync("EXEC fill_Privilage ");
+
+                }
+            }
+
+          //  await Database.ExecuteSqlRawAsync("EXEC fill_Privilage ");
         }
 
     }

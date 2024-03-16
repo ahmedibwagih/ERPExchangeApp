@@ -20,6 +20,12 @@ namespace Infrastructure.Repositories
         {
             Context = context;
         }
+            
+        public async void fill_Privilage()
+        {
+            await Context.Database.ExecuteSqlRawAsync("EXEC fill_Privilage");
+            //  await Context.fill_Privilage();
+        }
 
         public async Task<bool> CheckAuth(long PrivilageTypeId,long jobid,long screenid)
         {

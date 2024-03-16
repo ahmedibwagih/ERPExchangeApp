@@ -51,7 +51,7 @@ export class IdentitySourcesComponent implements OnInit {
     this.fillIdentitySources();
 
     //fill countriesOptions
-    this.back.countriesGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.countriesGetAll(1,10000,'id',undefined,undefined,undefined)
     .then((result: CurrenciesDtoPagingResultDto) => {
       this.countriesOptions = result.result?? [];
 
@@ -63,7 +63,7 @@ export class IdentitySourcesComponent implements OnInit {
 
   fillIdentitySources(){
 
-    this.back.identitySourcesGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.identitySourcesGetAll(1,10000,undefined,undefined,undefined,undefined)
     .then((result: IdentitySourcesDtoPagingResultDto) => {
       this.AllidentitySources = result;
       this.identitySources=this.AllidentitySources.result  ?? [];

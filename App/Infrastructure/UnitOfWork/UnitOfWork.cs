@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Threading.Tasks;
 using Core.Entities.LookUps;
 using Core.Other;
@@ -9,6 +10,8 @@ using Core.Repositories.privilage;
 using Core.UnitOfWork;
 using Dynamo.Core.Other;
 using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Infrastructure.UnitOfWork
 {
@@ -58,6 +61,22 @@ namespace Infrastructure.UnitOfWork
             Jobs = jobs;
             TransferPurposes = transferPurposes;
         }
+
+        //public async Task fill_Privilage()
+        //{
+        //    using (var connection = context.Database.GetDbConnection())
+        //    {
+        //        // Open the connection if it's closed
+        //        if (connection.State != ConnectionState.Open)
+        //            await connection.OpenAsync();
+
+  
+        //            await context.Database.ExecuteSqlRawAsync("EXEC fill_Privilage ");
+                
+        //    }
+      
+        //}
+
 
         public async Task<int> CompleteAsync()
         {

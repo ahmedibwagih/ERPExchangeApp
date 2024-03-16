@@ -53,7 +53,7 @@ export class BanksComponent implements OnInit {
   }
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('banks');
-    // this.back.banksGetAll(1,100,undefined,undefined,undefined,undefined)
+    // this.back.banksGetAll(1,10000,undefined,undefined,undefined,undefined)
     // .then((result: BanksDtoPagingResultDto) => {
     //   this.Allbanks = result;
     //   this.banks=this.Allbanks.result  ?? [];
@@ -80,7 +80,7 @@ export class BanksComponent implements OnInit {
 
   fillBanks(){
 
-    this.back.banksGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.banksGetAll(1,10000,'id',undefined,undefined,undefined)
     .then((result: BanksDtoPagingResultDto) => {
       this.Allbanks = result;
       this.banks=this.Allbanks.result  ?? [];

@@ -53,7 +53,7 @@ export class CountriesComponent implements OnInit {
 
   fillCountries(){
 
-    this.back.countriesGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.countriesGetAll(1,10000,'id',undefined,undefined,undefined)
     .then((result: CountriesDtoPagingResultDto) => {
       this.Allcountries = result;
       this.countries=this.Allcountries.result  ?? [];

@@ -57,7 +57,7 @@ export class CurrenciesComponent implements OnInit {
    
 
     //fill countriesOptions
-    this.back.countriesGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.countriesGetAll(1,10000,'id',undefined,undefined,undefined)
     .then((result: CurrenciesDtoPagingResultDto) => {
       this.countriesOptions = result.result?? [];
 
@@ -69,7 +69,7 @@ export class CurrenciesComponent implements OnInit {
 
   fillCurrencies(){
 
-    this.back.currenciesGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.currenciesGetAll(1,10000,undefined,undefined,undefined,undefined)
     .then((result: CurrenciesDtoPagingResultDto) => {
       this.Allcurrencies = result;
       this.currencies=this.Allcurrencies.result  ?? [];

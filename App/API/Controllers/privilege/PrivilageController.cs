@@ -11,6 +11,7 @@ using Core.DTOs;
 using Core.Entities.LookUps;
 using Core.Entities.privilege;
 using Core.Other;
+using Core.UnitOfWork;
 using Dynamo.Context.Identity;
 using Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Http;
@@ -28,11 +29,13 @@ namespace Api.Controllers.LookUps
         private readonly IPrivilageService service;
         private readonly IAuthenticateService authservice;
         private readonly DynamoUserManager userManager;
-        public PrivilageController(IPrivilageService service, IAuthenticateService authservice, DynamoUserManager userManager)
+        private readonly IUnitOfWork unitOfWork;
+        public PrivilageController(IUnitOfWork unitOfWork,IPrivilageService service, IAuthenticateService authservice, DynamoUserManager userManager)
         {
             this.service = service;
             this.authservice = authservice;
             this.userManager = userManager;
+            this.unitOfWork = unitOfWork;   
         }
 
         [HttpGet]
@@ -119,6 +122,23 @@ namespace Api.Controllers.LookUps
         {
             await service.Delete(id);
         }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [Route("[action]")]
+        public async Task<Boolean> AutoFill()
+        {
+            service.fill_Privilage();
+            return true;
+        }
+
+        //[HttpPost]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
+        //[Route("[action]")]
+        //public async Task<Boolean> CheckAuthByName2(string userId, string screenName, string PrivilageTypeName)
+        //{
+        //    return await service.CheckAuthByName(userId, screenName, PrivilageTypeName);
+        //}
 
     }
 }

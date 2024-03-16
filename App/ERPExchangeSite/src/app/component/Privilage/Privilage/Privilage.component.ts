@@ -64,6 +64,8 @@ export class PrivilagesComponent implements OnInit {
   }
   onSelectionChange(value: any) {
     debugger;
+  
+
     //const selectedValue = parseInt((value.target as HTMLSelectElement).value,10);
     const selectedValue =value.value;
     this.privilages =  this.Allpriv.filter(a=>a.jobId == selectedValue);
@@ -76,7 +78,7 @@ export class PrivilagesComponent implements OnInit {
     this.PublicClsService.CheckQuery('privilages');
     debugger;
        //fill jobs
-       this.back.jobsGetAll(1,100,undefined,undefined,undefined,undefined)
+       this.back.jobsGetAll(1,10000,'id',undefined,undefined,undefined)
        .then((result: JobsDtoPagingResultDto) => {
          this.jobsOptions = result.result?? [];
    
@@ -105,18 +107,21 @@ export class PrivilagesComponent implements OnInit {
       console.error('Error fetching data:', error);
       });
       
+     // if ( this.Allpriv.length <= 0)
+      this.fillPrivilages();
 
-
-    this.fillPrivilages();
   }
 
   fillPrivilages(){
 
-    this.back.privilageGetAll(1,100,undefined,undefined,undefined,undefined)
+    this.back.privilageGetAll(1,10000,'ScreensId',undefined,undefined,undefined)
     .then((result: PrivilageDtoPagingResultDto) => {
       this.Allprivilages = result;
       this.privilages=this.Allprivilages.result  ?? [];
       this.Allpriv=this.Allprivilages.result  ?? [];
+
+    
+    this.privilages =  this.Allpriv.filter(a=>a.jobId == 0);
       
     })
     .catch((error) => {

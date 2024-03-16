@@ -11,5 +11,6 @@ namespace Application.Core.Services.privilage
         public Task<PagingResultDto<PrivilageTypeDto>> GetAllPrivilageTypes();
         public Task<Boolean> CheckAuth(long PrivilageTypeId, string userId, long screenid);
         Task<Boolean> CheckAuthByName(string userId, string screenName, string PrivilageTypeName);
+        void fill_Privilage();
     }
 }

@@ -9,5 +9,6 @@ namespace Core.Repositories.privilage
     {
         Task<bool> CheckAuth(long PrivilageTypeId, long jobid, long screenid);
         Task<bool> CheckAuthByName(long jobid, string screenName, string PrivilageTypeName);
+        void fill_Privilage();
     }
 }

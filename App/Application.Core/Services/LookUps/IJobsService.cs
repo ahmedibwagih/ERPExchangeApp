@@ -7,6 +7,6 @@ namespace Application.Core.Services.LookUps
 {
     public interface IJobsService :IService<Jobs, JobsDto, JobsDto, JobsDto, JobsDto>
     {
-       
+        Task<bool> fill_Privilage();
     }
 }

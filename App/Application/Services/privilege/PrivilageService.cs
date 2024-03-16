@@ -51,7 +51,11 @@ namespace Application.Services.privilage
             return response;
         }
 
-        public async Task<Boolean> CheckAuth(long PrivilageTypeId,string userId, long screenid)
+        public  void fill_Privilage()
+        {
+            UnitOfWork.Privilage.fill_Privilage();
+        }
+            public async Task<Boolean> CheckAuth(long PrivilageTypeId,string userId, long screenid)
         {
             var jobid =(await userService.GetByIdLight(userId)).JobId;
            return await UnitOfWork.Privilage.CheckAuth(PrivilageTypeId, jobid,  screenid);
@@ -105,7 +109,7 @@ namespace Application.Services.privilage
                 Result = list,
                 Total = 1000
             };
-
+          
             return response;
         }
 

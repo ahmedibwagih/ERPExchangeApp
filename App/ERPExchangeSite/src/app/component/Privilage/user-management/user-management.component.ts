@@ -33,6 +33,7 @@ export class UserManagementComponent implements OnInit {
   userService:BackEndClientService;
   jobsOptions!: JobsDto[];
   setJobid:number=0;
+  isEditing = false;
   constructor(public PublicClsService:PublicClsService,private back:BackEndClientService) { 
     this.userService = back;
 
@@ -51,13 +52,13 @@ export class UserManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('users');
-    this.loadUsers();
+   
 
      //fill jobs
-     this.back.jobsGetAll(1,100,undefined,undefined,undefined,undefined)
+     this.back.jobsGetAll(1,10000,'id',undefined,undefined,undefined)
      .then((result: JobsDtoPagingResultDto) => {
        this.jobsOptions = result.result?? [];
- 
+       this.loadUsers();
      })
      .catch((error) => {
        console.error('Error fetching data:', error);
@@ -70,6 +71,7 @@ debugger;
     this.back.authenticationGetUsers()
     .then((result: UserDtoPagingResultDto) => {
       this.users = result?.result ?? [];
+      this.user= new UserDto();
       })
     .catch((error) => {
       console.error('Error fetching data:', error);
@@ -79,38 +81,77 @@ debugger;
 
   
 
-  addUser(user: UserDto): void {
-    // this.userService.addUser(user).subscribe(() => {
-    //   this.loadUsers();
-    // });
+  createUser(): void {
+    if (this.isEditing==true)
+    {
+      this.back.authenticationUpdateUser(this.user) .then(() => {
+        this.loadUsers();
+        this.alert( "تم التعديل بنجاح","success");
+         })
+      .catch((error) => {
+        debugger;
+        var message = error.response.split(':')[1].split('.')[0];
+         console.error('Error fetching data:', error);
+         if(message)
+           this.alert( message,"danger");
+          else
+          this.alert( "حدث خطا اثناء التعديل","danger");
+      });
+      
+    }else
+    {
+   
+      this.back.authenticationCreateUser(this.user) .then(() => {
+      this.loadUsers();
+      this.alert( "تم الاضافة بنجاح","success");
+       })
+    .catch((error) => {
+      debugger;
+      var message = error.response.split(':')[1].split('.')[0];
+       console.error('Error fetching data:', error);
+       if(message)
+       this.alert( message,"danger");
+      else
+      this.alert( "حدث خطا اثناء الاضافة","danger");
+    });
+
+  }
+
+
   }
 
   editUser(user: UserDto): void {
 debugger;
-if (this.setJobid == 0)
-return;
-user.jobId=this.setJobid ;
- user.password ="";
+// if (this.setJobid == 0)
+// return;
+//user.jobId=this.setJobid ;
+this.isEditing=true;
+ user.password ="P@$$w0rd";
  if (user.fullName== null)
  user.fullName =" ";
 
     this.user = user;
-    this.back.authenticationUpdateUser(this.user) .then(() => {
+    // this.back.authenticationUpdateUser(this.user) .then(() => {
       
-      this.alert( "تم التعديل بنجاح","success");
-    })
-    .catch((error) => {
-      console.error('Error fetching data:', error);
-      this.alert( "يوجد مشكله في التعديل","warning");
-    });
-
-    this.setJobid = 0;
+    //   this.alert( "تم التعديل بنجاح","success");
+    // })
+    // .catch((error) => {
+    //   console.error('Error fetching data:', error);
+    //   this.alert( "يوجد مشكله في التعديل","warning");
+    // });
+    // this.setJobid = 0;
    }
 
   deleteUser(userId: string): void {
-    // this.userService.deleteUser(userId).subscribe(() => {
-    //   this.loadUsers();
-    // });
+    debugger;
+    this.back.authenticationUpdateDelete(userId) .then(() => {
+      this.loadUsers();
+      this.alert( "تم الحذف بنجاح","success");
+       })
+    .catch((error) => {
+        this.alert( "حدث خطا اثناء الحذف","danger");
+    });
+    
   }
 
   submitForm(): void {
