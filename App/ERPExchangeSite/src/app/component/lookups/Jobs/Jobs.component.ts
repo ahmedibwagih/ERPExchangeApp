@@ -46,7 +46,7 @@ export class JobsComponent implements OnInit {
     this.backend = back;
 
   }
-
+  ScreenName:string = "Jobs";
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('Jobs');
     this.fillJobs();
@@ -65,10 +65,16 @@ export class JobsComponent implements OnInit {
 
   }
 
-  saveJob(): void {
+  async saveJob(): Promise<void> {
     debugger;
     //this.job.riskRate= this.jobSelectedOption?.value;
     if (this.isEditing) {
+            
+      if ( await this.PublicClsService.CheckeEdit(this.ScreenName)   == false)
+      {
+       this.alert( "لا يوجد صلاحية تعديل","warning");
+       return;
+      }
       this.back.jobsUpdate(this.job) .then(() => {
         this.fillJobs();
         this.alert( "تم التعديل بنجاح","success");
@@ -82,6 +88,11 @@ export class JobsComponent implements OnInit {
     
     } else {
 
+      if ( await this.PublicClsService.CheckAdd('Jobs')   == false)
+   {
+    this.alert( "لا يوجد صلاحية اضافة","warning");
+    return;
+   }
       // this.newJob.riskRate = this.job.riskRate as number;
       // this.newJob.nameAr = this.job.nameAr;
       // this.newJob.nameEn = this.job.nameEn;
@@ -116,7 +127,12 @@ export class JobsComponent implements OnInit {
   }
 
 
-  deleteJob(job: JobsDto): void {
+  async deleteJob(job: JobsDto): Promise<void> {
+    if ( await this.PublicClsService.CheckDelete(this.ScreenName)   == false)
+    {
+     this.alert( "لا يوجد صلاحية حذف","warning");
+     return;
+    }
     debugger;
     const index = this.jobs.indexOf(job);
     if (index !== -1) {

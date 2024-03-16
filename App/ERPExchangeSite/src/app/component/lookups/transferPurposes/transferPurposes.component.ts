@@ -45,7 +45,7 @@ export class TransferPurposesComponent implements OnInit {
     this.backend = back;
 
   }
-
+  ScreenName:string = "TransferPurposes";
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('TransferPurposes');
     this.fillTransferPurposes();
@@ -64,10 +64,17 @@ export class TransferPurposesComponent implements OnInit {
 
   }
 
-  saveTransferPurpose(): void {
+  async saveTransferPurpose(): Promise<void> {
     debugger;
     //this.transferPurpose.riskRate= this.transferPurposeSelectedOption?.value;
     if (this.isEditing) {
+            
+      if ( await this.PublicClsService.CheckeEdit(this.ScreenName)   == false)
+      {
+       this.alert( "لا يوجد صلاحية تعديل","warning");
+       return;
+      }
+
       this.back.transferPurposesUpdate(this.transferPurpose) .then(() => {
         this.fillTransferPurposes();
         this.alert( "تم التعديل بنجاح","success");
@@ -81,6 +88,11 @@ export class TransferPurposesComponent implements OnInit {
     
     } else {
 
+      if ( await this.PublicClsService.CheckAdd('TransferPurposes')   == false)
+   {
+    this.alert( "لا يوجد صلاحية اضافة","warning");
+    return;
+   }
       // this.newTransferPurpose.riskRate = this.transferPurpose.riskRate as number;
       // this.newTransferPurpose.nameAr = this.transferPurpose.nameAr;
       // this.newTransferPurpose.nameEn = this.transferPurpose.nameEn;
@@ -107,7 +119,12 @@ export class TransferPurposesComponent implements OnInit {
   }
 
 
-  deleteTransferPurpose(transferPurpose: TransferPurposesDto): void {
+  async deleteTransferPurpose(transferPurpose: TransferPurposesDto): Promise<void> {
+    if ( await this.PublicClsService.CheckDelete(this.ScreenName)   == false)
+    {
+     this.alert( "لا يوجد صلاحية حذف","warning");
+     return;
+    }
     debugger;
     const index = this.transferPurposes.indexOf(transferPurpose);
     if (index !== -1) {

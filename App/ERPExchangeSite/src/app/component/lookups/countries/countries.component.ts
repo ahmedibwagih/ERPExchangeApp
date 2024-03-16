@@ -45,7 +45,7 @@ export class CountriesComponent implements OnInit {
     this.backend = back;
 
   }
-
+  ScreenName:string = "Countries";
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('Countries');
     this.fillCountries();
@@ -64,10 +64,17 @@ export class CountriesComponent implements OnInit {
 
   }
 
-  saveCountry(): void {
+  async saveCountry(): Promise<void> {
     debugger;
     //this.country.riskRate= this.countrySelectedOption?.value;
     if (this.isEditing) {
+         
+      if ( await this.PublicClsService.CheckeEdit(this.ScreenName)   == false)
+      {
+       this.alert( "لا يوجد صلاحية تعديل","warning");
+       return;
+      }
+
       this.back.countriesUpdate(this.country) .then(() => {
         this.fillCountries();
         this.alert( "تم التعديل بنجاح","success");
@@ -81,6 +88,11 @@ export class CountriesComponent implements OnInit {
     
     } else {
 
+      if ( await this.PublicClsService.CheckAdd('Countries')   == false)
+   {
+    this.alert( "لا يوجد صلاحية اضافة","warning");
+    return;
+   }
       // this.newCountry.riskRate = this.country.riskRate as number;
       // this.newCountry.nameAr = this.country.nameAr;
       // this.newCountry.nameEn = this.country.nameEn;
@@ -107,7 +119,12 @@ export class CountriesComponent implements OnInit {
   }
 
 
-  deleteCountry(country: CountriesDto): void {
+  async deleteCountry(country: CountriesDto): Promise<void> {
+    if ( await this.PublicClsService.CheckDelete(this.ScreenName)   == false)
+    {
+     this.alert( "لا يوجد صلاحية حذف","warning");
+     return;
+    }
     debugger;
     const index = this.countries.indexOf(country);
     if (index !== -1) {

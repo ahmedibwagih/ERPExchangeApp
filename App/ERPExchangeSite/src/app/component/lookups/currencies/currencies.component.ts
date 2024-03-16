@@ -50,7 +50,7 @@ export class CurrenciesComponent implements OnInit {
 
   }
 
-  
+  ScreenName:string = "Currencies";
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('Currencies');
     this.fillCurrencies();
@@ -80,10 +80,16 @@ export class CurrenciesComponent implements OnInit {
 
   }
 
-  saveCurrency(): void {
+  async saveCurrency(): Promise<void> {
     debugger;
     //this.currency.riskRate= this.currencySelectedOption?.value;
     if (this.isEditing) {
+            
+      if ( await this.PublicClsService.CheckeEdit(this.ScreenName)   == false)
+      {
+       this.alert( "لا يوجد صلاحية تعديل","warning");
+       return;
+      }
       this.back.currenciesUpdate(this.currency) .then(() => {
         this.fillCurrencies();
         this.alert( "تم التعديل بنجاح","success");
@@ -97,6 +103,11 @@ export class CurrenciesComponent implements OnInit {
     
     } else {
 
+      if ( await this.PublicClsService.CheckAdd('Currencies')   == false)
+   {
+    this.alert( "لا يوجد صلاحية اضافة","warning");
+    return;
+   }
       // this.newCurrency.riskRate = this.currency.riskRate as number;
       // this.newCurrency.nameAr = this.currency.nameAr;
       // this.newCurrency.nameEn = this.currency.nameEn;
@@ -123,7 +134,12 @@ export class CurrenciesComponent implements OnInit {
   }
 
 
-  deleteCurrency(currency: CurrenciesDto): void {
+  async deleteCurrency(currency: CurrenciesDto): Promise<void> {
+    if ( await this.PublicClsService.CheckDelete(this.ScreenName)   == false)
+    {
+     this.alert( "لا يوجد صلاحية حذف","warning");
+     return;
+    }
     debugger;
     const index = this.currencies.indexOf(currency);
     if (index !== -1) {

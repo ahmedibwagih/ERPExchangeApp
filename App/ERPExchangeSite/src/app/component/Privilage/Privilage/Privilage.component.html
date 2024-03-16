@@ -10,8 +10,19 @@
           <mat-option *ngFor="let option of jobsOptions" [value]="option.id">{{ option.nameAr }}</mat-option>
         </mat-select>
       </mat-form-field>
+      <span class="label">اختار الشاشة:</span>
+      <mat-form-field appearance="fill">
+        <mat-select (selectionChange)="onSelectionChangescreen($event)" >
+          <mat-option *ngFor="let option of ScreensOptions" [value]="option.screenId">{{ option.nameAr }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+     
     </div>
+
+
+
   </mat-card-header>
+
 
 
 

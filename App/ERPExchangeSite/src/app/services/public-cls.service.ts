@@ -28,6 +28,22 @@ export class PublicClsService {
     });
 
   }
+
+  async CheckAdd(screenname:any):Promise<boolean>
+  {
+   return await  this.back.privilageCheckAuthByName(this.Getuserid(),screenname,'add');
+   }
+
+   async CheckeEdit(screenname:any):Promise<boolean>
+   {
+    return await  this.back.privilageCheckAuthByName(this.Getuserid(),screenname,'edit');
+    }
+
+    async CheckDelete(screenname:any):Promise<boolean>
+    {
+     return await  this.back.privilageCheckAuthByName(this.Getuserid(),screenname,'delete');
+     }
+
    Getuserid(): string {
 
 

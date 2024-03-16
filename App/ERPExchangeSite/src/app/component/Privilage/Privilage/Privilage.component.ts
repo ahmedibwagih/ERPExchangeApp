@@ -38,7 +38,7 @@ export class PrivilagesComponent implements OnInit {
   privilages: PrivilageDto[]  = [];
   privilage: PrivilageDto = new PrivilageDto()  ;
 
-
+currentjob:any;
   jobsOptions!: JobsDto[];
   ScreensOptions!: ScreensDto[];
   PrivilageTypesOptions!: PrivilageTypeDto[];
@@ -69,11 +69,24 @@ export class PrivilagesComponent implements OnInit {
     //const selectedValue = parseInt((value.target as HTMLSelectElement).value,10);
     const selectedValue =value.value;
     this.privilages =  this.Allpriv.filter(a=>a.jobId == selectedValue);
+ this.currentjob=selectedValue;
+    console.log('Selected option:', value);
+    // Handle selection change logic here
+  }
+
+  onSelectionChangescreen (value: any) {
+    debugger;
+  
+
+    //const selectedValue = parseInt((value.target as HTMLSelectElement).value,10);
+    const selectedValue =value.value;
+    this.privilages =  this.Allpriv.filter(a=>a.screensId == selectedValue && a.jobId == this.currentjob);
  
     console.log('Selected option:', value);
     // Handle selection change logic here
   }
-  
+
+
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('privilages');
     debugger;

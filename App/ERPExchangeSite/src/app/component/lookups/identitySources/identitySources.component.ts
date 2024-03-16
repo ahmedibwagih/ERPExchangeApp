@@ -45,7 +45,7 @@ export class IdentitySourcesComponent implements OnInit {
     this.backend = back;
 
   }
-
+  ScreenName:string = "IdentitySources";
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('IdentitySources');
     this.fillIdentitySources();
@@ -74,10 +74,16 @@ export class IdentitySourcesComponent implements OnInit {
 
   }
 
-  saveIdentitySource(): void {
+  async saveIdentitySource(): Promise<void> {
     debugger;
     //this.identitySource.riskRate= this.identitySourceSelectedOption?.value;
     if (this.isEditing) {
+            
+      if ( await this.PublicClsService.CheckeEdit(this.ScreenName)   == false)
+      {
+       this.alert( "لا يوجد صلاحية تعديل","warning");
+       return;
+      }
       this.back.identitySourcesUpdate(this.identitySource) .then(() => {
         this.fillIdentitySources();
         this.alert( "تم التعديل بنجاح","success");
@@ -91,6 +97,11 @@ export class IdentitySourcesComponent implements OnInit {
     
     } else {
 
+      if ( await this.PublicClsService.CheckAdd('IdentitySources')   == false)
+   {
+    this.alert( "لا يوجد صلاحية اضافة","warning");
+    return;
+   }
       // this.newIdentitySource.riskRate = this.identitySource.riskRate as number;
       // this.newIdentitySource.nameAr = this.identitySource.nameAr;
       // this.newIdentitySource.nameEn = this.identitySource.nameEn;
@@ -117,7 +128,12 @@ export class IdentitySourcesComponent implements OnInit {
   }
 
 
-  deleteIdentitySource(identitySource: IdentitySourcesDto): void {
+  async deleteIdentitySource(identitySource: IdentitySourcesDto): Promise<void> {
+    if ( await this.PublicClsService.CheckDelete(this.ScreenName)   == false)
+    {
+     this.alert( "لا يوجد صلاحية حذف","warning");
+     return;
+    }
     debugger;
     const index = this.identitySources.indexOf(identitySource);
     if (index !== -1) {

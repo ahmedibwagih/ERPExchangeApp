@@ -51,6 +51,7 @@ export class BanksComponent implements OnInit {
   ngAfterViewInit() {
    
   }
+  ScreenName:string = "banks";
   ngOnInit(): void {
     this.PublicClsService.CheckQuery('banks');
     // this.back.banksGetAll(1,10000,undefined,undefined,undefined,undefined)
@@ -92,10 +93,16 @@ export class BanksComponent implements OnInit {
 
   }
 
-  saveBank(): void {
+  async saveBank(): Promise<void> {
+
+   
+    
     debugger;
     //this.bank.riskRate= this.bankSelectedOption?.value;
     if (this.isEditing) {
+      
+ 
+
       this.back.banksUpdate(this.bank) .then(() => {
         this.fillBanks();
         this.alert( "تم التعديل بنجاح","success");
@@ -109,6 +116,11 @@ export class BanksComponent implements OnInit {
     
     } else {
 
+      if ( await this.PublicClsService.CheckAdd(this.ScreenName)   == false)
+   {
+    this.alert( "لا يوجد صلاحية اضافة","warning");
+    return;
+   }
       // this.newBank.riskRate = this.bank.riskRate as number;
       // this.newBank.nameAr = this.bank.nameAr;
       // this.newBank.nameEn = this.bank.nameEn;
@@ -126,8 +138,13 @@ export class BanksComponent implements OnInit {
     this.resetForm();
   }
 
-  editBank(bank: BanksDto): void {
+  async editBank(bank: BanksDto): Promise<void> {
    
+    if ( await this.PublicClsService.CheckeEdit(this.ScreenName)   == false)
+    {
+     this.alert( "لا يوجد صلاحية تعديل","warning");
+     return;
+    }
     //this.bankSelectedOption = this.bankOptions.filter(a=>a.value == bank.riskRate )[0];
     this.bank = bank;
 
@@ -135,7 +152,13 @@ export class BanksComponent implements OnInit {
   }
 
 
-  deleteBank(bank: BanksDto): void {
+  async deleteBank(bank: BanksDto): Promise<void> {
+    if ( await this.PublicClsService.CheckDelete(this.ScreenName)   == false)
+    {
+     this.alert( "لا يوجد صلاحية حذف","warning");
+     return;
+    }
+    
     debugger;
     const index = this.banks.indexOf(bank);
     if (index !== -1) {
